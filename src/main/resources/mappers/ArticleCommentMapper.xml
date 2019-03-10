@@ -1,31 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.DJSEnglish.dao.ArticleCommentMapper">
-  <resultMap id="BaseResultMap" type="com.DJSEnglish.pojo.ArticleComment">
-    <constructor>
-      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="article" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="user" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="text" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="likes" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.DJSEnglish.dao.ArticleCommentMapper" >
+  <resultMap id="BaseResultMap" type="com.DJSEnglish.pojo.ArticleComment" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="article" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="user" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="text" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="likes" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     id, article, user, text, likes, update_time, create_time
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from article_comment
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from article_comment
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleComment">
+  <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleComment" >
     insert into article_comment (id, article, user, 
       text, likes, update_time, 
       create_time)
@@ -33,770 +33,80 @@
       #{text,jdbcType=VARCHAR}, #{likes,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
+  <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.ArticleComment" >
     insert into article_comment
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         id,
       </if>
-      <if test="article != null">
+      <if test="article != null" >
         article,
       </if>
-      <if test="user != null">
+      <if test="user != null" >
         user,
       </if>
-      <if test="text != null">
+      <if test="text != null" >
         text,
       </if>
-      <if test="likes != null">
+      <if test="likes != null" >
         likes,
       </if>
-      <if test="updateTime != null">
+      <if test="updateTime != null" >
         update_time,
       </if>
-      <if test="createTime != null">
+      <if test="createTime != null" >
         create_time,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="article != null">
+      <if test="article != null" >
         #{article,jdbcType=INTEGER},
       </if>
-      <if test="user != null">
+      <if test="user != null" >
         #{user,jdbcType=INTEGER},
       </if>
-      <if test="text != null">
+      <if test="text != null" >
         #{text,jdbcType=VARCHAR},
       </if>
-      <if test="likes != null">
+      <if test="likes != null" >
         #{likes,jdbcType=INTEGER},
       </if>
-      <if test="updateTime != null">
+      <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createTime != null">
+      <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
+  <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.ArticleComment" >
     update article_comment
-    <set>
-      <if test="article != null">
+    <set >
+      <if test="article != null" >
         article = #{article,jdbcType=INTEGER},
       </if>
-      <if test="user != null">
+      <if test="user != null" >
         user = #{user,jdbcType=INTEGER},
       </if>
-      <if test="text != null">
+      <if test="text != null" >
         text = #{text,jdbcType=VARCHAR},
       </if>
-      <if test="likes != null">
+      <if test="likes != null" >
         likes = #{likes,jdbcType=INTEGER},
       </if>
-      <if test="updateTime != null">
+      <if test="updateTime != null" >
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createTime != null">
+      <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    set article = #{article,jdbcType=INTEGER},
-      user = #{user,jdbcType=INTEGER},
-      text = #{text,jdbcType=VARCHAR},
-      likes = #{likes,jdbcType=INTEGER},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="com.DJSEnglish.pojo.ArticleComment">
-    <constructor>
-      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="article" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="user" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="text" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="likes" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, article, user, text, likes, update_time, create_time
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    insert into article_comment (id, article, user, 
-      text, likes, update_time, 
-      create_time)
-    values (#{id,jdbcType=INTEGER}, #{article,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, 
-      #{text,jdbcType=VARCHAR}, #{likes,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{createTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    insert into article_comment
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="article != null">
-        article,
-      </if>
-      <if test="user != null">
-        user,
-      </if>
-      <if test="text != null">
-        text,
-      </if>
-      <if test="likes != null">
-        likes,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="article != null">
-        #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    <set>
-      <if test="article != null">
-        article = #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        user = #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        text = #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        likes = #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    set article = #{article,jdbcType=INTEGER},
-      user = #{user,jdbcType=INTEGER},
-      text = #{text,jdbcType=VARCHAR},
-      likes = #{likes,jdbcType=INTEGER},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="com.DJSEnglish.pojo.ArticleComment">
-    <constructor>
-      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="article" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="user" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="text" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="likes" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, article, user, text, likes, update_time, create_time
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    insert into article_comment (id, article, user, 
-      text, likes, update_time, 
-      create_time)
-    values (#{id,jdbcType=INTEGER}, #{article,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, 
-      #{text,jdbcType=VARCHAR}, #{likes,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{createTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    insert into article_comment
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="article != null">
-        article,
-      </if>
-      <if test="user != null">
-        user,
-      </if>
-      <if test="text != null">
-        text,
-      </if>
-      <if test="likes != null">
-        likes,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="article != null">
-        #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    <set>
-      <if test="article != null">
-        article = #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        user = #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        text = #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        likes = #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    set article = #{article,jdbcType=INTEGER},
-      user = #{user,jdbcType=INTEGER},
-      text = #{text,jdbcType=VARCHAR},
-      likes = #{likes,jdbcType=INTEGER},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="com.DJSEnglish.pojo.ArticleComment">
-    <constructor>
-      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="article" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="user" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="text" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="likes" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, article, user, text, likes, update_time, create_time
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    insert into article_comment (id, article, user, 
-      text, likes, update_time, 
-      create_time)
-    values (#{id,jdbcType=INTEGER}, #{article,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, 
-      #{text,jdbcType=VARCHAR}, #{likes,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{createTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    insert into article_comment
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="article != null">
-        article,
-      </if>
-      <if test="user != null">
-        user,
-      </if>
-      <if test="text != null">
-        text,
-      </if>
-      <if test="likes != null">
-        likes,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="article != null">
-        #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    <set>
-      <if test="article != null">
-        article = #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        user = #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        text = #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        likes = #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    set article = #{article,jdbcType=INTEGER},
-      user = #{user,jdbcType=INTEGER},
-      text = #{text,jdbcType=VARCHAR},
-      likes = #{likes,jdbcType=INTEGER},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="com.DJSEnglish.pojo.ArticleComment">
-    <constructor>
-      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="article" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="user" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="text" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="likes" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, article, user, text, likes, update_time, create_time
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    insert into article_comment (id, article, user, 
-      text, likes, update_time, 
-      create_time)
-    values (#{id,jdbcType=INTEGER}, #{article,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, 
-      #{text,jdbcType=VARCHAR}, #{likes,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{createTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    insert into article_comment
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="article != null">
-        article,
-      </if>
-      <if test="user != null">
-        user,
-      </if>
-      <if test="text != null">
-        text,
-      </if>
-      <if test="likes != null">
-        likes,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="article != null">
-        #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    <set>
-      <if test="article != null">
-        article = #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        user = #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        text = #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        likes = #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    set article = #{article,jdbcType=INTEGER},
-      user = #{user,jdbcType=INTEGER},
-      text = #{text,jdbcType=VARCHAR},
-      likes = #{likes,jdbcType=INTEGER},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="com.DJSEnglish.pojo.ArticleComment">
-    <constructor>
-      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="article" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="user" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="text" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="likes" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, article, user, text, likes, update_time, create_time
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    insert into article_comment (id, article, user, 
-      text, likes, update_time, 
-      create_time)
-    values (#{id,jdbcType=INTEGER}, #{article,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, 
-      #{text,jdbcType=VARCHAR}, #{likes,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{createTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    insert into article_comment
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="article != null">
-        article,
-      </if>
-      <if test="user != null">
-        user,
-      </if>
-      <if test="text != null">
-        text,
-      </if>
-      <if test="likes != null">
-        likes,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="article != null">
-        #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    <set>
-      <if test="article != null">
-        article = #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        user = #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        text = #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        likes = #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.ArticleComment">
-    update article_comment
-    set article = #{article,jdbcType=INTEGER},
-      user = #{user,jdbcType=INTEGER},
-      text = #{text,jdbcType=VARCHAR},
-      likes = #{likes,jdbcType=INTEGER},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      create_time = #{createTime,jdbcType=TIMESTAMP}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="com.mmall.pojo.ArticleComment">
-    <constructor>
-      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="article" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="user" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="text" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="likes" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
-    </constructor>
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, article, user, text, likes, update_time, create_time
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from article_comment
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.mmall.pojo.ArticleComment">
-    insert into article_comment (id, article, user, 
-      text, likes, update_time, 
-      create_time)
-    values (#{id,jdbcType=INTEGER}, #{article,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, 
-      #{text,jdbcType=VARCHAR}, #{likes,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{createTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="com.mmall.pojo.ArticleComment">
-    insert into article_comment
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="article != null">
-        article,
-      </if>
-      <if test="user != null">
-        user,
-      </if>
-      <if test="text != null">
-        text,
-      </if>
-      <if test="likes != null">
-        likes,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="article != null">
-        #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mmall.pojo.ArticleComment">
-    update article_comment
-    <set>
-      <if test="article != null">
-        article = #{article,jdbcType=INTEGER},
-      </if>
-      <if test="user != null">
-        user = #{user,jdbcType=INTEGER},
-      </if>
-      <if test="text != null">
-        text = #{text,jdbcType=VARCHAR},
-      </if>
-      <if test="likes != null">
-        likes = #{likes,jdbcType=INTEGER},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.mmall.pojo.ArticleComment">
+  <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.ArticleComment" >
     update article_comment
     set article = #{article,jdbcType=INTEGER},
       user = #{user,jdbcType=INTEGER},
