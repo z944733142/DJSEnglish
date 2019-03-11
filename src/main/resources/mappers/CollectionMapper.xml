@@ -6,10 +6,12 @@
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="article" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    id, user, article
+    id, user, article, update_time, create_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -22,10 +24,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.DJSEnglish.pojo.Collection" >
-    insert into collection (id, user, article
-      )
-    values (#{id,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{article,jdbcType=INTEGER}
-      )
+    insert into collection (id, user, article, 
+      update_time, create_time)
+    values (#{id,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{article,jdbcType=INTEGER}, 
+      now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.Collection" >
     insert into collection
@@ -39,6 +41,12 @@
       <if test="article != null" >
         article,
       </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -49,6 +57,12 @@
       </if>
       <if test="article != null" >
         #{article,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        now(),
+      </if>
+      <if test="createTime != null" >
+        now(),
       </if>
     </trim>
   </insert>
@@ -61,13 +75,21 @@
       <if test="article != null" >
         article = #{article,jdbcType=INTEGER},
       </if>
+      <if test="updateTime != null" >
+        update_time = now(),
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.Collection" >
     update collection
     set user = #{user,jdbcType=INTEGER},
-      article = #{article,jdbcType=INTEGER}
+      article = #{article,jdbcType=INTEGER},
+      update_time = now(),
+      create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

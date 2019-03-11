@@ -15,7 +15,7 @@
     id, user, type, articl_id, update_time, create_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from likes
     where id = #{id,jdbcType=INTEGER}
@@ -25,11 +25,11 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.DJSEnglish.pojo.Like" >
-    insert into likes (id, user, type, 
+    insert into likes (id, user, type,
       articl_id, update_time, create_time
       )
-    values (#{id,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
-      #{articlId,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}
+    values (#{id,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{type,jdbcType=INTEGER},
+      #{articlId,jdbcType=INTEGER}, now(), now()
       )
   </insert>
   <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.Like" >
@@ -68,10 +68,10 @@
         #{articlId,jdbcType=INTEGER},
       </if>
       <if test="updateTime != null" >
-        #{updateTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>
@@ -88,7 +88,7 @@
         articl_id = #{articlId,jdbcType=INTEGER},
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -101,7 +101,7 @@
     set user = #{user,jdbcType=INTEGER},
       type = #{type,jdbcType=INTEGER},
       articl_id = #{articlId,jdbcType=INTEGER},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_time = now(),
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>

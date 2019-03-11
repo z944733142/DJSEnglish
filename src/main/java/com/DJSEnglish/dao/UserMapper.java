@@ -19,4 +19,8 @@ public interface UserMapper {
     User selectUser(@Param("username") String username, @Param("password") String password);
 
     int selectUserCount(String username);
+
+    int selectEmailCount(String email);
+
+    int selectPhoneCount(String phone);
 }

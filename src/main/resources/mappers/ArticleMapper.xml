@@ -17,7 +17,7 @@
     id, text, begin, img, collection, likes, update_time, create_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from article
     where id = #{id,jdbcType=INTEGER}
@@ -27,12 +27,12 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.DJSEnglish.pojo.Article" >
-    insert into article (id, text, begin, 
-      img, collection, likes, 
+    insert into article (id, text, begin,
+      img, collection, likes,
       update_time, create_time)
-    values (#{id,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, #{begin,jdbcType=VARCHAR}, 
-      #{img,jdbcType=VARCHAR}, #{collection,jdbcType=INTEGER}, #{likes,jdbcType=INTEGER}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
+    values (#{id,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, #{begin,jdbcType=VARCHAR},
+      #{img,jdbcType=VARCHAR}, #{collection,jdbcType=INTEGER}, #{likes,jdbcType=INTEGER},
+      now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.Article" >
     insert into article
@@ -82,10 +82,10 @@
         #{likes,jdbcType=INTEGER},
       </if>
       <if test="updateTime != null" >
-        #{updateTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
       <if test="createTime != null" >
-        #{createTime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>
@@ -108,7 +108,7 @@
         likes = #{likes,jdbcType=INTEGER},
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -123,7 +123,7 @@
       img = #{img,jdbcType=VARCHAR},
       collection = #{collection,jdbcType=INTEGER},
       likes = #{likes,jdbcType=INTEGER},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_time = now(),
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
