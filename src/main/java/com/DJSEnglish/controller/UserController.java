@@ -68,6 +68,10 @@ public class UserController {
         return iUserService.Register(user);
     }
 
+//    @RequestMapping(value = "register.do", method = RequestMethod.POST)
+//    @ResponseBody
+//    public ServerResponse get
+
     @RequestMapping(value = "get_user_info.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> getUserInfo(HttpSession session)
