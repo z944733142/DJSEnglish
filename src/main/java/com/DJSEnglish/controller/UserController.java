@@ -5,6 +5,7 @@ import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.dao.UserMapper;
 import com.DJSEnglish.pojo.User;
 import com.DJSEnglish.service.IUserService;
+import com.DJSEnglish.util.PhoneUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,9 +64,24 @@ public class UserController {
 
     @RequestMapping(value = "register.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse register(User user)
+    public ServerResponse register(User user, String msgCode)
     {
+        if(!PhoneUtil.judgeCodeIsTrue(msgCode, user.getPhone()))
+        {
+            return ServerResponse.createByErrorMsg("注册失败, 验证码不正确");
+        }
         return iUserService.Register(user);
+    }
+
+    @RequestMapping(value = "check_msg.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse checkMsg(String phone, String msgCode)
+    {
+        if(!PhoneUtil.judgeCodeIsTrue(msgCode, phone))
+        {
+            return ServerResponse.createByErrorMsg("验证码不正确");
+        }
+        return ServerResponse.createBySuccessMsg("验证码正确");
     }
 
 //    @RequestMapping(value = "register.do", method = RequestMethod.POST)

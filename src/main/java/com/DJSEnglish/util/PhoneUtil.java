@@ -24,7 +24,7 @@ public class PhoneUtil {
         String url = "https://api2.bmob.cn/1/requestSmsCode";
         OkHttpClient client = new OkHttpClient();
 
-        PhoneRequest phoneRequest = new PhoneRequest(phoneNumber,"注册模板");
+        PhoneRequest phoneRequest = new PhoneRequest(phoneNumber,"djsEnglish");
 
         Gson gson = new Gson();
         String json = gson.toJson(phoneRequest);

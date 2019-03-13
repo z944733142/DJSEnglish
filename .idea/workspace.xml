@@ -2,24 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c3b665b-0e37-4d5e-a040-c5d0a1a41c92" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/util/PhoneUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneNumber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/ArticleCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/ArticleCommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/ChattingRecordsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/ChattingRecordsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/CollectionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/CollectionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/ConcernMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/ConcernMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/LikeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/LikeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/SearchHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/SearchHistoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/SentencesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/SentencesMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/WordsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/WordsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/util/PhoneUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/util/PhoneUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/DJSEnglish/util/PhoneUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/DJSEnglish/util/PhoneUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -72,16 +60,17 @@
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="collection" value="1" />
-          <entry key="java" value="82" />
+          <entry key="java" value="88" />
           <entry key="likes" value="1" />
           <entry key="properties" value="6" />
           <entry key="sql" value="6" />
@@ -91,7 +80,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="2" />
-          <entry key="JAVA" value="82" />
+          <entry key="JAVA" value="88" />
           <entry key="Properties" value="6" />
           <entry key="SQL" value="4" />
           <entry key="Scratch" value="2" />
@@ -100,7 +89,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4410" />
+          <entry key="java" value="4561" />
           <entry key="properties" value="36" />
           <entry key="sql" value="2105" />
           <entry key="txt" value="8" />
@@ -109,7 +98,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4410" />
+          <entry key="JAVA" value="4561" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="Properties" value="36" />
           <entry key="SQL" value="1977" />
@@ -121,14 +110,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="70" selection-start-line="70" selection-start-column="2" selection-end-line="72" selection-end-column="31" />
+            <state relative-caret-position="223">
+              <caret line="70" column="41" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/ServerResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -136,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/util/PhoneUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+            <state relative-caret-position="144">
+              <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,15 +143,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/test.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#124#125#0" expanded="true" />
-                <element signature="e#170#171#0" expanded="true" />
+                <element signature="e#221#222#0" expanded="true" />
+                <element signature="e#264#265#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,15 +160,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneNumber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+            <state relative-caret-position="240">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
-                <element signature="e#127#128#0" expanded="true" />
-                <element signature="e#161#162#0" expanded="true" />
-                <element signature="e#215#216#0" expanded="true" />
-                <element signature="e#261#262#0" expanded="true" />
-                <element signature="e#135#136#0" expanded="true" />
-                <element signature="e#181#182#0" expanded="true" />
+                <element signature="e#139#140#0" expanded="true" />
+                <element signature="e#179#180#0" expanded="true" />
+                <element signature="e#245#246#0" expanded="true" />
+                <element signature="e#303#304#0" expanded="true" />
+                <element signature="e#147#148#0" expanded="true" />
+                <element signature="e#205#206#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,7 +177,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/IUserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="60">
               <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -189,29 +187,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneRequest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/TokenCache.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#170#171#0" expanded="true" />
-                <element signature="e#210#211#0" expanded="true" />
-                <element signature="e#276#277#0" expanded="true" />
-                <element signature="e#334#335#0" expanded="true" />
-                <element signature="e#369#370#0" expanded="true" />
-                <element signature="e#400#401#0" expanded="true" />
-                <element signature="e#448#449#0" expanded="true" />
-                <element signature="e#488#489#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+            <state relative-caret-position="-210">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,28 +199,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="254" column="18" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
+            <state relative-caret-position="967">
+              <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/ResponseCode.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/Const.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+            <state relative-caret-position="270">
+              <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/UserMapper.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            <state relative-caret-position="210">
+              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+              <folding>
+                <element signature="e#164#165#0" expanded="true" />
+                <element signature="e#204#205#0" expanded="true" />
+                <element signature="e#270#271#0" expanded="true" />
+                <element signature="e#328#329#0" expanded="true" />
+                <element signature="e#363#364#0" expanded="true" />
+                <element signature="e#394#395#0" expanded="true" />
+                <element signature="e#442#443#0" expanded="true" />
+                <element signature="e#482#483#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -309,11 +301,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/IUserService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneNumber.java" />
-        <option value="$PROJECT_DIR$/src/test/java/test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/util/PhoneUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneRequest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneNumber.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -364,8 +356,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -416,16 +407,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="DJSEnglish" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DSJEnglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DSJEnglish" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="DJSEnglish" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -436,7 +417,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="DJSEnglish" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DSJEnglish" type="b2602c69:ProjectViewProjectNode" />
@@ -458,16 +439,6 @@
               <item name="DJSEnglish" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DSJEnglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DSJEnglish" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="DJSEnglish" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DSJEnglish" type="b2602c69:ProjectViewProjectNode" />
@@ -520,7 +491,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -528,11 +500,14 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/JavaProject/DSJEnglish/src/main/resources/generatorConfig.xml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552398401015" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552471715499" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mmall" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -575,13 +550,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DSJEnglish" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.test" />
       <item itemvalue="JUnit.test.test" />
+      <item itemvalue="JUnit.test.test2" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.test.test" />
+        <item itemvalue="JUnit.test.test2" />
         <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
@@ -609,6 +596,7 @@
       <workItem from="1552218002843" duration="5300000" />
       <workItem from="1552303887795" duration="7563000" />
       <workItem from="1552391765692" duration="3930000" />
+      <workItem from="1552470039424" duration="1743000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1552122386471</created>
@@ -621,21 +609,45 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="test_test - 2019.03.12 at 21h 35m 49s.xml">
+    <history-entry file="test_test - 2019.03.12 at 21h 44m 33s.xml">
       <configuration name="test.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="test_test - 2019.03.12 at 21h 44m 33s.xml">
+    <history-entry file="test_test - 2019.03.13 at 17h 40m 56s.xml">
+      <configuration name="test.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test - 2019.03.13 at 17h 41m 21s.xml">
+      <configuration name="test.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.03.13 at 17h 42m 55s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.03.13 at 17h 43m 37s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.03.13 at 17h 44m 30s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.03.13 at 17h 46m 27s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.03.13 at 17h 46m 35s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test2 - 2019.03.13 at 17h 50m 38s.xml">
+      <configuration name="test.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test - 2019.03.13 at 17h 54m 00s.xml">
       <configuration name="test.test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37374000" />
+    <option name="totallyTimeSpent" value="39117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="69" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24068768" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24426934" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -806,16 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/TokenCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/SentencesMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -827,20 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/ServerResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/Const.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -970,6 +958,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7620">
+          <caret line="254" column="18" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/ResponseCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -984,16 +979,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="254" column="18" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
+        <state relative-caret-position="210">
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+          <folding>
+            <element signature="e#164#165#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#442#443#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/Const.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneNumber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#139#140#0" expanded="true" />
+            <element signature="e#179#180#0" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#205#206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/TokenCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/util/PhoneUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/IUserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="60">
           <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1003,74 +1062,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        <state relative-caret-position="967">
+          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneRequest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/ServerResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#170#171#0" expanded="true" />
-            <element signature="e#210#211#0" expanded="true" />
-            <element signature="e#276#277#0" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#369#370#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/PhoneNumber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="e#127#128#0" expanded="true" />
-            <element signature="e#161#162#0" expanded="true" />
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#261#262#0" expanded="true" />
-            <element signature="e#135#136#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="217">
+          <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="70" selection-start-line="70" selection-start-column="2" selection-end-line="72" selection-end-column="31" />
+        <state relative-caret-position="223">
+          <caret line="70" column="41" selection-start-line="70" selection-start-column="41" selection-end-line="70" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/util/PhoneUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="53" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#124#125#0" expanded="true" />
-            <element signature="e#170#171#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1078,9 +1090,83 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>DSJEnglish:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>DSJEnglish</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

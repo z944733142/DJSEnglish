@@ -1,17 +1,17 @@
 package com.DJSEnglish.common;
 
 public class PhoneNumber {
-    private String phoneNumber;
+    private String mobilePhoneNumber;
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getMobilePhoneNumber() {
+        return mobilePhoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setMobilePhoneNumber(String mobilePhoneNumber) {
+        this.mobilePhoneNumber = mobilePhoneNumber;
     }
 
-    public PhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public PhoneNumber(String mobilePhoneNumber) {
+        this.mobilePhoneNumber = mobilePhoneNumber;
     }
 }
