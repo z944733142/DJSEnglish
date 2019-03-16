@@ -1118,36 +1118,16 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="281" parent="2" name="article">
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <table id="282" parent="2" name="article_comment">
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <table id="283" parent="2" name="chatting_records">
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <table id="284" parent="2" name="collection">
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <table id="285" parent="2" name="concern">
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <table id="286" parent="2" name="likes">
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <table id="287" parent="2" name="search_history">
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <table id="288" parent="2" name="sentences">
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <table id="289" parent="2" name="user">
-      <Collation>utf8_general_ci</Collation>
-    </table>
-    <table id="290" parent="2" name="words">
-      <Collation>utf8_general_ci</Collation>
-    </table>
+    <table id="281" parent="2" name="article"/>
+    <table id="282" parent="2" name="article_comment"/>
+    <table id="283" parent="2" name="chatting_records"/>
+    <table id="284" parent="2" name="collection"/>
+    <table id="285" parent="2" name="concern"/>
+    <table id="286" parent="2" name="likes"/>
+    <table id="287" parent="2" name="search_history"/>
+    <table id="288" parent="2" name="sentences"/>
+    <table id="289" parent="2" name="user"/>
+    <table id="290" parent="2" name="words"/>
     <view id="291" parent="3" name="CHARACTER_SETS">
       <System>1</System>
     </view>

@@ -13,4 +13,6 @@ public interface IUserService {
 
     ServerResponse loginResetPassword(int id, String password);
 
+    ServerResponse forgetResetPassword(String phoneNumber, String password);
+
 }

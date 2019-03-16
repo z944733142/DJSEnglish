@@ -83,12 +83,8 @@
       <if test="phone != null" >
         phone,
       </if>
-      <if test="updateTime != null" >
         update_time,
-      </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
+        create_time
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -115,12 +111,8 @@
       <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null" >
         now(),
-      </if>
-      <if test="createTime != null" >
-        now(),
-      </if>
+        now()
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.User" >
@@ -168,5 +160,10 @@
       update_time = now(),
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPhone">
+    update user
+    set password = #{password}
+    where phone = #{phoneNumber}
   </update>
 </mapper>

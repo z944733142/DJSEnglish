@@ -33,6 +33,7 @@ public class UserController {
             {
                 session.setAttribute(Const.CURRENT_USER, serverResponse.getData());
             }
+        System.out.println((User)serverResponse.getData());
         return serverResponse;
     }
 
@@ -41,7 +42,29 @@ public class UserController {
     public ServerResponse logout(HttpSession session)
     {
         session.removeAttribute(Const.CURRENT_USER);
-        return ServerResponse.createBySuccess();
+        return ServerResponse.createBySuccessMsg("注销成功");
+    }
+
+    @RequestMapping(value = "forget_reset_password.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse forgetResetPassword(String msgCode, String phoneNumber, String password)
+    {
+        if(!PhoneUtil.judgeCodeIsTrue(msgCode, phoneNumber))
+        {
+            return ServerResponse.createByErrorMsg("验证码错误");
+        }
+        return iUserService.forgetResetPassword(phoneNumber, password);
+    }
+
+    @RequestMapping(value = "get_msgcode.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse getMsgcode(String phoneNumber)
+    {
+        if (PhoneUtil.getVerificationCode(phoneNumber) != null)
+        {
+            return ServerResponse.createBySuccessMsg("发送成功");
+        }
+        return ServerResponse.createByErrorMsg("发送失败");
     }
 
     @RequestMapping(value = "login_reset_password.do", method = RequestMethod.POST)
@@ -50,9 +73,9 @@ public class UserController {
     {
         User user = (User)session.getAttribute(Const.CURRENT_USER);
         ServerResponse serverResponse;
-        if(user != null)
+        if(user == null)
         {
-            return ServerResponse.createBySuccess(user);
+            return ServerResponse.createByErrorMsg("用户未登录");
         }
         if((serverResponse = iUserService.loginResetPassword(user.getId(), password)).isSuccess());
         {
@@ -108,8 +131,9 @@ public class UserController {
 
         if(loginUser == null)
         {
-            return ServerResponse.createBySuccessMsg("用户未登录, 请先登录");
+            return ServerResponse.createByErrorMsg("用户未登录, 请先登录");
         }
+        user.setId(loginUser.getId());
         ServerResponse serverResponse = iUserService.updateUserInfo(user);
         if(serverResponse.isSuccess())
         {

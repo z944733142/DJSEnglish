@@ -1,5 +1,8 @@
 package com.DJSEnglish.pojo;
 
+import org.apache.commons.lang3.StringUtils;
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.util.Date;
 
 public class User {
@@ -9,6 +12,7 @@ public class User {
 
     private String username;
 
+    @JsonIgnore
     private String password;
 
     private String msg;
@@ -19,8 +23,27 @@ public class User {
 
     private String phone;
 
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", msg='" + msg + '\'' +
+                ", img='" + img + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", updateTime=" + updateTime +
+                ", createTime=" + createTime +
+                '}';
+    }
+
+    @JsonIgnore
     private Date updateTime;
 
+    @JsonIgnore
     private Date createTime;
 
     public User(Integer id, String name, String username, String password, String msg, String img, String email, String phone, Date updateTime, Date createTime) {

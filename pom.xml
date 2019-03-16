@@ -23,8 +23,14 @@
     <dependency>
       <groupId>org.apache.tomcat</groupId>
       <artifactId>tomcat-servlet-api</artifactId>
-      <version>7.0.64</version>
+      <version>8.0.12</version>
     </dependency>
+
+    <!--<dependency>-->
+      <!--<groupId>org.apache.tomcat</groupId>-->
+      <!--<artifactId>tomcat-servlet-api</artifactId>-->
+      <!--<version>7.0.73</version>-->
+    <!--</dependency>-->
 
     <dependency>
       <groupId>org.springframework</groupId>
@@ -112,6 +118,12 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.12</version>
     </dependency>
+
+    <!--<dependency>-->
+      <!--<groupId>mysql</groupId>-->
+      <!--<artifactId>mysql-connector-java</artifactId>-->
+      <!--<version>5.1.6</version>-->
+    <!--</dependency>-->
 
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -248,6 +260,8 @@
       <artifactId>jedis</artifactId>
       <version>2.9.0</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.cocoon/cocoon-core -->
+
 
     <dependency>
       <groupId>com.squareup.okhttp</groupId>

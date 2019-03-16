@@ -10,7 +10,7 @@ create table user (
   update_time datetime not null  comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key (id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table concern(
   id int(11) not null AUTO_INCREMENT,
@@ -19,7 +19,7 @@ create table concern(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key(id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table article(
   id int (11) not null AUTO_INCREMENT,
@@ -31,7 +31,7 @@ create table article(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key(id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table words(
   id int(11) not null AUTO_INCREMENT,
@@ -41,7 +41,7 @@ create table words(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key (id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table sentences(
   id int(11) not null AUTO_INCREMENT,
@@ -49,7 +49,7 @@ create table sentences(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key (id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table chatting_records(
   id int(11) not null AUTO_INCREMENT,
@@ -58,7 +58,7 @@ create table chatting_records(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key(id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table search_history(
   id int(11) not null AUTO_INCREMENT,
@@ -67,18 +67,18 @@ create table search_history(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key(id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22;
 
 create table article_comment(
   id int(11) not null AUTO_INCREMENT,
   article int(11) not null comment '文章id',
   user int(11) not null comment '评论人id',
   text varchar(500) not null comment '评论内容',
-  like int(11) not null comment '点赞数',
+  likes int(11) not null comment '点赞数',
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key(id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22;
 
 create table collection(
   id int(11) not null AUTO_INCREMENT,
@@ -86,10 +86,10 @@ create table collection(
   article int(11) not null comment '收藏文章主键',
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
-  primary key (id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+  primary key (id)1
+)ENGINE=InnoDB AUTO_INCREMENT=22;
 
-create table like(
+create table likes(
   id int(11) not null AUTO_INCREMENT,
   user int(11) not null comment'收藏人主键',
   type int(2) not null comment'0美文1评论',
@@ -97,4 +97,4 @@ create table like(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key(id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22;

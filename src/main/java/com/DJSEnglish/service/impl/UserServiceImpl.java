@@ -4,13 +4,14 @@ import com.DJSEnglish.common.Const;
 import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.dao.UserMapper;
 import com.DJSEnglish.pojo.User;
+import com.DJSEnglish.service.IUserService;
 import com.DJSEnglish.util.MD5Util;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
-public class UserServiceImpl {
+@Service("iUserService")
+public class UserServiceImpl implements IUserService {
 
     @Autowired
     private UserMapper userMapper;
@@ -18,18 +19,28 @@ public class UserServiceImpl {
     public ServerResponse Login(String username, String password)
     {
         ServerResponse serverResponse = CheckVaild(username, Const.USERNAME);
-        if(!serverResponse.isSuccess())
+        if(serverResponse.isSuccess())
         {
-            return serverResponse;
+            return ServerResponse.createByErrorMsg("账号不存在");
         }
 
         String MD5PassWord = MD5Util.MD5EncodeUtf8(password);
-        User user = userMapper.selectUser(username, password);
+        User user = userMapper.selectUser(username, MD5PassWord);
         if(user != null)
         {
+            user.setPassword("");
             return ServerResponse.createBySuccess("登录成功", user);
         }
         return ServerResponse.createByErrorMsg("账号密码不匹配");
+    }
+
+    public boolean checkValid(User user)
+    {
+        if(StringUtils.isBlank(user.getName()) || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getPassword()) || StringUtils.isBlank(user.getPhone()))
+        {
+            return false;
+        }
+        return true;
     }
 
     public ServerResponse Register(User user)
@@ -49,6 +60,11 @@ public class UserServiceImpl {
         {
             return serverResponse;
         }
+
+        if(!checkValid(user))
+        {
+            ServerResponse.createByErrorMsg("信息不完全");
+        }
         User insertUser = new User();
         insertUser.setUsername(user.getUsername());
         insertUser.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
@@ -56,6 +72,7 @@ public class UserServiceImpl {
         insertUser.setMsg(user.getMsg());
         insertUser.setName(user.getName());
         insertUser.setPhone(user.getPhone());
+        insertUser.setImg("null");
         int count = userMapper.insertSelective(insertUser);
         if(count > 0)
         {
@@ -118,6 +135,16 @@ public class UserServiceImpl {
         }
 
         return ServerResponse.createBySuccessMsg("重置失败");
+    }
 
+    public ServerResponse forgetResetPassword(String phoneNumber, String password)
+    {
+        User updateUser = new User();
+        password = MD5Util.MD5EncodeUtf8(password);
+        if(userMapper.updateByPhone(phoneNumber, password) > 0)
+        {
+            return ServerResponse.createBySuccessMsg("修改成功");
+        }
+        return ServerResponse.createByErrorMsg("修改失败");
     }
 }

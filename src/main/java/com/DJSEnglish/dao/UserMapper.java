@@ -23,4 +23,6 @@ public interface UserMapper {
     int selectEmailCount(String email);
 
     int selectPhoneCount(String phone);
+
+    int updateByPhone(@Param("phoneNumber")String phoneNumber, @Param("password")String password);
 }
