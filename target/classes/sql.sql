@@ -10,7 +10,7 @@ create table user (
   update_time datetime not null  comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key (id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table concern(
   id int(11) not null AUTO_INCREMENT,
@@ -19,7 +19,7 @@ create table concern(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key(id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table article(
   id int (11) not null AUTO_INCREMENT,
@@ -31,7 +31,7 @@ create table article(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key(id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table words(
   id int(11) not null AUTO_INCREMENT,
@@ -41,7 +41,7 @@ create table words(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key (id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table sentences(
   id int(11) not null AUTO_INCREMENT,
@@ -49,7 +49,7 @@ create table sentences(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key (id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table chatting_records(
   id int(11) not null AUTO_INCREMENT,
@@ -58,7 +58,7 @@ create table chatting_records(
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key(id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
 create table search_history(
   id int(11) not null AUTO_INCREMENT,
