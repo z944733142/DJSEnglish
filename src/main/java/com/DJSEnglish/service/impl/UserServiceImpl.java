@@ -5,6 +5,7 @@ import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.dao.UserMapper;
 import com.DJSEnglish.pojo.User;
 import com.DJSEnglish.service.IUserService;
+import com.DJSEnglish.util.FTPUtil;
 import com.DJSEnglish.util.MD5Util;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,10 @@ public class UserServiceImpl implements IUserService {
         if(user != null)
         {
             user.setPassword("");
+            if(user.getImg() != "null")
+            {
+                user.setImg(FTPUtil.ftpPrefix + user.getImg());
+            }
             return ServerResponse.createBySuccess("登录成功", user);
         }
         return ServerResponse.createByErrorMsg("账号密码不匹配");

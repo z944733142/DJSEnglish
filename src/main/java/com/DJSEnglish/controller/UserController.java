@@ -4,15 +4,24 @@ import com.DJSEnglish.common.Const;
 import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.dao.UserMapper;
 import com.DJSEnglish.pojo.User;
+import com.DJSEnglish.service.IFileService;
 import com.DJSEnglish.service.IUserService;
 import com.DJSEnglish.util.PhoneUtil;
+import com.DJSEnglish.util.PropertiesUtil;
+import com.google.common.collect.Maps;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Enumeration;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user/")
@@ -24,6 +33,31 @@ public class UserController {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private IFileService iFileService;
+
+    @RequestMapping(value = "test.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse test(String test, HttpServletRequest request, HttpSession session)
+    {
+        Enumeration<String> headerNames = request.getHeaderNames();
+        while (headerNames.hasMoreElements())
+        {
+            String nextElement = headerNames.nextElement();
+            System.out.println(nextElement + ":" + request.getHeader(nextElement));
+        }
+        Enumeration<String> parameterNames = request.getParameterNames();
+        while (parameterNames.hasMoreElements())
+        {
+            String nextElement = parameterNames.nextElement();
+            System.out.println(nextElement + ":" + request.getParameter(nextElement));
+        }
+        if(StringUtils.isNotBlank(test)) {
+            return ServerResponse.createBySuccessMsg("参数" + test);
+        }
+        return ServerResponse.createByErrorMsg("失败");
+    }
+
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse login(String username, String password, HttpSession session)
@@ -33,8 +67,34 @@ public class UserController {
             {
                 session.setAttribute(Const.CURRENT_USER, serverResponse.getData());
             }
-        System.out.println((User)serverResponse.getData());
         return serverResponse;
+    }
+
+    @RequestMapping(value = "upload.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse upload(HttpSession session, @RequestParam(value = "upload_file",required = false) MultipartFile file, HttpServletRequest request)
+    {
+        User user = (User)session.getAttribute(Const.CURRENT_USER);
+        ServerResponse serverResponse;
+        if(user == null)
+        {
+            return ServerResponse.createByErrorMsg("用户未登录");
+        }
+        String path = request.getSession().getServletContext().getRealPath("upload");
+        String targetFileName = iFileService.upload(file,path);
+        String url = PropertiesUtil.getProperty("ftp.server.http.prefix")+targetFileName;
+        if(targetFileName != null)
+        {
+            User newUser = new User();
+            newUser.setImg(targetFileName);
+            newUser.setId(user.getId());
+            userMapper.updateByPrimaryKeySelective(newUser);
+            user.setImg(url);
+        }
+        Map fileMap = Maps.newHashMap();
+        fileMap.put("uri",targetFileName);
+        fileMap.put("url",url);
+        return ServerResponse.createBySuccess(fileMap);
     }
 
     @RequestMapping(value = "logout.do", method = RequestMethod.POST)
