@@ -40,10 +40,10 @@ public class User {
                 '}';
     }
 
-    @JsonIgnore
+//    @JsonIgnore
     private Date updateTime;
 
-    @JsonIgnore
+//    @JsonIgnore
     private Date createTime;
 
     public User(Integer id, String name, String username, String password, String msg, String img, String email, String phone, Date updateTime, Date createTime) {

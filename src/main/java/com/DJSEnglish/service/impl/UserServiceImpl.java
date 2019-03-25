@@ -77,7 +77,7 @@ public class UserServiceImpl implements IUserService {
         insertUser.setMsg(user.getMsg());
         insertUser.setName(user.getName());
         insertUser.setPhone(user.getPhone());
-        insertUser.setImg("null");
+        insertUser.setImg("default.jpg");
         int count = userMapper.insertSelective(insertUser);
         if(count > 0)
         {

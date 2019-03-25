@@ -19,15 +19,16 @@ public class Article {
 
     private Date createTime;
 
-    public Article(Integer id, String text, String begin, String img, Integer collection, Integer likes, Date updateTime, Date createTime) {
+    public Article(Integer id, String text, String begin, String img, Integer collection, Integer likes,
+                   Date updateTime, Date createTime) {
         this.id = id;
         this.text = text;
         this.begin = begin;
         this.img = img;
         this.collection = collection;
         this.likes = likes;
-        this.updateTime = updateTime;
         this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     public Article() {

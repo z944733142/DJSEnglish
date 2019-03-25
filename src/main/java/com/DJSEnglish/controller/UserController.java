@@ -38,14 +38,14 @@ public class UserController {
 
     @RequestMapping(value = "test.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse test(String test, HttpServletRequest request, HttpSession session)
-    {
-        Enumeration<String> headerNames = request.getHeaderNames();
-        while (headerNames.hasMoreElements())
+        public ServerResponse test(String test, HttpServletRequest request, HttpSession session)
         {
-            String nextElement = headerNames.nextElement();
-            System.out.println(nextElement + ":" + request.getHeader(nextElement));
-        }
+            Enumeration<String> headerNames = request.getHeaderNames();
+            while (headerNames.hasMoreElements())
+            {
+                String nextElement = headerNames.nextElement();
+                System.out.println(nextElement + ":" + request.getHeader(nextElement));
+            }
         Enumeration<String> parameterNames = request.getParameterNames();
         while (parameterNames.hasMoreElements())
         {
