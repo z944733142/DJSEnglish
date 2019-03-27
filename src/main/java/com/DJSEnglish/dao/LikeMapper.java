@@ -1,6 +1,9 @@
 package com.DJSEnglish.dao;
 
 import com.DJSEnglish.pojo.Like;
+import com.DJSEnglish.vo.FriendListVo;
+
+import java.util.List;
 
 public interface LikeMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +17,6 @@ public interface LikeMapper {
     int updateByPrimaryKeySelective(Like record);
 
     int updateByPrimaryKey(Like record);
+
+    List<FriendListVo> selectFriendList(List<Integer> idList);
 }

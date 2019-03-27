@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service("iArticleService")
-public class ArticleService implements IArticleService {
+public class ArticleServiceImpl implements IArticleService {
 
     @Autowired
     private ArticleMapper articleMapper;

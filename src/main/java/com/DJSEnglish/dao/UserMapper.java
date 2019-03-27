@@ -1,7 +1,10 @@
 package com.DJSEnglish.dao;
 
 import com.DJSEnglish.pojo.User;
+import com.DJSEnglish.vo.FriendListVo;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -25,4 +28,6 @@ public interface UserMapper {
     int selectPhoneCount(String phone);
 
     int updateByPhone(@Param("phoneNumber")String phoneNumber, @Param("password")String password);
+
+    List<FriendListVo> selectFriendList(List<Integer> idList);
 }

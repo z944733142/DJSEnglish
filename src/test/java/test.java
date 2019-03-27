@@ -24,13 +24,19 @@ public class test {
     public void test3()
     {
         User user = new User();
-        user.setPhone("13227769909");
-        user.setPassword("1008600");
+        user.setPhone("18066877585");
+        user.setUsername("zs944733142");
+        user.setPassword(MD5Util.MD5EncodeUtf8("1008600"));
         user.setName("测试");
-        user.setMsg("的旧爱受打击扫单欧凡覅欧艾斯");
-        user.setImg("null");
+        user.setMsg("测试人员");
+        user.setImg("default.jpg");
         user.setEmail("test@test.com");
         userMapper.insertSelective(user);
     }
 
+    @Test
+    public void test4()
+    {
+        System.out.println(MD5Util.MD5EncodeUtf8("10086000"));
+    }
 }

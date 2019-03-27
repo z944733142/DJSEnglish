@@ -19,15 +19,31 @@
     from concern
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectCount" parameterType="map" resultType="java.lang.Integer">
+    select count(*) from concern
+    where user = #{userId}
+    and friending = #{friendId}
+  </select>
+  <select id="selectByUserId" resultType="int" parameterType="int">
+    select
+    friending
+    from concern
+    where user = #{userId}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from concern
     where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteConcern" parameterType="map">
+    delete from concern
+    where user = #{userId}
+    and friending = #{friendId}
   </delete>
   <insert id="insert" parameterType="com.DJSEnglish.pojo.Concern" >
     insert into concern (id, user, friending,
       update_time, create_time)
     values (#{id,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{friending,jdbcType=INTEGER},
-      #{updateTime,jdbcType=TIMESTAMP}, now())
+      now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.Concern" >
     insert into concern
@@ -41,12 +57,8 @@
       <if test="friending != null" >
         friending,
       </if>
-      <if test="updateTime != null" >
         update_time,
-      </if>
-      <if test="createTime != null" >
         create_time,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -58,12 +70,8 @@
       <if test="friending != null" >
         #{friending,jdbcType=INTEGER},
       </if>
-      <if test="updateTime != null" >
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null" >
         now(),
-      </if>
+        now(),
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.Concern" >
@@ -76,7 +84,7 @@
         friending = #{friending,jdbcType=INTEGER},
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
       <if test="createTime != null" >
         create_time = #{createTime,jdbcType=TIMESTAMP},

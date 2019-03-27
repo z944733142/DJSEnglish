@@ -30,6 +30,14 @@
   where username = #{username}
   and password = #{password}
   </select>
+  <select id="selectFriendList" resultType="com.DJSEnglish.vo.FriendListVo" parameterType="list">
+    select id, name, img
+    from user
+    where id in
+    <foreach collection="list" index="index" item="item" open="(" close=")" separator=",">
+      #{item}
+    </foreach>
+  </select>
   <select id="selectUserCount" resultType="java.lang.Integer">
     select count(*) from user
     where username = #{username}
