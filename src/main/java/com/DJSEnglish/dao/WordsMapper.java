@@ -14,4 +14,5 @@ public interface WordsMapper {
     int updateByPrimaryKeySelective(Words record);
 
     int updateByPrimaryKey(Words record);
+
 }

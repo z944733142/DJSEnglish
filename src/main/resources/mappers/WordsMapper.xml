@@ -24,7 +24,7 @@
     delete from words
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.DJSEnglish.pojo.Words" >
+    <insert id="insert" parameterType="com.DJSEnglish.pojo.Words" >
     insert into words (id, word, sound_mark,
       pos, update_time, create_time
       )
