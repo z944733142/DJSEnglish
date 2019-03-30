@@ -46,4 +46,15 @@ public class WordsController {
         }
         return iWordService.deleteWord(user.getId(), word);
     }
-}
+
+    @RequestMapping("history_list.do")
+    @ResponseBody
+    public ServerResponse historyList(HttpSession session) {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if( user == null)
+        {
+            return ServerResponse.createByErrorMsg("用户未登录");
+        }
+        return iWordService.getList(user.getId());
+    }
+    }

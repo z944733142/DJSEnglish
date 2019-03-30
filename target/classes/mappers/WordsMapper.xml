@@ -24,7 +24,7 @@
     delete from words
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.DJSEnglish.pojo.Words" >
+    <insert id="insert" parameterType="com.DJSEnglish.pojo.Words" >
     insert into words (id, word, sound_mark,
       pos, update_time, create_time
       )
@@ -47,12 +47,8 @@
       <if test="pos != null" >
         pos,
       </if>
-      <if test="updateTime != null" >
         update_time,
-      </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
+        create_time
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -67,12 +63,8 @@
       <if test="pos != null" >
         #{pos,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null" >
         now(),
-      </if>
-      <if test="createTime != null" >
-        now(),
-      </if>
+        now()
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.Words" >

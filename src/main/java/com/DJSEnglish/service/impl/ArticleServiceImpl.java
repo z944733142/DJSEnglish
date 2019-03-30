@@ -34,6 +34,8 @@ public class ArticleServiceImpl implements IArticleService {
             articleVos.add(toArticleVo(article));
         }
         PageInfo articlePage = new PageInfo(articleVos);
+
+        articlePage.setOrderBy("updateTime");
         return ServerResponse.createBySuccess(articlePage);
     }
 
@@ -50,7 +52,8 @@ public class ArticleServiceImpl implements IArticleService {
     public ArticleVo toArticleVo(Article article)
     {
         ArticleVo articleVo = new ArticleVo();
-        articleVo.setBegin(article.getText().substring(50));
+        int length = article.getText().length();
+        articleVo.setBegin(article.getText().substring(0, length > 50 ? 50 : length));
         articleVo.setCreateTime(DateTimeUtil.dateToStr(article.getCreateTime()));
         articleVo.setUpdateTime(DateTimeUtil.dateToStr(article.getUpdateTime()));
         articleVo.setCollection(article.getCollection());

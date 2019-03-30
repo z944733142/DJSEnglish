@@ -7,6 +7,8 @@ import com.DJSEnglish.service.IWordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("iWordService")
 public class WordServiceImpl implements IWordService {
 
@@ -39,9 +41,19 @@ public class WordServiceImpl implements IWordService {
     public ServerResponse deleteAll(Integer userId) {
         if(searchHistoryMapper.deleteAllByUserId(userId) > 0)
         {
-            return ServerResponse.createBySuccessMsg("成功删除" + userId + "条记录");
+            return ServerResponse.createBySuccessMsg("成功删除");
         }
-        return ServerResponse.createBySuccessMsg(("清空0条"));
+        return ServerResponse.createByErrorMsg(("清空0条"));
+    }
+
+    @Override
+    public ServerResponse getList(Integer id) {
+        List<SearchHistory> list = searchHistoryMapper.selectByUserId(id);
+        if(list == null || list.size() == 0)
+        {
+            return ServerResponse.createByErrorMsg("数量为零");
+        }
+        return ServerResponse.createBySuccess(list);
     }
 
 

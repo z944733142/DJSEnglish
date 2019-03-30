@@ -9,4 +9,6 @@ public interface IWordService {
     ServerResponse deleteWord(Integer id, String word);
 
     ServerResponse deleteAll(Integer id);
+
+    ServerResponse getList(Integer id);
 }

@@ -89,10 +89,20 @@ create table collection(
   primary key (id)1
 )ENGINE=InnoDB AUTO_INCREMENT=22;
 
-create table likes(
+create table article_likes(
   id int(11) not null AUTO_INCREMENT,
   user int(11) not null comment'收藏人主键',
-  type int(2) not null comment'0美文1评论',
+--   type int(2) not null comment'0美文1评论',
+  articl_id int(11) not null comment'文章主键',
+  update_time datetime not null comment '更新时间',
+  create_time datetime not null comment '创建时间',
+  primary key(id)
+)ENGINE=InnoDB AUTO_INCREMENT=22;
+
+create table comment_likes(
+  id int(11) not null AUTO_INCREMENT,
+  user int(11) not null comment'收藏人主键',
+--   type int(2) not null comment'0美文1评论',
   articl_id int(11) not null comment'文章主键',
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',

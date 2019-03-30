@@ -19,6 +19,13 @@
     from search_history
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByUserId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from search_history
+    where user = #{userId}
+    order by create_time DESC
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from search_history
     where id = #{id,jdbcType=INTEGER}
@@ -29,7 +36,7 @@
     </delete>
   <delete id="deleteWord" parameterType="map">
     delete from search_history
-    where userId = #{userId}
+    where user = #{userId}
     and word = #{word}
   </delete>
   <insert id="insert" parameterType="com.DJSEnglish.pojo.SearchHistory" >
@@ -50,12 +57,10 @@
       <if test="word != null" >
         word,
       </if>
-      <if test="updateTime != null" >
         update_time,
-      </if>
-      <if test="createTime != null" >
+
         create_time,
-      </if>
+
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -67,12 +72,11 @@
       <if test="word != null" >
         #{word,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null" >
+
         now(),
-      </if>
-      <if test="createTime != null" >
+
         now(),
-      </if>
+
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.SearchHistory" >

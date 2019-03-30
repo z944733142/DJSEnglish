@@ -1,16 +1,21 @@
 package com.DJSEnglish.pojo;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.util.Date;
 
 public class SearchHistory {
+    @JsonIgnore
     private Integer id;
 
     private Integer user;
 
     private String word;
 
+    @JsonIgnore
     private Date updateTime;
 
+    @JsonIgnore
     private Date createTime;
 
     public SearchHistory(Integer id, Integer user, String word, Date updateTime, Date createTime) {
