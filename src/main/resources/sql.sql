@@ -36,6 +36,7 @@ create table article(
 create table words(
   id int(11) not null AUTO_INCREMENT,
   word varchar(50) not null comment'单词',
+  mean varchar(200) not null comment '解释翻译',
   sound_mark varchar(50) not null comment'音标',
   pos varchar(50) not null comment '词性',
   update_time datetime not null comment '更新时间',

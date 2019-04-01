@@ -15,13 +15,16 @@ public class Words {
 
     private Date createTime;
 
-    public Words(Integer id, String word, String soundMark, String pos, Date updateTime, Date createTime) {
+    private String mean;
+
+    public Words(Integer id, String word, String soundMark, String pos, Date updateTime, Date createTime, String mean) {
         this.id = id;
         this.word = word;
         this.soundMark = soundMark;
         this.pos = pos;
         this.updateTime = updateTime;
         this.createTime = createTime;
+        this.mean = mean;
     }
 
     public Words() {
@@ -74,5 +77,13 @@ public class Words {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getMean() {
+        return mean;
+    }
+
+    public void setMean(String mean) {
+        this.mean = mean == null ? null : mean.trim();
     }
 }
