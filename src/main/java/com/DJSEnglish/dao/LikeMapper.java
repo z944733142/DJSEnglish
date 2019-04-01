@@ -1,6 +1,5 @@
 package com.DJSEnglish.dao;
 
-import com.DJSEnglish.pojo.Like;
 import com.DJSEnglish.vo.FriendListVo;
 
 import java.util.List;
