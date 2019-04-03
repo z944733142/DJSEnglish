@@ -4,7 +4,6 @@ import com.DJSEnglish.common.Const;
 import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.pojo.User;
 import com.DJSEnglish.service.IWordService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +18,19 @@ public class WordsController {
 
     @Autowired
     private IWordService iWordService;
+
+
+    @RequestMapping("get_words.do")
+    @ResponseBody
+    public ServerResponse searchHistory(HttpSession session)
+    {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if( user == null)
+        {
+            return ServerResponse.createByErrorMsg("用户未登录");
+        }
+        return iWordService.getWord();
+    }
 
     @RequestMapping("add_history.do")
     @ResponseBody

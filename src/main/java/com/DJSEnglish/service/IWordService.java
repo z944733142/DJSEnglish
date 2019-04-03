@@ -11,4 +11,6 @@ public interface IWordService {
     ServerResponse deleteAll(Integer id);
 
     ServerResponse getList(Integer id);
+
+    ServerResponse getWord();
 }

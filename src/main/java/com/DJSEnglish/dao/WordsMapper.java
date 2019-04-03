@@ -1,5 +1,9 @@
 package com.DJSEnglish.dao;
 
+import com.DJSEnglish.pojo.Words;
+
+import java.util.List;
+
 public interface WordsMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -12,5 +16,7 @@ public interface WordsMapper {
     int updateByPrimaryKeySelective(Words record);
 
     int updateByPrimaryKey(Words record);
+
+    List<Words> selectWordsList();
 
 }

@@ -21,6 +21,15 @@
     from words
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectWordsList" resultMap="BaseResultMap">
+  SELECT
+   <include refid="Base_Column_List" />
+  FROM words
+
+  WHERE id >= (SELECT floor( RAND() * ((SELECT MAX(id) FROM words)-(SELECT MIN(id) FROM words)) + (SELECT MIN(id) FROM words)))
+
+  ORDER BY id LIMIT 12;
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from words
     where id = #{id,jdbcType=INTEGER}

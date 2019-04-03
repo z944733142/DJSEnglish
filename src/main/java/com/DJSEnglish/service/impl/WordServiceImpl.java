@@ -2,7 +2,9 @@ package com.DJSEnglish.service.impl;
 
 import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.dao.SearchHistoryMapper;
+import com.DJSEnglish.dao.WordsMapper;
 import com.DJSEnglish.pojo.SearchHistory;
+import com.DJSEnglish.pojo.Words;
 import com.DJSEnglish.service.IWordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ public class WordServiceImpl implements IWordService {
 
     @Autowired
     private SearchHistoryMapper searchHistoryMapper;
+
+    @Autowired
+    private WordsMapper wordsMapper;
 
     @Override
     public ServerResponse addHistory(Integer id, String word)
@@ -56,6 +61,12 @@ public class WordServiceImpl implements IWordService {
         return ServerResponse.createBySuccess(list);
     }
 
+    @Override
+    public ServerResponse getWord() {
+        List<Words> words = wordsMapper.selectWordsList();
+
+        return ServerResponse.createBySuccess(words);
+    }
 
 //    public ServerResponse deleteHistory(Integer )
 }
