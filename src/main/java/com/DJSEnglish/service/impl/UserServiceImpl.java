@@ -73,9 +73,7 @@ public class UserServiceImpl implements IUserService {
         User insertUser = new User();
         insertUser.setUsername(user.getUsername());
         insertUser.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
-        insertUser.setEmail(user.getEmail());
-        insertUser.setMsg(user.getMsg());
-        insertUser.setName(user.getName());
+        insertUser.setName("手机用户" + user.getPhone());
         insertUser.setPhone(user.getPhone());
         insertUser.setImg("default.jpg");
         int count = userMapper.insertSelective(insertUser);
