@@ -2,6 +2,8 @@ package com.DJSEnglish.dao;
 
 import com.DJSEnglish.pojo.ArticleComment;
 
+import java.util.List;
+
 public interface ArticleCommentMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface ArticleCommentMapper {
     int updateByPrimaryKeySelective(ArticleComment record);
 
     int updateByPrimaryKey(ArticleComment record);
+
+    List<ArticleComment> selectCommentList();
 }

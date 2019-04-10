@@ -2,8 +2,8 @@ package com.DJSEnglish.controller;
 
 import com.DJSEnglish.common.Const;
 import com.DJSEnglish.common.ServerResponse;
+import com.DJSEnglish.pojo.ArticleComment;
 import com.DJSEnglish.pojo.User;
-import com.DJSEnglish.service.IArticleService;
 import com.DJSEnglish.service.ICommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,38 +14,29 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
-@RequestMapping("/article/")
+@RequestMapping("/comment/")
 @Controller
-public class ArticleController {
+public class CommentController {
 
     @Autowired
-    private IArticleService iArticleService;
-
-
+    private ICommentService iCommentService;
 
     @RequestMapping(value = "get_list.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse getList(HttpSession session, @RequestParam(required = false, defaultValue = "1") Integer pageNum, @RequestParam(required = false, defaultValue = "10")Integer pageSize)
+    public ServerResponse getList(@RequestParam(required = false, defaultValue = "1") Integer pageNum, @RequestParam(required = false, defaultValue = "10")Integer pageSize)
     {
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
-        if( user == null)
-        {
-            return ServerResponse.createByErrorMsg("用户未登录");
-        }
-        return iArticleService.getList(pageNum, pageSize);
+        return iCommentService.getList(pageNum, pageSize);
     }
 
-    @RequestMapping(value = "get_detail.do", method = RequestMethod.POST)
+    @RequestMapping(value = "add_comment.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse getDetail(HttpSession session, Integer articleId)
+    public ServerResponse addComment(HttpSession session, ArticleComment articleComment)
     {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if( user == null)
         {
             return ServerResponse.createByErrorMsg("用户未登录");
         }
-        return iArticleService.getDetail(articleId);
+        return iCommentService.addComment(articleComment);
     }
-
-
 }

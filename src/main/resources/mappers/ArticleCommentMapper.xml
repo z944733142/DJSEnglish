@@ -21,6 +21,13 @@
     from article_comment
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectCommentList" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from article_comment
+    order by create_time DESC
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from article_comment
     where id = #{id,jdbcType=INTEGER}
