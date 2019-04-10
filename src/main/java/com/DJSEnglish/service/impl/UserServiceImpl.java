@@ -7,6 +7,7 @@ import com.DJSEnglish.pojo.User;
 import com.DJSEnglish.service.IUserService;
 import com.DJSEnglish.util.FTPUtil;
 import com.DJSEnglish.util.MD5Util;
+import com.DJSEnglish.util.PhoneUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,14 +42,14 @@ public class UserServiceImpl implements IUserService {
 
     public boolean checkValid(User user)
     {
-        if(StringUtils.isBlank(user.getName()) || StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getPassword()) || StringUtils.isBlank(user.getPhone()))
+        if(StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getPassword()) || StringUtils.isBlank(user.getPhone()))
         {
             return false;
         }
         return true;
     }
 
-    public ServerResponse Register(User user)
+    public ServerResponse Register(User user, String msgCode)
     {
         ServerResponse serverResponse = CheckVaild(user.getUsername(), Const.USERNAME);
         if(!serverResponse.isSuccess())
@@ -70,9 +71,16 @@ public class UserServiceImpl implements IUserService {
         {
             ServerResponse.createByErrorMsg("信息不完全");
         }
+
+        if(!PhoneUtil.judgeCodeIsTrue(msgCode, user.getPhone()))
+        {
+            return ServerResponse.createByErrorMsg("注册失败, 验证码不正确");
+        }
         User insertUser = new User();
         insertUser.setUsername(user.getUsername());
         insertUser.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
+        insertUser.setMsg("此人很懒, 尚未填写个人信息");
+        insertUser.setEmail(user.getEmail());
         insertUser.setName("手机用户" + user.getPhone());
         insertUser.setPhone(user.getPhone());
         insertUser.setImg("default.jpg");
@@ -115,6 +123,11 @@ public class UserServiceImpl implements IUserService {
     public ServerResponse updateUserInfo(User user)
     {
         User updateUser = new User();
+        ServerResponse serverResponse = CheckVaild(user.getEmail(), Const.EMAIL);
+        if(!serverResponse.isSuccess())
+        {
+            return serverResponse;
+        }
         updateUser.setId(user.getId());
         updateUser.setName(user.getName());
         updateUser.setMsg(user.getMsg());

@@ -43,6 +43,10 @@ public class ArticleServiceImpl implements IArticleService {
     public ServerResponse getDetail(Integer articleId)
     {
         Article article = articleMapper.selectByPrimaryKey(articleId);
+        if(article == null)
+        {
+            return ServerResponse.createByErrorMsg("文章不存在");
+        }
 //        article.setCreateTime(DateTimeUtil.strToDate(article.getCreateTime().toString()));
 //        article.setUpdateTime(DateTimeUtil.strToDate(article.getUpdateTime().toString()));
         ArticleVo articleVo = toArticleVo(article);

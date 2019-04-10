@@ -12,9 +12,10 @@
 
     <appender name="DJSEnglish" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!--<File>d:/DJSEnglishlog/DJSEnglish.log</File>-->
-        <File>E:\tomcat\apache-tomcat-8.5.34/logs/DJSEnglish.log</File>
+        <File>/developer/apache-tomcat-7.0.73/logs/DJSEnglish.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>E:\tomcat\apache-tomcat-8.5.34/logs/DJSEnglish.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <!--<fileNamePattern>\tomcat\apache-tomcat-8.5.34/logs/DJSEnglish.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
+            <fileNamePattern>/developer/apache-tomcat-7.0.73/logs/DJSEnglish.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
             <append>true</append>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
@@ -26,9 +27,10 @@
 
     <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!--<File>d:/DJSEnglishlog/error.log</File>-->
-        <File>E:\tomcat\apache-tomcat-8.5.34/logs/error.log</File>
+        <File>/developer/apache-tomcat-7.0.73/logs/error.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>E:\tomcat\apache-tomcat-8.5.34/logs/DJSEnglishError.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <!--<fileNamePattern>E:\tomcat\apache-tomcat-8.5.34/logs/DJSEnglishError.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
+            <fileNamePattern>/developer/apache-tomcat-7.0.73/logs/DJSEnglishError.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
             <!--<fileNamePattern>d:/DJSEnglishlog/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
             <append>true</append>
             <maxHistory>10</maxHistory>

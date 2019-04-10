@@ -7,7 +7,7 @@ public interface IUserService {
 
     ServerResponse Login(String username, String password);
 
-    ServerResponse Register(User user);
+    ServerResponse Register(User user, String msgCode);
 
     ServerResponse updateUserInfo(User user);
 

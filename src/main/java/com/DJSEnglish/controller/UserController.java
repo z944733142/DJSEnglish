@@ -149,11 +149,8 @@ public class UserController {
     @ResponseBody
     public ServerResponse register(User user, String msgCode)
     {
-        if(!PhoneUtil.judgeCodeIsTrue(msgCode, user.getPhone()))
-        {
-            return ServerResponse.createByErrorMsg("注册失败, 验证码不正确");
-        }
-        return iUserService.Register(user);
+
+        return iUserService.Register(user, msgCode);
     }
 
     @RequestMapping(value = "check_msg.do", method = RequestMethod.POST)

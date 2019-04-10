@@ -26,6 +26,17 @@ public class WordServiceImpl implements IWordService {
         SearchHistory searchHistory = new SearchHistory();
         searchHistory.setUser(id);
         searchHistory.setWord(word);
+        if(searchHistoryMapper.selectCountByUseridAndWord(id, word) > 0)
+        {
+            if(searchHistoryMapper.updateWordTime(id, word) > 0)
+            {
+                return ServerResponse.createBySuccessMsg("插入成功");
+            }
+            else
+            {
+                return ServerResponse.createByErrorMsg("插入失败");
+            }
+        }
         if(searchHistoryMapper.insertSelective(searchHistory) > 0)
         {
             return ServerResponse.createBySuccessMsg("插入成功");

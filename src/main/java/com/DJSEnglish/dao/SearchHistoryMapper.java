@@ -16,9 +16,13 @@ public interface SearchHistoryMapper {
 
     List<SearchHistory> selectByUserId(Integer userId);
 
+    int selectCountByUseridAndWord(@Param("userId") Integer userId, @Param("word") String  word);
+
     int updateByPrimaryKeySelective(SearchHistory record);
 
     int updateByPrimaryKey(SearchHistory record);
+
+    int updateWordTime(@Param("userId") Integer userId, @Param("word") String  word);
 
     int deleteAllByUserId(Integer userId);
 
