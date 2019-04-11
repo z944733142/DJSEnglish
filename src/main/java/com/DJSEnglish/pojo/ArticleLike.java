@@ -2,7 +2,7 @@ package com.DJSEnglish.pojo;
 
 import java.util.Date;
 
-public class commentLike {
+public class ArticleLike {
     private Integer id;
 
     private Integer user;
@@ -13,7 +13,7 @@ public class commentLike {
 
     private Date createTime;
 
-    public commentLike(Integer id, Integer user, Integer articlId, Date updateTime, Date createTime) {
+    public ArticleLike(Integer id, Integer user, Integer articlId, Date updateTime, Date createTime) {
         this.id = id;
         this.user = user;
         this.articlId = articlId;
@@ -21,7 +21,7 @@ public class commentLike {
         this.createTime = createTime;
     }
 
-    public commentLike() {
+    public ArticleLike() {
         super();
     }
 

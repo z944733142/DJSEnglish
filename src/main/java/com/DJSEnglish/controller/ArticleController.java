@@ -44,7 +44,7 @@ public class ArticleController {
         {
             return ServerResponse.createByErrorMsg("用户未登录");
         }
-        return iArticleService.getDetail(articleId);
+        return iArticleService.getDetail(articleId, user.getId());
     }
 
 

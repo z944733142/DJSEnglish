@@ -21,11 +21,23 @@
     from article_comment
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectCommentList" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from article_comment
+    order by create_time DESC
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from article_comment
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleComment" >
+    <delete id="deleteComment" parameterType="map">
+      delete  from article_comment
+      where id = #{id}
+      and userId = #{userId}
+    </delete>
+    <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleComment" >
     insert into article_comment (id, article, user,
       text, likes, update_time,
       create_time)
@@ -51,12 +63,8 @@
       <if test="likes != null" >
         likes,
       </if>
-      <if test="updateTime != null" >
         update_time,
-      </if>
-      <if test="createTime != null" >
         create_time,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -74,12 +82,8 @@
       <if test="likes != null" >
         #{likes,jdbcType=INTEGER},
       </if>
-      <if test="updateTime != null" >
         now(),
-      </if>
-      <if test="createTime != null" >
         now(),
-      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.ArticleComment" >

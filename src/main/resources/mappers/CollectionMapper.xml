@@ -19,7 +19,13 @@
     from collection
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <select id="selectById" resultType="java.lang.Integer" parameterType="map">
+      select count(*)
+      from collection
+      where user = #{userId}
+      and article = #{articleId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from collection
     where id = #{id,jdbcType=INTEGER}
   </delete>

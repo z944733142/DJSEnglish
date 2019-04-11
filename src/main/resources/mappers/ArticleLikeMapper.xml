@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.DJSEnglish.dao.commentLikeMapper" >
-  <resultMap id="BaseResultMap" type="com.DJSEnglish.pojo.commentLike" >
+<mapper namespace="com.DJSEnglish.dao.ArticleLikeMapper" >
+  <resultMap id="BaseResultMap" type="com.DJSEnglish.pojo.ArticleLike" >
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="user" jdbcType="INTEGER" javaType="java.lang.Integer" />
@@ -13,24 +13,37 @@
   <sql id="Base_Column_List" >
     id, user, articl_id, update_time, create_time
   </sql>
+  <select id="selectList" parameterType="map" resultType="int">
+    select id
+    from article_like
+    where user = #{userId}
+    and articleId = #{articleId}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from comment_like
+    from article_like
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectById" resultType="java.lang.Integer" parameterType="map">
+    select
+    count (*)
+    from article_like
+    where user = #{userId}
+    and article = #{articleId}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from comment_like
+    delete from article_like
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.DJSEnglish.pojo.commentLike" >
-    insert into comment_like (id, user, articl_id, 
+  <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleLike" >
+    insert into article_like (id, user, articl_id, 
       update_time, create_time)
     values (#{id,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{articlId,jdbcType=INTEGER}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.commentLike" >
-    insert into comment_like
+  <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.ArticleLike" >
+    insert into article_like
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -66,8 +79,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.commentLike" >
-    update comment_like
+  <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.ArticleLike" >
+    update article_like
     <set >
       <if test="user != null" >
         user = #{user,jdbcType=INTEGER},
@@ -84,8 +97,8 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.commentLike" >
-    update comment_like
+  <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.ArticleLike" >
+    update article_like
     set user = #{user,jdbcType=INTEGER},
       articl_id = #{articlId,jdbcType=INTEGER},
       update_time = #{updateTime,jdbcType=TIMESTAMP},

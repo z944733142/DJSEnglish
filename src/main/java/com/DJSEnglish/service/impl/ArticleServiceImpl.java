@@ -1,8 +1,12 @@
 package com.DJSEnglish.service.impl;
 
 import com.DJSEnglish.common.ServerResponse;
+import com.DJSEnglish.dao.ArticleLikeMapper;
 import com.DJSEnglish.dao.ArticleMapper;
+import com.DJSEnglish.dao.CollectionMapper;
+import com.DJSEnglish.dao.CommentLikeMapper;
 import com.DJSEnglish.pojo.Article;
+import com.DJSEnglish.pojo.ArticleLike;
 import com.DJSEnglish.service.IArticleService;
 import com.DJSEnglish.util.DateTimeUtil;
 import com.DJSEnglish.vo.ArticleVo;
@@ -20,6 +24,12 @@ public class ArticleServiceImpl implements IArticleService {
 
     @Autowired
     private ArticleMapper articleMapper;
+
+    @Autowired
+    private ArticleLikeMapper articleLikeMapper;
+
+    @Autowired
+    private CollectionMapper collectionMapper;
 
     @Override
     public ServerResponse getList(Integer pageNum, Integer pageSize) {
@@ -40,7 +50,7 @@ public class ArticleServiceImpl implements IArticleService {
     }
 
     @Override
-    public ServerResponse getDetail(Integer articleId)
+    public ServerResponse getDetail(Integer articleId, Integer userId)
     {
         Article article = articleMapper.selectByPrimaryKey(articleId);
         if(article == null)
@@ -49,8 +59,31 @@ public class ArticleServiceImpl implements IArticleService {
         }
 //        article.setCreateTime(DateTimeUtil.strToDate(article.getCreateTime().toString()));
 //        article.setUpdateTime(DateTimeUtil.strToDate(article.getUpdateTime().toString()));
-        ArticleVo articleVo = toArticleVo(article);
+        ArticleVo articleVo = toArticleVo(article, userId);
         return ServerResponse.createBySuccess(articleVo);
+    }
+
+    public ArticleVo toArticleVo(Article article, Integer userId)
+    {
+        ArticleVo articleVo = new ArticleVo();
+        int length = article.getText().length();
+        if(articleLikeMapper.selectById(userId, article.getId()) > 0)
+        {
+            articleVo.setLike(true);
+        }
+        if(collectionMapper.selectById(userId, article.getId()) > 0)
+        {
+            articleVo.setCollection(true);
+        }
+        articleVo.setBegin(article.getText().substring(0, length > 50 ? 50 : length));
+        articleVo.setCreateTime(DateTimeUtil.dateToStr(article.getCreateTime()));
+        articleVo.setUpdateTime(DateTimeUtil.dateToStr(article.getUpdateTime()));
+        articleVo.setCollection(article.getCollection());
+        articleVo.setId(article.getId());
+        articleVo.setImg(article.getImg());
+        articleVo.setLikes(article.getLikes());
+        articleVo.setText(article.getText());
+        return  articleVo;
     }
 
     public ArticleVo toArticleVo(Article article)

@@ -1,6 +1,7 @@
 package com.DJSEnglish.dao;
 
 import com.DJSEnglish.pojo.Collection;
+import org.apache.ibatis.annotations.Param;
 
 public interface CollectionMapper {
     int deleteByPrimaryKey(Integer id);
@@ -10,6 +11,8 @@ public interface CollectionMapper {
     int insertSelective(Collection record);
 
     Collection selectByPrimaryKey(Integer id);
+
+    int selectById(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 
     int updateByPrimaryKeySelective(Collection record);
 

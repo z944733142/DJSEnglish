@@ -14,11 +14,18 @@ public class ArticleVo {
 
     private Integer collection;
 
+    private boolean isCollection = false;
+
     private Integer likes;
+
+    private boolean isLike = false;
 
     private String updateTime;
 
     private String createTime;
+
+    public ArticleVo() {
+    }
 
     public Integer getId() {
         return id;
@@ -60,12 +67,28 @@ public class ArticleVo {
         this.collection = collection;
     }
 
+    public boolean isCollection() {
+        return isCollection;
+    }
+
+    public void setCollection(boolean collection) {
+        isCollection = collection;
+    }
+
     public Integer getLikes() {
         return likes;
     }
 
     public void setLikes(Integer likes) {
         this.likes = likes;
+    }
+
+    public boolean isLike() {
+        return isLike;
+    }
+
+    public void setLike(boolean like) {
+        isLike = like;
     }
 
     public String getUpdateTime() {
@@ -81,21 +104,6 @@ public class ArticleVo {
     }
 
     public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
-
-    public ArticleVo() {
-    }
-
-
-    public ArticleVo(Integer id, String text, String begin, String img, Integer collection, Integer likes, String updateTime, String createTime) {
-        this.id = id;
-        this.text = text;
-        this.begin = begin;
-        this.img = img;
-        this.collection = collection;
-        this.likes = likes;
-        this.updateTime = updateTime;
         this.createTime = createTime;
     }
 }

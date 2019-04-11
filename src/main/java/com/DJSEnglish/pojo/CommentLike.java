@@ -2,26 +2,26 @@ package com.DJSEnglish.pojo;
 
 import java.util.Date;
 
-public class articleLike {
+public class CommentLike {
     private Integer id;
 
     private Integer user;
 
-    private Integer articlId;
+    private Integer commentId;
 
     private Date updateTime;
 
     private Date createTime;
 
-    public articleLike(Integer id, Integer user, Integer articlId, Date updateTime, Date createTime) {
+    public CommentLike(Integer id, Integer user, Integer commentId, Date updateTime, Date createTime) {
         this.id = id;
         this.user = user;
-        this.articlId = articlId;
+        this.commentId = commentId;
         this.updateTime = updateTime;
         this.createTime = createTime;
     }
 
-    public articleLike() {
+    public CommentLike() {
         super();
     }
 
@@ -41,12 +41,12 @@ public class articleLike {
         this.user = user;
     }
 
-    public Integer getArticlId() {
-        return articlId;
+    public Integer getCommentId() {
+        return commentId;
     }
 
-    public void setArticlId(Integer articlId) {
-        this.articlId = articlId;
+    public void setCommentId(Integer articlId) {
+        this.commentId = articlId;
     }
 
     public Date getUpdateTime() {
