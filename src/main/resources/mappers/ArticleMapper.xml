@@ -39,7 +39,12 @@
       from article
     order by create_time DESC
     </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <select id="selectCountByPrimaryKey" resultType="java.lang.Integer">
+    select count(*)
+    from article
+    where id = #{articleId}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from article
     where id = #{id,jdbcType=INTEGER}
   </delete>

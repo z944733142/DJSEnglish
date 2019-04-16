@@ -30,4 +30,5 @@ public interface ArticleMapper {
     int updateByPrimaryKeyDelCollection(Integer articleId);
 
 
+    int selectCountByPrimaryKey(Integer articleId);
 }

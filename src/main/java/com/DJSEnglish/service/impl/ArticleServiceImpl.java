@@ -68,6 +68,10 @@ public class ArticleServiceImpl implements IArticleService {
         Article article = new Article();
         articleLike.setUser(userId);
         articleLike.setArticlId(articleId);
+        if(articleMapper.selectCountByPrimaryKey(articleId) == 0)
+        {
+            return ServerResponse.createByErrorMsg("文章不存在");
+        }
         if(articleLikeMapper.selectCount(userId, articleId) > 0)
         {
             return ServerResponse.createByErrorMsg("已赞过");
@@ -101,7 +105,7 @@ public class ArticleServiceImpl implements IArticleService {
         List<ArticleVo> articleVos = new ArrayList<>();
         if(articleIdList == null || articleIdList.size() <= 0)
         {
-            return  ServerResponse.createBySuccessMsg("数量为零");
+            return  ServerResponse.createByErrorMsg("数量为零");
         }
         List<Article> articles = articleMapper.selectByArticleIds(articleIdList);
         for (Article article : articles) {
@@ -116,6 +120,10 @@ public class ArticleServiceImpl implements IArticleService {
         Collection collection = new Collection();
         collection.setArticle(articleId);
         collection.setUser(userId);
+        if(articleMapper.selectCountByPrimaryKey(articleId) == 0)
+        {
+            return ServerResponse.createByErrorMsg("文章不存在");
+        }
         if(collectionMapper.selectCount(userId, articleId) > 0)
         {
             return ServerResponse.createByErrorMsg("已收藏过");

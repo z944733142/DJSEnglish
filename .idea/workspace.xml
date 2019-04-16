@@ -10,32 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c3b665b-0e37-4d5e-a040-c5d0a1a41c92" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a92c248-c448-4b53-8961-a092675a86ec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0a92c248-c448-4b53-8961-a092675a86ec.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/接口文档/文章接口.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleLikeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleLikeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/CollectionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/CollectionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/pojo/Collection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/pojo/Collection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/vo/ArticleVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/DJSEnglish/vo/ArticleVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/ArticleLikeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/ArticleLikeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/CollectionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/CollectionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/CommentLikeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/CommentLikeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/com/DJSEnglish/pojo/Collection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/com/DJSEnglish/pojo/Collection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/com/DJSEnglish/service/impl/ArticleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/com/DJSEnglish/service/impl/ArticleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/com/DJSEnglish/vo/ArticleVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/com/DJSEnglish/vo/ArticleVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/mappers/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/mappers/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/mappers/CollectionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/mappers/CollectionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/mappers/articleLikeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/mappers/articleLikeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/mappers/commentLikeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/DJSEnglish/WEB-INF/classes/mappers/commentLikeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/DJSEnglish/pojo/Collection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/DJSEnglish/pojo/Collection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/DJSEnglish/service/impl/ArticleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/DJSEnglish/service/impl/ArticleServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/DJSEnglish/vo/ArticleVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/DJSEnglish/vo/ArticleVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/CollectionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/CollectionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/articleLikeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/articleLikeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/commentLikeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/commentLikeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/接口文档/单词接口.md" beforeDir="false" afterPath="$PROJECT_DIR$/接口文档/单词接口.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -105,51 +85,52 @@
           <entry key="article" value="2" />
           <entry key="class" value="3" />
           <entry key="collection" value="1" />
-          <entry key="java" value="372" />
+          <entry key="java" value="383" />
           <entry key="jsp" value="3" />
           <entry key="likes" value="1" />
-          <entry key="md" value="23" />
+          <entry key="md" value="30" />
           <entry key="properties" value="23" />
           <entry key="sql" value="49" />
-          <entry key="xml" value="213" />
+          <entry key="xml" value="214" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="3" />
           <entry key="Database Element" value="4" />
-          <entry key="JAVA" value="372" />
+          <entry key="JAVA" value="383" />
           <entry key="JSP" value="3" />
-          <entry key="Markdown" value="23" />
+          <entry key="Markdown" value="30" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="23" />
           <entry key="SQL" value="19" />
           <entry key="Scratch" value="30" />
-          <entry key="XML" value="213" />
+          <entry key="XML" value="214" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="24" />
-          <entry key="java" value="12662" />
+          <entry key="java" value="12699" />
           <entry key="jsp" value="6" />
-          <entry key="md" value="80" />
+          <entry key="md" value="342" />
           <entry key="properties" value="114" />
           <entry key="sql" value="3819" />
           <entry key="txt" value="8" />
-          <entry key="xml" value="2450" />
+          <entry key="xml" value="2499" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12662" />
+          <entry key="JAVA" value="12699" />
+          <entry key="JSON" value="6" />
           <entry key="JSP" value="6" />
-          <entry key="Markdown" value="80" />
+          <entry key="Markdown" value="336" />
           <entry key="PLAIN_TEXT" value="32" />
           <entry key="Properties" value="114" />
-          <entry key="SQL" value="2117" />
+          <entry key="SQL" value="2119" />
           <entry key="Scratch" value="1811" />
-          <entry key="XML" value="2341" />
+          <entry key="XML" value="2388" />
         </counts>
       </usages-collector>
     </session>
@@ -162,38 +143,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/ArticleServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-208">
-              <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/CommentServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2010">
-              <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/CollectionMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="26" column="19" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ArticleLikeMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+            <state relative-caret-position="150">
+              <caret line="122" column="36" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -202,7 +153,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+              <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,10 +162,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/CollectionMapper.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/ArticleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+            <state relative-caret-position="108">
+              <caret line="97" column="37" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -223,25 +174,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/IArticleService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleLikeMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="26" column="88" selection-start-line="26" selection-start-column="88" selection-end-line="26" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/ArticleController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -249,8 +182,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ArticleMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="336">
+              <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/FriendController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/CommentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="70" column="36" lean-forward="true" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/接口文档/文章接口.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-5168">
+                <caret line="188" column="4" selection-start-line="188" selection-start-column="4" selection-end-line="188" selection-end-column="4" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/ICommentService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/CommentServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -301,8 +288,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/FriendServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/SearchHistoryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/pojo/SearchHistory.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a178f55a-713d-4e43-9432-05b512c57153/console.sql" />
         <option value="$PROJECT_DIR$/接口文档/数据库表设计.md" />
@@ -345,13 +330,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/pojo/Collection.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/vo/ArticleVo.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c48e813d-a878-40b2-8337-8fecd34db371/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/ArticleMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/ArticleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleLikeMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/ArticleLikeMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/CollectionMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/CollectionMapper.xml" />
+        <option value="$PROJECT_DIR$/接口文档/单词接口.md" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/ArticleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/ArticleMapper.xml" />
+        <option value="$PROJECT_DIR$/接口文档/文章接口.md" />
       </list>
     </option>
   </component>
@@ -427,7 +414,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="2010" />
     <option name="y" value="-20" />
     <option name="width" value="1940" />
@@ -586,7 +573,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/JavaProject/DSJEnglish/src/main/resources/generatorConfig.xml" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555413443736" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555422912831" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../myBlog" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -825,7 +812,7 @@
       <workItem from="1555239219279" duration="5280000" />
       <workItem from="1555320962475" duration="3894000" />
       <workItem from="1555406493958" duration="5126000" />
-      <workItem from="1555413805811" duration="3627000" />
+      <workItem from="1555413805811" duration="7114000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目">
       <created>1552122386471</created>
@@ -870,13 +857,22 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187375000" />
+    <option name="totallyTimeSpent" value="190862000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1913" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="1913" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.498062" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.498062" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" sideWeight="0.501938" side_tool="true" weight="0.35315186" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -886,13 +882,13 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35602838" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28085107" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32928476" />
-      <window_info anchor="bottom" id="Spring" order="7" weight="0.32928476" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.14609928" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32907802" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.14468086" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.20283689" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32928476" />
@@ -926,27 +922,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/pojo/SearchHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/common/ResponseCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-datasource.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -961,13 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2370">
           <caret line="79" column="16" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/FriendController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -996,16 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="660">
-            <caret line="175" column="16" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="16" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1047,13 +1005,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2539">
-          <caret line="78" column="24" lean-forward="true" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1064,23 +1015,6 @@
           <folding>
             <element signature="n#dependencies#0;n#project#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/接口文档/好友接口.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="774">
-            <caret line="207" column="7" lean-forward="true" selection-start-line="207" selection-start-column="7" selection-end-line="207" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/ICommentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1119,13 +1053,6 @@
             <caret line="188" column="41" selection-start-line="188" selection-start-column="41" selection-end-line="188" selection-end-column="41" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/CommentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1255,37 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/IArticleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ArticleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/ArticleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleLikeMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -1307,10 +1203,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/ArticleServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="5250">
+            <caret line="175" column="16" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/接口文档/好友接口.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="492">
+            <caret line="207" column="7" lean-forward="true" selection-start-line="207" selection-start-column="7" selection-end-line="207" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/WordsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-208">
-          <caret line="118" column="31" selection-start-line="118" selection-start-column="31" selection-end-line="118" selection-end-column="31" />
+        <state relative-caret-position="-1141">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="78" column="24" lean-forward="true" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/接口文档/单词接口.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="390">
+            <caret line="67" lean-forward="true" selection-end-line="67" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1321,13 +1254,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/CommentServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/IArticleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+        <state relative-caret-position="150">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/dao/ArticleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/ArticleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="122" column="36" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/ICommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/service/impl/CommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ArticleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/FriendController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="70" column="36" lean-forward="true" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/DJSEnglish/controller/ArticleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="97" column="37" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/接口文档/文章接口.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-5168">
+            <caret line="188" column="4" selection-start-line="188" selection-start-column="4" selection-end-line="188" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
