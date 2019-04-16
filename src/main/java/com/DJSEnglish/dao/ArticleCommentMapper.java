@@ -18,7 +18,11 @@ public interface ArticleCommentMapper {
 
     int updateByPrimaryKey(ArticleComment record);
 
-    List<ArticleComment> selectCommentList();
+    List<ArticleComment> selectCommentList(Integer articleId);
 
     boolean deleteComment(@Param(value = "id") Integer id, @Param(value = "userId") Integer userId);
+
+    void updateByPrimaryKeyAddLike(Integer commentId);
+
+    void updateByPrimaryKeyDisLike(Integer commentId);
 }

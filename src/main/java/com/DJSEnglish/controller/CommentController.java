@@ -21,16 +21,17 @@ public class CommentController {
     @Autowired
     private ICommentService iCommentService;
 
+
     @RequestMapping(value = "get_list.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse getList(HttpSession session, @RequestParam(required = false, defaultValue = "1") Integer pageNum, @RequestParam(required = false, defaultValue = "10")Integer pageSize)
+    public ServerResponse getList(HttpSession session, @RequestParam(required = false, defaultValue = "1") Integer pageNum, @RequestParam(required = false, defaultValue = "10")Integer pageSize, Integer articleId)
     {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if( user == null)
         {
             return ServerResponse.createByErrorMsg("用户未登录");
         }
-        return iCommentService.getList(pageNum, pageSize, user.getId());
+        return iCommentService.getList(pageNum, pageSize, user.getId(), articleId);
     }
 
     @RequestMapping(value = "add_comment.do", method = RequestMethod.POST)
@@ -57,4 +58,30 @@ public class CommentController {
         }
         return iCommentService.delComment(id, user.getId());
     }
+
+    @RequestMapping(value = "like_comment.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse likeComment(HttpSession session, Integer commentId)
+    {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if( user == null)
+        {
+            return ServerResponse.createByErrorMsg("用户未登录");
+        }
+        return iCommentService.likeComment(user.getId(), commentId);
+    }
+
+    @RequestMapping(value = "dislike_comment.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse dislikeComment(HttpSession session, Integer commentId)
+    {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if( user == null)
+        {
+            return ServerResponse.createByErrorMsg("用户未登录");
+        }
+        return iCommentService.dislikeComment(user.getId(), commentId);
+    }
+
+
 }

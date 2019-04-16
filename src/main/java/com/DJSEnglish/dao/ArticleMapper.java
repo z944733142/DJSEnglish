@@ -18,4 +18,14 @@ public interface ArticleMapper {
     int updateByPrimaryKey(Article record);
 
     List<Article> getList();
+
+    List<Article> selectByArticleIds(List<Integer> articleIdList);
+
+    int updateByPrimaryKeyAddLike(Integer articleId);
+
+    int updateByPrimaryKeyAddCollection(Integer articleId);
+
+    int updateByPrimaryKeyDisLike(Integer articleId);
+
+    int updateByPrimaryKeyDelCollection(Integer articleId);
 }

@@ -3,9 +3,9 @@ package com.DJSEnglish.service.impl;
 
 import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.dao.ArticleCommentMapper;
-import com.DJSEnglish.dao.ArticleLikeMapper;
+import com.DJSEnglish.dao.CommentLikeMapper;
 import com.DJSEnglish.pojo.ArticleComment;
-import com.DJSEnglish.pojo.ArticleLike;
+import com.DJSEnglish.pojo.CommentLike;
 import com.DJSEnglish.service.ICommentService;
 import com.DJSEnglish.util.DateTimeUtil;
 import com.DJSEnglish.vo.CommentVo;
@@ -16,8 +16,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 @Service("iCommentService")
 public class CommentServiceImpl implements ICommentService {
@@ -25,17 +23,17 @@ public class CommentServiceImpl implements ICommentService {
     private ArticleCommentMapper articleCommentMapper;
 
     @Autowired
-    private ArticleLikeMapper articleLikeMapper;
+    private CommentLikeMapper commentLikeMapper;
 
     @Override
     public ServerResponse getList(Integer pageNum, Integer pageSize, Integer userId, Integer articleId) {
         PageHelper.startPage(pageNum, pageSize);
-        List<ArticleComment> list = articleCommentMapper.selectCommentList();
+        List<ArticleComment> list = articleCommentMapper.selectCommentList(articleId);
         if(list == null ||list.size() <= 0)
         {
-            return ServerResponse.createByErrorMsg("超出页码范围");
+            return ServerResponse.createByErrorMsg("数据为空");
         }
-//        List<Integer> likeList = articleLikeMapper.selectList(userId, articleId);
+        List<Integer> likeList = commentLikeMapper.selectList(userId);
         PageInfo pageInfo = new PageInfo(list);
         pageInfo.setList(commentToVo(list, userId, likeList));
         return ServerResponse.createBySuccess(pageInfo);
@@ -48,7 +46,10 @@ public class CommentServiceImpl implements ICommentService {
         for (ArticleComment articleComment : list) {
 //            if(likeList.contains())
             CommentVo commentVo = new CommentVo();
-
+            if(likeList.contains(articleComment.getId()))
+            {
+                commentVo.setIslike(true);
+            }
             commentVo.setDelete(userId.equals(articleComment.getUser()));
             commentVo.setId(articleComment.getId());
             commentVo.setArticle(articleComment.getArticle());
@@ -80,4 +81,36 @@ public class CommentServiceImpl implements ICommentService {
         }
         return ServerResponse.createByErrorMsg("删除失败");
     }
+
+    @Override
+    public ServerResponse likeComment(Integer userId, Integer commentId)
+    {
+        CommentLike commentLike = new CommentLike();
+        ArticleComment articleComment = new ArticleComment();
+        articleComment.setId(commentId);
+        commentLike.setCommentId(commentId);
+        commentLike.setUser(userId);
+        if(commentLikeMapper.selectCount(userId, commentId) > 0)
+        {
+            return ServerResponse.createBySuccessMsg("请勿重复点赞");
+        }
+        if(commentLikeMapper.insertSelective(commentLike) > 0)
+        {
+            articleCommentMapper.updateByPrimaryKeyAddLike(commentId);
+            return ServerResponse.createBySuccessMsg("点赞成功");
+        }
+        return ServerResponse.createByErrorMsg("点赞失败");
+    }
+
+    @Override
+    public ServerResponse dislikeComment(Integer userId, Integer commentId) {
+        if(commentLikeMapper.deleteByUserAndComment(userId, commentId))
+        {
+            articleCommentMapper.updateByPrimaryKeyDisLike(commentId);
+            return ServerResponse.createBySuccessMsg("取消成功");
+        }
+        return ServerResponse.createByErrorMsg("取消失败");
+    }
+
+
 }

@@ -1376,9 +1376,9 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="329" parent="286" name="articl_id">
+    <column id="329" parent="286" name="comment_id">
       <Position>3</Position>
-      <Comment>文章主键</Comment>
+      <Comment>评论主键</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>

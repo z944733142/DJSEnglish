@@ -47,5 +47,63 @@ public class ArticleController {
         return iArticleService.getDetail(articleId, user.getId());
     }
 
+    @RequestMapping(value = "like_article.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse likeComment(HttpSession session, Integer articleId)
+    {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if( user == null)
+        {
+            return ServerResponse.createByErrorMsg("用户未登录");
+        }
+        return iArticleService.likeArticle(user.getId(), articleId);
+    }
 
+    @RequestMapping(value = "dislike_article.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse dislikeComment(HttpSession session, Integer articleId)
+    {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if( user == null)
+        {
+            return ServerResponse.createByErrorMsg("用户未登录");
+        }
+        return iArticleService.dislikeArticle(user.getId(), articleId);
+    }
+
+    @RequestMapping(value = "get_collections.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse getCollections(HttpSession session)
+    {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if( user == null)
+        {
+            return ServerResponse.createByErrorMsg("用户未登录");
+        }
+        return iArticleService.getCollections(user.getId());
+    }
+
+    @RequestMapping(value = "add_collection.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse addCollection(HttpSession session, Integer articleId)
+    {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if( user == null)
+        {
+            return ServerResponse.createByErrorMsg("用户未登录");
+        }
+        return iArticleService.collectionArticle(user.getId(), articleId);
+    }
+
+    @RequestMapping(value = "del_collection.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse delCollection(HttpSession session, Integer articleId)
+    {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if( user == null)
+        {
+            return ServerResponse.createByErrorMsg("用户未登录");
+        }
+        return iArticleService.delColletcion(user.getId(), articleId);
+    }
 }

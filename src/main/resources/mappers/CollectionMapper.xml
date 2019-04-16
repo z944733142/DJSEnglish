@@ -19,6 +19,10 @@
     from collection
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByUserId" parameterType="int" resultType="int">
+    select from collection
+    where user = #{userId}
+  </select>
     <select id="selectById" resultType="java.lang.Integer" parameterType="map">
       select count(*)
       from collection
@@ -28,6 +32,11 @@
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from collection
     where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByUserAndArticle" parameterType="map">
+    delete from collection
+    where user = #{userId}
+    and articleId = #{articleId};
   </delete>
   <insert id="insert" parameterType="com.DJSEnglish.pojo.Collection" >
     insert into collection (id, user, article, 

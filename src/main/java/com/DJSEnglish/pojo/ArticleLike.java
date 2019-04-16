@@ -7,7 +7,7 @@ public class ArticleLike {
 
     private Integer user;
 
-    private Integer articlId;
+    private Integer articleId;
 
     private Date updateTime;
 
@@ -16,7 +16,7 @@ public class ArticleLike {
     public ArticleLike(Integer id, Integer user, Integer articlId, Date updateTime, Date createTime) {
         this.id = id;
         this.user = user;
-        this.articlId = articlId;
+        this.articleId = articlId;
         this.updateTime = updateTime;
         this.createTime = createTime;
     }
@@ -42,11 +42,11 @@ public class ArticleLike {
     }
 
     public Integer getArticlId() {
-        return articlId;
+        return articleId;
     }
 
     public void setArticlId(Integer articlId) {
-        this.articlId = articlId;
+        this.articleId = articlId;
     }
 
     public Date getUpdateTime() {

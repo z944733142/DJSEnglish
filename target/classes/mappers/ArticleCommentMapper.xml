@@ -26,6 +26,7 @@
     select
     <include refid="Base_Column_List" />
     from article_comment
+    where article = #{articleId}
     order by create_time DESC
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
@@ -35,7 +36,7 @@
     <delete id="deleteComment" parameterType="map">
       delete  from article_comment
       where id = #{id}
-      and userId = #{userId}
+      and user = #{userId}
     </delete>
     <insert id="insert" parameterType="com.DJSEnglish.pojo.ArticleComment" >
     insert into article_comment (id, article, user,
@@ -120,4 +121,14 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    <update id="updateByPrimaryKeyAddLike">
+        update  article_comment
+        set likes = likes + 1
+        where id = #{commentId}
+    </update>
+    <update id="updateByPrimaryKeyDisLike">
+        update  article_comment
+        set likes = likes - 1
+        where id = #{commentId}
+    </update>
 </mapper>
