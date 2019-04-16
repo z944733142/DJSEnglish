@@ -19,13 +19,19 @@
     from collection
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectCount" parameterType="map" resultType="int">
+    select count(*)
+    from collection
+    where user = #{userId}
+    and article = #{articleId}
+  </select>
   <select id="selectByUserId" parameterType="int" resultType="int">
-    select from collection
+    select article
+    from collection
     where user = #{userId}
   </select>
-    <select id="selectById" resultType="java.lang.Integer" parameterType="map">
-      select count(*)
-      from collection
+    <select id="selectById"  parameterType="map" resultType="int" >
+      select count(*) from collection
       where user = #{userId}
       and article = #{articleId}
     </select>
@@ -36,7 +42,7 @@
   <delete id="deleteByUserAndArticle" parameterType="map">
     delete from collection
     where user = #{userId}
-    and articleId = #{articleId};
+    and article = #{articleId};
   </delete>
   <insert id="insert" parameterType="com.DJSEnglish.pojo.Collection" >
     insert into collection (id, user, article, 
@@ -56,12 +62,8 @@
       <if test="article != null" >
         article,
       </if>
-      <if test="updateTime != null" >
         update_time,
-      </if>
-      <if test="createTime != null" >
-        create_time,
-      </if>
+        create_time
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -73,12 +75,8 @@
       <if test="article != null" >
         #{article,jdbcType=INTEGER},
       </if>
-      <if test="updateTime != null" >
         now(),
-      </if>
-      <if test="createTime != null" >
         now(),
-      </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.Collection" >

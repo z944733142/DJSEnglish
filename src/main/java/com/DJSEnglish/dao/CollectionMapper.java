@@ -23,4 +23,6 @@ public interface CollectionMapper {
     List<Integer> selectByUserId(Integer userId);
 
     boolean deleteByUserAndArticle(@Param("userId")Integer userId, @Param("articleId")Integer articleId);
+
+    int selectCount(@Param("userId")Integer userId, @Param("articleId")Integer articleId);
 }

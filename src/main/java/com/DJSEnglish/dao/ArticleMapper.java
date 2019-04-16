@@ -28,4 +28,6 @@ public interface ArticleMapper {
     int updateByPrimaryKeyDisLike(Integer articleId);
 
     int updateByPrimaryKeyDelCollection(Integer articleId);
+
+
 }

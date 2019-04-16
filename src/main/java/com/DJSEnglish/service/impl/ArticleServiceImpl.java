@@ -45,7 +45,6 @@ public class ArticleServiceImpl implements IArticleService {
         }
         PageInfo articlePage = new PageInfo(articleVos);
 
-        articlePage.setOrderBy("updateTime");
         return ServerResponse.createBySuccess(articlePage);
     }
 
@@ -69,6 +68,10 @@ public class ArticleServiceImpl implements IArticleService {
         Article article = new Article();
         articleLike.setUser(userId);
         articleLike.setArticlId(articleId);
+        if(articleLikeMapper.selectCount(userId, articleId) > 0)
+        {
+            return ServerResponse.createByErrorMsg("已赞过");
+        }
         if(articleLikeMapper.insertSelective(articleLike) > 0)
         {
             articleMapper.updateByPrimaryKeyAddLike(articleId);
@@ -79,6 +82,10 @@ public class ArticleServiceImpl implements IArticleService {
 
     @Override
     public ServerResponse dislikeArticle(Integer userId, Integer articleId) {
+        if(articleLikeMapper.selectCount(userId, articleId) == 0)
+        {
+            return ServerResponse.createByErrorMsg("未赞过");
+        }
         if(articleLikeMapper.deleteByUserAndArticle(userId, articleId))
         {
             articleMapper.updateByPrimaryKeyDisLike(articleId);
@@ -109,6 +116,10 @@ public class ArticleServiceImpl implements IArticleService {
         Collection collection = new Collection();
         collection.setArticle(articleId);
         collection.setUser(userId);
+        if(collectionMapper.selectCount(userId, articleId) > 0)
+        {
+            return ServerResponse.createByErrorMsg("已收藏过");
+        }
         if(collectionMapper.insertSelective(collection) > 0)
         {
             articleMapper.updateByPrimaryKeyAddCollection(articleId);
@@ -119,6 +130,10 @@ public class ArticleServiceImpl implements IArticleService {
 
     @Override
     public ServerResponse delColletcion(Integer userId, Integer articleId) {
+        if(collectionMapper.selectCount(userId, articleId) == 0)
+        {
+            return ServerResponse.createByErrorMsg("未收藏过");
+        }
         if(collectionMapper.deleteByUserAndArticle(userId, articleId))
         {
             articleMapper.updateByPrimaryKeyDelCollection(articleId);
@@ -133,11 +148,11 @@ public class ArticleServiceImpl implements IArticleService {
         int length = article.getText().length();
         if(articleLikeMapper.selectById(userId, article.getId()) > 0)
         {
-            articleVo.setLike(true);
+            articleVo.setisLike(true);
         }
         if(collectionMapper.selectById(userId, article.getId()) > 0)
         {
-            articleVo.setCollection(true);
+            articleVo.setIsCollection(true);
         }
         articleVo.setBegin(article.getText().substring(0, length > 50 ? 50 : length));
         articleVo.setCreateTime(DateTimeUtil.dateToStr(article.getCreateTime()));

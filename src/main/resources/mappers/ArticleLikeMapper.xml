@@ -24,9 +24,15 @@
     from article_like
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="selectById" resultType="java.lang.Integer" parameterType="map">
+  <select id="selectCount" resultType="int" parameterType="map">
+    select count(*)
+    from article_like
+    where user = #{userId}
+    and article_id = #{articleId}
+  </select>
+  <select id="selectById"  parameterType="map" resultType="java.lang.Integer">
     select
-    count (*)
+    count(*)
     from article_like
     where user = #{userId}
     and article_id = #{articleId}
@@ -35,7 +41,6 @@
     delete from article_like
     where  user = #{userId}
     and article_id = #{articleId}
-    and articleId
   </delete>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from article_like
@@ -59,12 +64,8 @@
       <if test="articlId != null" >
         article_id,
       </if>
-      <if test="updateTime != null" >
         update_time,
-      </if>
-      <if test="createTime != null" >
         create_time,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -76,8 +77,8 @@
       <if test="articlId != null" >
         #{articlId,jdbcType=INTEGER},
       </if>
-        #{updateTime,jdbcType=TIMESTAMP},
-        #{createTime,jdbcType=TIMESTAMP},
+       now(),
+      now()
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.ArticleLike" >

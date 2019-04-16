@@ -13,18 +13,6 @@ public class Collection {
 
     private Date createTime;
 
-    public Collection(Integer id, Integer user, Integer article, Date updateTime, Date createTime) {
-        this.id = id;
-        this.user = user;
-        this.article = article;
-        this.updateTime = updateTime;
-        this.createTime = createTime;
-    }
-
-    public Collection() {
-        super();
-    }
-
     public Integer getId() {
         return id;
     }
@@ -63,5 +51,16 @@ public class Collection {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public Collection(Integer id, Integer user, Integer article, Date updateTime, Date createTime) {
+        this.id = id;
+        this.user = user;
+        this.article = article;
+        this.updateTime = updateTime;
+        this.createTime = createTime;
+    }
+
+    public Collection() {
     }
 }

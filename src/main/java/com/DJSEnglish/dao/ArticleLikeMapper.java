@@ -23,4 +23,6 @@ public interface ArticleLikeMapper {
     int updateByPrimaryKey(ArticleLike record);
 
     boolean deleteByUserAndArticle(@Param("userId")Integer userId,@Param("articleId") Integer articleId);
+
+    int selectCount(@Param("userId")Integer userId,@Param("articleId") Integer articleId);
 }

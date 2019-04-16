@@ -22,16 +22,17 @@
     from article
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="selectByArticleIds" resultMap="BaseResultMap" parameterType="list">
+  <select id="selectByArticleIds" resultMap="BaseResultMap" parameterType="java.util.List">
       select
       <include refid="Base_Column_List" />
       from article
       where id
       in
-      <foreach collection="articleIdList" open="(" separator="," close=")" index="index" item="item">
+      <foreach collection="list" open="(" separator="," close=")" index="index" item="item">
         #{item}
       </foreach>
   </select>
+
   <select id="getList" resultMap="BaseResultMap">
       select
       <include refid="Base_Column_List" />
@@ -150,17 +151,17 @@
   </update>
   <update id="updateByPrimaryKeyAddCollection" parameterType="int" >
     update article
-    set likes = likes - 1
+    set collection = collection + 1
     where id = #{articleId}
   </update>
   <update id="updateByPrimaryKeyDisLike" parameterType="int" >
-    update article
-    set collecion = collecion + 1
+   update article
+    set likes = likes - 1
     where id = #{articleId}
   </update>
   <update id="updateByPrimaryKeyDelCollection" parameterType="int" >
     update article
-    set collecion = collecion - 1
+    set collection = collection - 1
     where id = #{articleId}
   </update>
 </mapper>
