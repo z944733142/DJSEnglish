@@ -30,7 +30,12 @@
     from comment_like
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <select id="selectCommentId" resultType="int">
+      select count(*)
+      from comment_like
+      where id = #{commentId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from comment_like
     where id = #{id,jdbcType=INTEGER}
   </delete>

@@ -49,14 +49,14 @@ public class CommentController {
 
     @RequestMapping(value = "del_comment.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse delComment(HttpSession session, Integer id)
+    public ServerResponse delComment(HttpSession session, Integer commentId)
     {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if( user == null)
         {
             return ServerResponse.createByErrorMsg("用户未登录");
         }
-        return iCommentService.delComment(id, user.getId());
+        return iCommentService.delComment(commentId, user.getId());
     }
 
     @RequestMapping(value = "like_comment.do", method = RequestMethod.POST)

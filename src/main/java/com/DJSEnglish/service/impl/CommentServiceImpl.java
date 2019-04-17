@@ -31,7 +31,7 @@ public class CommentServiceImpl implements ICommentService {
         List<ArticleComment> list = articleCommentMapper.selectCommentList(articleId);
         if(list == null ||list.size() <= 0)
         {
-            return ServerResponse.createByErrorMsg("数据为空");
+            return ServerResponse.createByErrorMsg("暂无评论");
         }
         List<Integer> likeList = commentLikeMapper.selectList(userId);
         PageInfo pageInfo = new PageInfo(list);
@@ -67,6 +67,7 @@ public class CommentServiceImpl implements ICommentService {
 
     @Override
     public ServerResponse addComment(ArticleComment articleComment) {
+        articleComment.setLikes(0);
         if(articleCommentMapper.insertSelective(articleComment) > 0) {
             return ServerResponse.createBySuccessMsg("添加成功");
         }
@@ -90,6 +91,10 @@ public class CommentServiceImpl implements ICommentService {
         articleComment.setId(commentId);
         commentLike.setCommentId(commentId);
         commentLike.setUser(userId);
+        if(commentLikeMapper.selectCommentId(commentId) == 0)
+        {
+            return ServerResponse.createByErrorMsg("评论不存在");
+        }
         if(commentLikeMapper.selectCount(userId, commentId) > 0)
         {
             return ServerResponse.createBySuccessMsg("请勿重复点赞");

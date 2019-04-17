@@ -23,4 +23,6 @@ public interface CommentLikeMapper {
     boolean deleteByUserAndComment(@Param("userId") Integer userId, @Param("commentId") Integer commentId);
 
     int selectCount(@Param("userId") Integer userId, @Param("commentId") Integer commentId);
+
+    int selectCommentId(Integer commentId);
 }
