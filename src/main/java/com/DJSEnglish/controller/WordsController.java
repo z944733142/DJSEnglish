@@ -22,7 +22,7 @@ public class WordsController {
 
     @RequestMapping("get_words.do")
     @ResponseBody
-    public ServerResponse searchHistory(HttpSession session)
+    public ServerResponse getWords(HttpSession session)
     {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if( user == null)
@@ -32,9 +32,15 @@ public class WordsController {
         return iWordService.getWord();
     }
 
+//    @RequestMapping("add_sentence.do")
+//    @ResponseBody
+//    public ServerResponse addSentence(HttpSession session){
+//
+//
+//    }
     @RequestMapping("add_history.do")
     @ResponseBody
-    public ServerResponse searchHistory(HttpSession session, String word)
+    public ServerResponse addHistory(HttpSession session, String word)
     {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if( user == null)
@@ -46,7 +52,7 @@ public class WordsController {
 
     @RequestMapping("delete_history.do")
     @ResponseBody
-    public ServerResponse searchHistory(HttpSession session, @RequestParam(value = "word", required = false)String word, @RequestParam(value = "deleteAll", defaultValue = "false") boolean deleteAll) {
+    public ServerResponse deleteHistory(HttpSession session, @RequestParam(value = "word", required = false)String word, @RequestParam(value = "deleteAll", defaultValue = "false") boolean deleteAll) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if( user == null)
         {

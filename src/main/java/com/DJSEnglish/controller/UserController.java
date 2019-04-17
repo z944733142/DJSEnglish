@@ -26,7 +26,9 @@ import java.util.Map;
 @Controller
 @RequestMapping("/user/")
 public class UserController {
-
+    /*
+    todo 判断登录拦截器
+     */
     @Autowired
     private IUserService iUserService;
 
