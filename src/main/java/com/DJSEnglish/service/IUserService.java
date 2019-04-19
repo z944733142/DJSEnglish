@@ -5,7 +5,7 @@ import com.DJSEnglish.pojo.User;
 
 public interface IUserService {
 
-    ServerResponse Login(String username, String password);
+    ServerResponse Login(String username, String password) throws Exception;
 
     ServerResponse Register(User user, String msgCode);
 
@@ -15,4 +15,5 @@ public interface IUserService {
 
     ServerResponse forgetResetPassword(String phoneNumber, String password);
 
+    ServerResponse<User> getUserInfo(Integer id);
 }

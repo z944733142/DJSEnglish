@@ -119,6 +119,12 @@
       <version>8.0.12</version>
     </dependency>
 
+    <dependency>
+      <groupId>com.auth0</groupId>
+      <artifactId>java-jwt</artifactId>
+      <version>3.5.0</version>
+    </dependency>
+
     <!--<dependency>-->
       <!--<groupId>mysql</groupId>-->
       <!--<artifactId>mysql-connector-java</artifactId>-->

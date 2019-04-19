@@ -6,6 +6,7 @@ import com.DJSEnglish.dao.UserMapper;
 import com.DJSEnglish.pojo.User;
 import com.DJSEnglish.service.IFileService;
 import com.DJSEnglish.service.IUserService;
+import com.DJSEnglish.util.JWTUtil;
 import com.DJSEnglish.util.PhoneUtil;
 import com.DJSEnglish.util.PropertiesUtil;
 import com.google.common.collect.Maps;
@@ -26,9 +27,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/user/")
 public class UserController {
-    /*
-    todo 判断登录拦截器
-     */
+
     @Autowired
     private IUserService iUserService;
 
@@ -40,79 +39,67 @@ public class UserController {
 
     @RequestMapping(value = "test.do", method = RequestMethod.POST)
     @ResponseBody
-        public ServerResponse test(String test, HttpServletRequest request, HttpSession session)
-        {
-            Enumeration<String> headerNames = request.getHeaderNames();
-            while (headerNames.hasMoreElements())
-            {
-                String nextElement = headerNames.nextElement();
-                System.out.println(nextElement + ":" + request.getHeader(nextElement));
-            }
+    public ServerResponse test(String test, HttpServletRequest request) {
+        Enumeration<String> headerNames = request.getHeaderNames();
+        while (headerNames.hasMoreElements()) {
+            String nextElement = headerNames.nextElement();
+            System.out.println(nextElement + ":" + request.getHeader(nextElement));
+        }
         Enumeration<String> parameterNames = request.getParameterNames();
-        while (parameterNames.hasMoreElements())
-        {
+        while (parameterNames.hasMoreElements()) {
             String nextElement = parameterNames.nextElement();
             System.out.println(nextElement + ":" + request.getParameter(nextElement));
         }
-        if(StringUtils.isNotBlank(test)) {
+        if (StringUtils.isNotBlank(test)) {
             return ServerResponse.createBySuccessMsg("参数" + test);
         }
         return ServerResponse.createByErrorMsg("失败");
     }
 
+
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse login(String username, String password, HttpSession session)
-    {
-            ServerResponse serverResponse = iUserService.Login(username, password);
-            if(serverResponse.isSuccess())
-            {
-                session.setAttribute(Const.CURRENT_USER, serverResponse.getData());
-            }
+    public ServerResponse login(String username, String password) {
+        ServerResponse serverResponse = null;
+        try {
+            serverResponse = iUserService.Login(username, password);
+        } catch (Exception e) {
+            return ServerResponse.createByErrorMsg("登录失败");
+        }
         return serverResponse;
+    }
+
+
+    @RequestMapping(value = "need_login.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse needLogin() {
+        return ServerResponse.createByErrorMsg("用户未登录");
     }
 
     @RequestMapping(value = "upload.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse upload(HttpSession session, @RequestParam(value = "upload_file",required = false) MultipartFile file, HttpServletRequest request)
-    {
-        User user = (User)session.getAttribute(Const.CURRENT_USER);
-        ServerResponse serverResponse;
-        if(user == null)
-        {
-            return ServerResponse.createByErrorMsg("用户未登录");
-        }
+    public ServerResponse upload(@RequestParam(value = "upload_file", required = false) MultipartFile file, HttpServletRequest request) {
+        Integer id = (Integer) request.getAttribute(Const.ID);
         String path = request.getSession().getServletContext().getRealPath("upload");
-        String targetFileName = iFileService.upload(file,path);
-        String url = PropertiesUtil.getProperty("ftp.server.http.prefix")+targetFileName;
-        if(targetFileName != null)
-        {
+        String targetFileName = iFileService.upload(file, path);
+        String url = PropertiesUtil.getProperty("ftp.server.http.prefix") + targetFileName;
+        if (targetFileName != null) {
             User newUser = new User();
             newUser.setImg(targetFileName);
-            newUser.setId(user.getId());
+            newUser.setId(id);
             userMapper.updateByPrimaryKeySelective(newUser);
-            user.setImg(url);
         }
         Map fileMap = Maps.newHashMap();
-        fileMap.put("uri",targetFileName);
-        fileMap.put("url",url);
+        fileMap.put("uri", targetFileName);
+        fileMap.put("url", url);
         return ServerResponse.createBySuccess(fileMap);
     }
 
-    @RequestMapping(value = "logout.do", method = RequestMethod.POST)
-    @ResponseBody
-    public ServerResponse logout(HttpSession session)
-    {
-        session.removeAttribute(Const.CURRENT_USER);
-        return ServerResponse.createBySuccessMsg("注销成功");
-    }
 
     @RequestMapping(value = "forget_reset_password.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse forgetResetPassword(String msgCode, String phoneNumber, String password)
-    {
-        if(!PhoneUtil.judgeCodeIsTrue(msgCode, phoneNumber))
-        {
+    public ServerResponse forgetResetPassword(String msgCode, String phoneNumber, String password) {
+        if (!PhoneUtil.judgeCodeIsTrue(msgCode, phoneNumber)) {
             return ServerResponse.createByErrorMsg("验证码错误");
         }
         return iUserService.forgetResetPassword(phoneNumber, password);
@@ -120,10 +107,8 @@ public class UserController {
 
     @RequestMapping(value = "get_msgcode.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse getMsgcode(String phoneNumber)
-    {
-        if (PhoneUtil.getVerificationCode(phoneNumber) != null)
-        {
+    public ServerResponse getMsgcode(String phoneNumber) {
+        if (PhoneUtil.getVerificationCode(phoneNumber) != null) {
             return ServerResponse.createBySuccessMsg("发送成功");
         }
         return ServerResponse.createByErrorMsg("发送失败");
@@ -131,36 +116,30 @@ public class UserController {
 
     @RequestMapping(value = "login_reset_password.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse loginResetPassword(HttpSession session, String password)
-    {
-        User user = (User)session.getAttribute(Const.CURRENT_USER);
+    public ServerResponse loginResetPassword(HttpServletRequest request, String password) {
         ServerResponse serverResponse;
-        if(user == null)
+        Integer id = (Integer) request.getAttribute(Const.ID);
+        if ((serverResponse = iUserService.loginResetPassword(id, password)).isSuccess())
         {
-            return ServerResponse.createByErrorMsg("用户未登录");
+            return serverResponse;
         }
-        if((serverResponse = iUserService.loginResetPassword(user.getId(), password)).isSuccess());
-        {
-            session.removeAttribute(Const.CURRENT_USER);
+        else{
+            return ServerResponse.createByErrorMsg("重置失败");
         }
-        return serverResponse;
     }
 
 
     @RequestMapping(value = "register.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse register(User user, String msgCode)
-    {
+    public ServerResponse register(User user, String msgCode) {
 
         return iUserService.Register(user, msgCode);
     }
 
     @RequestMapping(value = "check_msg.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse checkMsg(String phone, String msgCode)
-    {
-        if(!PhoneUtil.judgeCodeIsTrue(msgCode, phone))
-        {
+    public ServerResponse checkMsg(String phone, String msgCode) {
+        if (!PhoneUtil.judgeCodeIsTrue(msgCode, phone)) {
             return ServerResponse.createByErrorMsg("验证码不正确");
         }
         return ServerResponse.createBySuccessMsg("验证码正确");
@@ -172,33 +151,17 @@ public class UserController {
 
     @RequestMapping(value = "get_user_info.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<User> getUserInfo(HttpSession session)
-    {
-        User user = (User)session.getAttribute(Const.CURRENT_USER);
-        if(user != null)
-        {
-            return ServerResponse.createBySuccess(user);
-        }
-        return ServerResponse.createByErrorMsg("用户未登录, 无法获取当前用户信息");
+    public ServerResponse<User> getUserInfo(HttpServletRequest request) {
+        Integer id = (Integer) request.getAttribute(Const.ID);
+        return iUserService.getUserInfo(id);
     }
 
     @RequestMapping(value = "update_user_info.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse<User> updateUserInfo(HttpSession session, User user)
-    {
-        User loginUser = (User) session.getAttribute(Const.CURRENT_USER);
-
-        if(loginUser == null)
-        {
-            return ServerResponse.createByErrorMsg("用户未登录, 请先登录");
-        }
-        user.setId(loginUser.getId());
-        ServerResponse serverResponse = iUserService.updateUserInfo(user);
-        if(serverResponse.isSuccess())
-        {
-            session.setAttribute(Const.CURRENT_USER, userMapper.selectByPrimaryKey(user.getId()));
-        }
-        return serverResponse;
+    public ServerResponse<User> updateUserInfo(HttpServletRequest request, User user) {
+        Integer id = (Integer) request.getAttribute(Const.ID);
+        user.setId(id);
+        return iUserService.updateUserInfo(user);
     }
 
 }

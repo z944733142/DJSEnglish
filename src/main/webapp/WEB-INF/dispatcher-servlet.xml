@@ -30,6 +30,22 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <mvc:interceptors>
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="com.map.web.interceptor.TokenInterceptor"/>-->
+
+        <!--</mvc:interceptor>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="com.map.web.interceptor.FileTypeInterceptor" />-->
+        <!--</mvc:interceptor>-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.DJSEnglish.interceptor.TokenInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 
 
     <!-- 文件上传 -->

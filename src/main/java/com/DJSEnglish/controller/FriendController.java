@@ -5,11 +5,13 @@ import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.pojo.User;
 import com.DJSEnglish.service.IFriendService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @RequestMapping("/friend/")
@@ -21,56 +23,36 @@ public class FriendController {
 
     @RequestMapping("concern.do")
     @ResponseBody
-    public ServerResponse concern(HttpSession session, Integer friendId)
+    public ServerResponse concern(HttpServletRequest request, Integer friendId)
     {
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
-        if( user == null)
-        {
-            return ServerResponse.createByErrorMsg("用户未登录");
-        }
-        return iFriendService.concern(user.getId(), friendId);
+        Integer id = (Integer) request.getAttribute(Const.ID);
+        return iFriendService.concern(id, friendId);
     }
 
     @RequestMapping("unconcern.do")
     @ResponseBody
-    public ServerResponse unconcern(HttpSession session, Integer friendId) {
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
-        if( user == null)
-        {
-            return ServerResponse.createByErrorMsg("用户未登录");
-        }
-        return iFriendService.unconcern(user.getId(), friendId);
+    public ServerResponse unconcern(HttpServletRequest request, Integer friendId) {
+        Integer id = (Integer) request.getAttribute(Const.ID);
+        return iFriendService.unconcern(id, friendId);
     }
 
     @RequestMapping("check_concern.do")
     @ResponseBody
-    public ServerResponse checkConcern(HttpSession session, Integer friendId) {
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
-        if( user == null)
-        {
-            return ServerResponse.createByErrorMsg("用户未登录");
-        }
-        return iFriendService.checkConcern(user.getId(), friendId);
+    public ServerResponse checkConcern(HttpServletRequest request, Integer friendId) {
+        Integer id = (Integer) request.getAttribute(Const.ID);
+        return iFriendService.checkConcern(id, friendId);
     }
     @RequestMapping("get_list.do")
     @ResponseBody
-    public ServerResponse getList(HttpSession session) {
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
-        if( user == null)
-        {
-            return ServerResponse.createByErrorMsg("用户未登录");
-        }
-        return iFriendService.getList(user.getId());
+    public ServerResponse getList(HttpServletRequest request) {
+        Integer id = (Integer) request.getAttribute(Const.ID);
+        return iFriendService.getList(id);
     }
 
     @RequestMapping("get_detail.do")
     @ResponseBody
-    public ServerResponse getDetail(HttpSession session, Integer friendId) {
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
-        if( user == null)
-        {
-            return ServerResponse.createByErrorMsg("用户未登录");
-        }
+    public ServerResponse getDetail(HttpServletRequest request, Integer friendId) {
+        
         return iFriendService.getDetail(friendId);
     }
     }

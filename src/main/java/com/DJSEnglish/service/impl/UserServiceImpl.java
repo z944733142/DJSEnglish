@@ -6,11 +6,15 @@ import com.DJSEnglish.dao.UserMapper;
 import com.DJSEnglish.pojo.User;
 import com.DJSEnglish.service.IUserService;
 import com.DJSEnglish.util.FTPUtil;
+import com.DJSEnglish.util.JWTUtil;
 import com.DJSEnglish.util.MD5Util;
 import com.DJSEnglish.util.PhoneUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Service("iUserService")
 public class UserServiceImpl implements IUserService {
@@ -18,8 +22,7 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
 
-    public ServerResponse Login(String username, String password)
-    {
+    public ServerResponse Login(String username, String password) throws Exception {
         ServerResponse serverResponse = CheckVaild(username, Const.USERNAME);
         if(serverResponse.isSuccess())
         {
@@ -31,11 +34,12 @@ public class UserServiceImpl implements IUserService {
         if(user != null)
         {
             user.setPassword("");
-            if(user.getImg() != "null")
-            {
-                user.setImg(FTPUtil.ftpPrefix + user.getImg());
-            }
-            return ServerResponse.createBySuccess("登录成功", user);
+            user.setImg(FTPUtil.ftpPrefix + user.getImg());
+            String token = JWTUtil.createToken(user.getId());
+            Map map = new HashMap();
+            map.put("user", user);
+            map.put("token", token);
+            return ServerResponse.createBySuccess("登录成功",map);
         }
         return ServerResponse.createByErrorMsg("账号密码不匹配");
     }
@@ -162,5 +166,15 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createBySuccessMsg("修改成功");
         }
         return ServerResponse.createByErrorMsg("修改失败");
+    }
+
+    @Override
+    public ServerResponse<User> getUserInfo(Integer id) {
+        User user;
+        if((user = userMapper.selectByPrimaryKey(id)) != null)
+        {
+            return ServerResponse.createBySuccess(user);
+        }
+        return ServerResponse.createByErrorMsg("获取失败");
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @RequestMapping("/comment/")
@@ -36,27 +37,19 @@ public class CommentController {
 
     @RequestMapping(value = "add_comment.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse addComment(HttpSession session, ArticleComment articleComment)
+    public ServerResponse addComment(HttpServletRequest request, ArticleComment articleComment)
     {
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
-        if( user == null)
-        {
-            return ServerResponse.createByErrorMsg("用户未登录");
-        }
-        articleComment.setUser(user.getId());
+        Integer id = (Integer) request.getAttribute(Const.ID);
+        articleComment.setUser(id);
         return iCommentService.addComment(articleComment);
     }
 
     @RequestMapping(value = "del_comment.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse delComment(HttpSession session, Integer commentId)
+    public ServerResponse delComment(HttpServletRequest request, Integer commentId)
     {
-        User user = (User) session.getAttribute(Const.CURRENT_USER);
-        if( user == null)
-        {
-            return ServerResponse.createByErrorMsg("用户未登录");
-        }
-        return iCommentService.delComment(commentId, user.getId());
+        Integer id = (Integer) request.getAttribute(Const.ID);
+        return iCommentService.delComment(commentId, id);
     }
 
     @RequestMapping(value = "like_comment.do", method = RequestMethod.POST)
