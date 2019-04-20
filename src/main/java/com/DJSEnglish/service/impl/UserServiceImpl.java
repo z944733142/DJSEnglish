@@ -32,7 +32,6 @@ public class UserServiceImpl implements IUserService {
         User user = userMapper.selectUser(phoneNumber, MD5PassWord);
         if(user != null)
         {
-            user.setPassword("");
             user.setImg(FTPUtil.ftpPrefix + user.getImg());
             String token = JWTUtil.createToken(user.getId());
             Map map = new HashMap();
@@ -141,8 +140,12 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccessMsg("重置失败");
     }
 
-    public ServerResponse forgetResetPassword(String phoneNumber, String password)
+    @Override
+    public ServerResponse forgetResetPassword(String msgCode, String phoneNumber, String password)
     {
+        if (!PhoneUtil.judgeCodeIsTrue(msgCode, phoneNumber)) {
+            return ServerResponse.createByErrorMsg("验证码错误");
+        }
         password = MD5Util.MD5EncodeUtf8(password);
         if(userMapper.updateByPhone(phoneNumber, password) > 0)
         {
@@ -154,8 +157,8 @@ public class UserServiceImpl implements IUserService {
     @Override
     public ServerResponse<User> getUserInfo(Integer id) {
         User user;
-        if((user = userMapper.selectByPrimaryKey(id)) != null)
-        {
+        if((user = userMapper.selectByPrimaryKey(id)) != null) {
+            user.setImg(FTPUtil.ftpPrefix + user.getImg());
             return ServerResponse.createBySuccess(user);
         }
         return ServerResponse.createByErrorMsg("获取失败");

@@ -2,6 +2,7 @@ package com.DJSEnglish.service.impl;
 
 import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.dao.SearchHistoryMapper;
+import com.DJSEnglish.dao.SentenceMapper;
 import com.DJSEnglish.dao.WordsMapper;
 import com.DJSEnglish.pojo.SearchHistory;
 import com.DJSEnglish.pojo.Sentence;
@@ -22,7 +23,7 @@ public class WordServiceImpl implements IWordService {
     private WordsMapper wordsMapper;
 
     @Autowired
-    private SentencesMapper sentencesMapper;
+    private SentenceMapper sentenceMapper;
 
     @Override
     public ServerResponse addHistory(Integer userId, String word)
@@ -88,9 +89,21 @@ public class WordServiceImpl implements IWordService {
         Sentence s = new Sentence();
         s.setUserId(userId);
         s.setSentence(sentence);
-        if(sentencesMapper.insertSelective(s) > 0)
+        if(sentenceMapper.insertSelective(s) > 0)
         {
-        return ;
+            return ServerResponse.createBySuccess("添加成功");
+        }
+        return ServerResponse.createByErrorMsg("添加失败");
+    }
+
+    @Override
+    public ServerResponse getSentences(Integer userId) {
+        List<Sentence> list = sentenceMapper.selectSentences(userId);
+        if(list != null || list.size() > 0)
+        {
+            return ServerResponse.createBySuccess(list);
+        }
+        return ServerResponse.createByErrorMsg("数量为零");
     }
 
 //    public ServerResponse deleteHistory(Integer )

@@ -99,10 +99,8 @@ public class UserController {
     @RequestMapping(value = "forget_reset_password.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse forgetResetPassword(String msgCode, String phoneNumber, String password) {
-        if (!PhoneUtil.judgeCodeIsTrue(msgCode, phoneNumber)) {
-            return ServerResponse.createByErrorMsg("验证码错误");
-        }
-        return iUserService.forgetResetPassword(phoneNumber, password);
+
+        return iUserService.forgetResetPassword(msgCode, phoneNumber, password);
     }
 
     @RequestMapping(value = "get_msgcode.do", method = RequestMethod.POST)

@@ -13,7 +13,7 @@ public interface IUserService {
 
     ServerResponse loginResetPassword(int userId, String password);
 
-    ServerResponse forgetResetPassword(String phoneNumber, String password);
+    ServerResponse forgetResetPassword(String msgCode,String phoneNumber, String password);
 
     ServerResponse<User> getUserInfo(Integer userId);
 }

@@ -33,6 +33,14 @@ public class WordsController {
             Integer userId = (Integer) request.getAttribute(Const.ID);
             return iWordService.addSentence(userId, sentence);
     }
+
+    @RequestMapping("get_sentences.do")
+    @ResponseBody
+    public ServerResponse getSentences(HttpServletRequest request){
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iWordService.getSentences(userId);
+    }
+
     @RequestMapping("add_history.do")
     @ResponseBody
     public ServerResponse addHistory(HttpServletRequest request, String word) {

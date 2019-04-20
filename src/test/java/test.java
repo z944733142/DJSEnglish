@@ -29,7 +29,6 @@ public class test {
     {
         User user = new User();
         user.setPhone("18066877585");
-        user.setUsername("zs944733142");
         user.setPassword(MD5Util.MD5EncodeUtf8("1008600"));
         user.setName("测试");
         user.setMsg("测试人员");

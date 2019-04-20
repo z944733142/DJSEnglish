@@ -13,6 +13,12 @@
   <sql id="Base_Column_List">
     id, user_id, sentence, update_time, create_time
   </sql>
+  <select id="selectSentences" parameterType="int" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from sentence
+    where user_id = #{userId}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

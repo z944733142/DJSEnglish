@@ -15,4 +15,6 @@ public interface IWordService {
     ServerResponse getWord();
 
     ServerResponse addSentence(Integer userId, String sentence);
+
+    ServerResponse getSentences(Integer userId);
 }
