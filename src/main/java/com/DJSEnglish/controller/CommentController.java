@@ -39,8 +39,8 @@ public class CommentController {
     @ResponseBody
     public ServerResponse addComment(HttpServletRequest request, ArticleComment articleComment)
     {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        articleComment.setUser(id);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        articleComment.setUser(userId);
         return iCommentService.addComment(articleComment);
     }
 
@@ -48,8 +48,8 @@ public class CommentController {
     @ResponseBody
     public ServerResponse delComment(HttpServletRequest request, Integer commentId)
     {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iCommentService.delComment(commentId, id);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iCommentService.delComment(commentId, userId);
     }
 
     @RequestMapping(value = "like_comment.do", method = RequestMethod.POST)

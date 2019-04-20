@@ -2,8 +2,10 @@ package com.DJSEnglish.pojo;
 
 import java.util.Date;
 
-public class Sentences {
+public class Sentence {
     private Integer id;
+
+    private Integer userId;
 
     private String sentence;
 
@@ -11,14 +13,15 @@ public class Sentences {
 
     private Date createTime;
 
-    public Sentences(Integer id, String sentence, Date updateTime, Date createTime) {
+    public Sentence(Integer id, Integer userId, String sentence, Date updateTime, Date createTime) {
         this.id = id;
+        this.userId = userId;
         this.sentence = sentence;
         this.updateTime = updateTime;
         this.createTime = createTime;
     }
 
-    public Sentences() {
+    public Sentence() {
         super();
     }
 
@@ -28,6 +31,14 @@ public class Sentences {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getSentence() {

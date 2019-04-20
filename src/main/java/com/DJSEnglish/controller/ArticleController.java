@@ -32,47 +32,47 @@ public class ArticleController {
     @ResponseBody
     public ServerResponse getDetail(HttpServletRequest request, Integer articleId)
     {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iArticleService.getDetail(articleId, id);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iArticleService.getDetail(articleId, userId);
     }
 
     @RequestMapping(value = "like_article.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse likeComment(HttpServletRequest request, Integer articleId)
     {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iArticleService.likeArticle(id, articleId);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iArticleService.likeArticle(userId, articleId);
     }
 
     @RequestMapping(value = "dislike_article.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse dislikeComment(HttpServletRequest request, Integer articleId)
     {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iArticleService.dislikeArticle(id, articleId);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iArticleService.dislikeArticle(userId, articleId);
     }
 
     @RequestMapping(value = "get_collections.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse getCollections(HttpServletRequest request)
     {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iArticleService.getCollections(id);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iArticleService.getCollections(userId);
     }
 
     @RequestMapping(value = "add_collection.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse addCollection(HttpServletRequest request, Integer articleId)
     {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iArticleService.collectionArticle(id, articleId);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iArticleService.collectionArticle(userId, articleId);
     }
 
     @RequestMapping(value = "del_collection.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse delCollection(HttpServletRequest request, Integer articleId)
     {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iArticleService.delColletcion(id, articleId);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iArticleService.delColletcion(userId, articleId);
     }
 }

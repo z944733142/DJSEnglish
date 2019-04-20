@@ -10,8 +10,6 @@ public class User {
 
     private String name;
 
-    private String username;
-
     @JsonIgnore
     private String password;
 
@@ -29,7 +27,6 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", msg='" + msg + '\'' +
                 ", img='" + img + '\'' +
@@ -46,10 +43,9 @@ public class User {
     @JsonIgnore
     private Date createTime;
 
-    public User(Integer id, String name, String username, String password, String msg, String img, String email, String phone, Date updateTime, Date createTime) {
+    public User(Integer id, String name, String password, String msg, String img, String email, String phone, Date updateTime, Date createTime) {
         this.id = id;
         this.name = name;
-        this.username = username;
         this.password = password;
         this.msg = msg;
         this.img = img;
@@ -77,14 +73,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
     }
 
     public String getPassword() {

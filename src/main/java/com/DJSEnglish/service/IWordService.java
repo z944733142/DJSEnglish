@@ -4,13 +4,15 @@ import com.DJSEnglish.common.ServerResponse;
 
 public interface IWordService {
 
-    ServerResponse addHistory(Integer id, String word);
+    ServerResponse addHistory(Integer userId, String word);
 
-    ServerResponse deleteWord(Integer id, String word);
+    ServerResponse deleteWord(Integer userId, String word);
 
-    ServerResponse deleteAll(Integer id);
+    ServerResponse deleteAll(Integer userId);
 
-    ServerResponse getList(Integer id);
+    ServerResponse getList(Integer userId);
 
     ServerResponse getWord();
+
+    ServerResponse addSentence(Integer userId, String sentence);
 }

@@ -27,33 +27,33 @@ public class WordsController {
         return iWordService.getWord();
     }
 
-    //    @RequestMapping("add_sentence.do")
-//    @ResponseBody
-//    public ServerResponse addSentence(HttpServletRequest request){
-//
-//
-//    }
+    @RequestMapping("add_sentence.do")
+    @ResponseBody
+    public ServerResponse addSentence(HttpServletRequest request, String sentence){
+            Integer userId = (Integer) request.getAttribute(Const.ID);
+            return iWordService.addSentence(userId, sentence);
+    }
     @RequestMapping("add_history.do")
     @ResponseBody
     public ServerResponse addHistory(HttpServletRequest request, String word) {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iWordService.addHistory(id, word);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iWordService.addHistory(userId, word);
     }
 
     @RequestMapping("delete_history.do")
     @ResponseBody
     public ServerResponse deleteHistory(HttpServletRequest request, @RequestParam(value = "word", required = false) String word, @RequestParam(value = "deleteAll", defaultValue = "false") boolean deleteAll) {
-        Integer id = (Integer) request.getAttribute(Const.ID);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
         if (deleteAll) {
-            return iWordService.deleteAll(id);
+            return iWordService.deleteAll(userId);
         }
-        return iWordService.deleteWord(id, word);
+        return iWordService.deleteWord(userId, word);
     }
 
     @RequestMapping("history_list.do")
     @ResponseBody
     public ServerResponse historyList(HttpServletRequest request) {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iWordService.getList(id);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iWordService.getList(userId);
     }
 }

@@ -4,6 +4,7 @@ import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.dao.SearchHistoryMapper;
 import com.DJSEnglish.dao.WordsMapper;
 import com.DJSEnglish.pojo.SearchHistory;
+import com.DJSEnglish.pojo.Sentence;
 import com.DJSEnglish.pojo.Words;
 import com.DJSEnglish.service.IWordService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +21,18 @@ public class WordServiceImpl implements IWordService {
     @Autowired
     private WordsMapper wordsMapper;
 
+    @Autowired
+    private SentencesMapper sentencesMapper;
+
     @Override
-    public ServerResponse addHistory(Integer id, String word)
+    public ServerResponse addHistory(Integer userId, String word)
     {
         SearchHistory searchHistory = new SearchHistory();
-        searchHistory.setUser(id);
+        searchHistory.setUser(userId);
         searchHistory.setWord(word);
-        if(searchHistoryMapper.selectCountByUseridAndWord(id, word) > 0)
+        if(searchHistoryMapper.selectCountByUseridAndWord(userId, word) > 0)
         {
-            if(searchHistoryMapper.updateWordTime(id, word) > 0)
+            if(searchHistoryMapper.updateWordTime(userId, word) > 0)
             {
                 return ServerResponse.createBySuccessMsg("插入成功");
             }
@@ -45,8 +49,8 @@ public class WordServiceImpl implements IWordService {
     }
 
     @Override
-    public ServerResponse deleteWord(Integer userId, String word) {
-        if(searchHistoryMapper.deleteWord(userId, word) > 0)
+    public ServerResponse deleteWord(Integer useruserId, String word) {
+        if(searchHistoryMapper.deleteWord(useruserId, word) > 0)
         {
             return ServerResponse.createBySuccessMsg("删除成功");
         }
@@ -54,8 +58,8 @@ public class WordServiceImpl implements IWordService {
     }
 
     @Override
-    public ServerResponse deleteAll(Integer userId) {
-        if(searchHistoryMapper.deleteAllByUserId(userId) > 0)
+    public ServerResponse deleteAll(Integer useruserId) {
+        if(searchHistoryMapper.deleteAllByUserId(useruserId) > 0)
         {
             return ServerResponse.createBySuccessMsg("成功删除");
         }
@@ -63,8 +67,8 @@ public class WordServiceImpl implements IWordService {
     }
 
     @Override
-    public ServerResponse getList(Integer id) {
-        List<SearchHistory> list = searchHistoryMapper.selectByUserId(id);
+    public ServerResponse getList(Integer userId) {
+        List<SearchHistory> list = searchHistoryMapper.selectByUserId(userId);
         if(list == null || list.size() == 0)
         {
             return ServerResponse.createByErrorMsg("数量为零");
@@ -77,6 +81,16 @@ public class WordServiceImpl implements IWordService {
         List<Words> words = wordsMapper.selectWordsList();
 
         return ServerResponse.createBySuccess(words);
+    }
+
+    @Override
+    public ServerResponse addSentence(Integer userId, String sentence) {
+        Sentence s = new Sentence();
+        s.setUserId(userId);
+        s.setSentence(sentence);
+        if(sentencesMapper.insertSelective(s) > 0)
+        {
+        return ;
     }
 
 //    public ServerResponse deleteHistory(Integer )

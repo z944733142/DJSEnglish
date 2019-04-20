@@ -21,28 +21,28 @@ public class FriendController {
     @ResponseBody
     public ServerResponse concern(HttpServletRequest request, Integer friendId)
     {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iFriendService.concern(id, friendId);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iFriendService.concern(userId, friendId);
     }
 
     @RequestMapping("unconcern.do")
     @ResponseBody
     public ServerResponse unconcern(HttpServletRequest request, Integer friendId) {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iFriendService.unconcern(id, friendId);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iFriendService.unconcern(userId, friendId);
     }
 
     @RequestMapping("check_concern.do")
     @ResponseBody
     public ServerResponse checkConcern(HttpServletRequest request, Integer friendId) {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iFriendService.checkConcern(id, friendId);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iFriendService.checkConcern(userId, friendId);
     }
     @RequestMapping("get_list.do")
     @ResponseBody
     public ServerResponse getList(HttpServletRequest request) {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iFriendService.getList(id);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iFriendService.getList(userId);
     }
 
     @RequestMapping("get_detail.do")

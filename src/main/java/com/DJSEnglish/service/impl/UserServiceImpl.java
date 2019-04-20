@@ -22,15 +22,14 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
 
-    public ServerResponse Login(String username, String password) throws Exception {
-        ServerResponse serverResponse = CheckVaild(username, Const.USERNAME);
+    public ServerResponse Login(String phoneNumber, String password) throws Exception {
+        ServerResponse serverResponse = CheckVaild(phoneNumber, Const.PHONE);
         if(serverResponse.isSuccess())
         {
-            return ServerResponse.createByErrorMsg("账号不存在");
+            return ServerResponse.createByErrorMsg("手机号不存在");
         }
-
         String MD5PassWord = MD5Util.MD5EncodeUtf8(password);
-        User user = userMapper.selectUser(username, MD5PassWord);
+        User user = userMapper.selectUser(phoneNumber, MD5PassWord);
         if(user != null)
         {
             user.setPassword("");
@@ -46,7 +45,7 @@ public class UserServiceImpl implements IUserService {
 
     public boolean checkValid(User user)
     {
-        if(StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getPassword()) || StringUtils.isBlank(user.getPhone()))
+        if(StringUtils.isBlank(user.getPhone()) || StringUtils.isBlank(user.getPassword()) || StringUtils.isBlank(user.getPhone()))
         {
             return false;
         }
@@ -55,12 +54,7 @@ public class UserServiceImpl implements IUserService {
 
     public ServerResponse Register(User user, String msgCode)
     {
-        ServerResponse serverResponse = CheckVaild(user.getUsername(), Const.USERNAME);
-        if(!serverResponse.isSuccess())
-        {
-            return serverResponse;
-        }
-        serverResponse = CheckVaild(user.getPhone(), Const.PHONE);
+        ServerResponse serverResponse = CheckVaild(user.getPhone(), Const.PHONE);
         if(!serverResponse.isSuccess())
         {
             return serverResponse;
@@ -81,13 +75,10 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createByErrorMsg("注册失败, 验证码不正确");
         }
         User insertUser = new User();
-        insertUser.setUsername(user.getUsername());
         insertUser.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
-        insertUser.setMsg("此人很懒, 尚未填写个人信息");
         insertUser.setEmail(user.getEmail());
         insertUser.setName("手机用户" + user.getPhone());
         insertUser.setPhone(user.getPhone());
-        insertUser.setImg("default.jpg");
         int count = userMapper.insertSelective(insertUser);
         if(count > 0)
         {
@@ -98,14 +89,7 @@ public class UserServiceImpl implements IUserService {
 
     public ServerResponse CheckVaild(String str, String type)
     {
-        if(StringUtils.equals(type, Const.USERNAME))
-        {
-            if(userMapper.selectUserCount(str) > 0)
-            {
-                return ServerResponse.createByErrorMsg("用户名已存在");
-            }
-        }
-        else if(StringUtils.equals(type, Const.EMAIL))
+        if(StringUtils.equals(type, Const.EMAIL))
         {
             if(userMapper.selectEmailCount(str) > 0)
             {
@@ -159,7 +143,6 @@ public class UserServiceImpl implements IUserService {
 
     public ServerResponse forgetResetPassword(String phoneNumber, String password)
     {
-        User updateUser = new User();
         password = MD5Util.MD5EncodeUtf8(password);
         if(userMapper.updateByPhone(phoneNumber, password) > 0)
         {

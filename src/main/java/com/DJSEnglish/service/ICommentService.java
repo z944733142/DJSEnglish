@@ -9,9 +9,9 @@ public interface ICommentService {
 
     ServerResponse addComment(ArticleComment articleComment);
 
-    ServerResponse delComment(Integer id, Integer userId);
+    ServerResponse delComment(Integer commentId, Integer userId);
 
-    ServerResponse likeComment(Integer id, Integer commentId);
+    ServerResponse likeComment(Integer UserId, Integer commentId);
 
     ServerResponse dislikeComment(Integer userId, Integer commentId);
 }

@@ -5,7 +5,6 @@
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="username" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="msg" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="img" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -16,7 +15,7 @@
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, username, password, msg, img, email, phone, update_time, create_time
+    id, name, msg, img, email, phone, update_time, create_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select
@@ -27,7 +26,7 @@
   <select id="selectUser" resultMap="BaseResultMap">
   select <include refid="Base_Column_List"/>
   from user
-  where username = #{username}
+  where phone = #{phoneNumber}
   and password = #{password}
   </select>
   <select id="selectFriendList" resultType="com.DJSEnglish.vo.FriendListVo" parameterType="list">
@@ -37,10 +36,6 @@
     <foreach collection="list" index="index" item="item" open="(" close=")" separator=",">
       #{item}
     </foreach>
-  </select>
-  <select id="selectUserCount" resultType="java.lang.Integer">
-    select count(*) from user
-    where username = #{username}
   </select>
   <select id="selectEmailCount" resultType="java.lang.Integer">
     select count(*) from user
@@ -55,11 +50,11 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.DJSEnglish.pojo.User" >
-    insert into user (id, name, username,
+    insert into user (id, name,
       password, msg, img,
       email, phone, update_time,
       create_time)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
       #{password,jdbcType=VARCHAR}, #{msg,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR},
       #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, now(),
       now())
@@ -72,9 +67,6 @@
       </if>
       <if test="name != null" >
         name,
-      </if>
-      <if test="username != null" >
-        username,
       </if>
       <if test="password != null" >
         password,
@@ -101,9 +93,6 @@
       <if test="name != null" >
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="username != null" >
-        #{username,jdbcType=VARCHAR},
-      </if>
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
@@ -128,9 +117,6 @@
     <set >
       <if test="name != null" >
         name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="username != null" >
-        username = #{username,jdbcType=VARCHAR},
       </if>
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
@@ -159,7 +145,6 @@
   <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.User" >
     update user
     set name = #{name,jdbcType=VARCHAR},
-      username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       msg = #{msg,jdbcType=VARCHAR},
       img = #{img,jdbcType=VARCHAR},

@@ -7,9 +7,9 @@ public interface IArticleService {
 
     ServerResponse getDetail(Integer articleId, Integer userId);
 
-    ServerResponse likeArticle(Integer id, Integer articleId);
+    ServerResponse likeArticle(Integer userId, Integer articleId);
 
-    ServerResponse dislikeArticle(Integer id, Integer articleId);
+    ServerResponse dislikeArticle(Integer userId, Integer articleId);
 
     ServerResponse getCollections(Integer userId);
 

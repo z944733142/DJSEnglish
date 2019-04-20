@@ -1,16 +1,17 @@
 create table user (
   id int(11) not null AUTO_INCREMENT,
   name varchar(50) not null comment '昵称',
-  username varchar(50) not null comment '用户名',
-  password varchar(50) not null comment '密码',
-  msg varchar(200) not null comment '用户介绍',
-  img varchar(50) not null comment '头像url',
-  email varchar(50) not null comment '邮箱',
   phone varchar(20) not null comment '电话',
+  password varchar(50) not null comment '密码',
+  msg varchar(200)  default '此人很懒, 尚未填写个人信息.'comment '用户介绍',
+  img varchar(50) default 'default.jpg' comment '头像url',
+  email varchar(50)  default 'null' comment '邮箱',
   update_time datetime not null  comment '更新时间',
   create_time datetime not null comment '创建时间',
-  primary key (id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 ;
+  primary key (id),
+  unique index (phone),
+  unique index (email)
+)ENGINE=InnoDB AUTO_INCREMENT=22;
 
 create table concern(
   id int(11) not null AUTO_INCREMENT,
@@ -46,7 +47,8 @@ create table words(
 
 create table sentences(
   id int(11) not null AUTO_INCREMENT,
-  sentence varchar(500) not null,
+  user_id int(11) not null comment '用户id',
+  sentence varchar(500) not null comment '造句',
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key (id)

@@ -59,10 +59,10 @@ public class UserController {
 
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse login(String username, String password) {
+    public ServerResponse login(String phoneNumber, String password) {
         ServerResponse serverResponse;
         try {
-            serverResponse = iUserService.Login(username, password);
+            serverResponse = iUserService.Login(phoneNumber, password);
         } catch (Exception e) {
             return ServerResponse.createByErrorMsg("登录失败");
         }
@@ -79,14 +79,14 @@ public class UserController {
     @RequestMapping(value = "upload.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse upload(@RequestParam(value = "upload_file", required = false) MultipartFile file, HttpServletRequest request) {
-        Integer id = (Integer) request.getAttribute(Const.ID);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
         String path = request.getSession().getServletContext().getRealPath("upload");
         String targetFileName = iFileService.upload(file, path);
         String url = PropertiesUtil.getProperty("ftp.server.http.prefix") + targetFileName;
         if (targetFileName != null) {
             User newUser = new User();
             newUser.setImg(targetFileName);
-            newUser.setId(id);
+            newUser.setId(userId);
             userMapper.updateByPrimaryKeySelective(newUser);
         }
         Map fileMap = Maps.newHashMap();
@@ -118,8 +118,8 @@ public class UserController {
     @ResponseBody
     public ServerResponse loginResetPassword(HttpServletRequest request, String password) {
         ServerResponse serverResponse;
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        if ((serverResponse = iUserService.loginResetPassword(id, password)).isSuccess())
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        if ((serverResponse = iUserService.loginResetPassword(userId, password)).isSuccess())
         {
             return serverResponse;
         }
@@ -145,22 +145,19 @@ public class UserController {
         return ServerResponse.createBySuccessMsg("验证码正确");
     }
 
-//    @RequestMapping(value = "register.do", method = RequestMethod.POST)
-//    @ResponseBody
-//    public ServerResponse get
 
     @RequestMapping(value = "get_user_info.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> getUserInfo(HttpServletRequest request) {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        return iUserService.getUserInfo(id);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iUserService.getUserInfo(userId);
     }
 
     @RequestMapping(value = "update_user_info.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> updateUserInfo(HttpServletRequest request, User user) {
-        Integer id = (Integer) request.getAttribute(Const.ID);
-        user.setId(id);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        user.setId(userId);
         return iUserService.updateUserInfo(user);
     }
 
