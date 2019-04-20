@@ -1,5 +1,7 @@
 package com.DJSEnglish.pojo;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.util.Date;
 
 public class Sentence {
@@ -9,8 +11,10 @@ public class Sentence {
 
     private String sentence;
 
+    @JsonIgnore
     private Date updateTime;
 
+    @JsonIgnore
     private Date createTime;
 
     public Sentence(Integer id, Integer userId, String sentence, Date updateTime, Date createTime) {

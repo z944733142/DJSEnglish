@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.DJSEnglish.dao.CommentLikeMapper" >
+  <resultMap id="BaseResultMap" type="com.DJSEnglish.pojo.CommentLike" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="user" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="comment_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user, comment_id, update_time, create_time
+  </sql>
+  <select id="selectCount" parameterType="map" resultType="java.lang.Integer">
+    select count(*)
+    from comment_like
+    where user = #{userId}
+    and comment_Id = #{commentId}
+  </select>
+  <select id="selectList" parameterType="int" resultType="int">
+    select comment_id
+    from comment_like
+    where user = #{userId}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from comment_like
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <select id="selectCommentId" resultType="int">
+      select count(*)
+      from comment_like
+      where id = #{commentId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from comment_like
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByUserAndComment" parameterType="map">
+    delete from comment_like
+    where  user = #{userId}
+    and comment_Id = #{commentId}
+  </delete>
+  <insert id="insert" parameterType="com.DJSEnglish.pojo.CommentLike" >
+    insert into comment_like (id, user, comment_id, 
+      update_time, create_time)
+    values (#{id,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{commentId,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.CommentLike" >
+    insert into comment_like
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="user != null" >
+        user,
+      </if>
+      <if test="commentId != null" >
+        comment_id,
+      </if>
+        update_time,
+        create_time,
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="user != null" >
+        #{user,jdbcType=INTEGER},
+      </if>
+      <if test="commentId != null" >
+        #{commentId,jdbcType=INTEGER},
+      </if>
+      now(),
+      now()
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.DJSEnglish.pojo.CommentLike" >
+    update comment_like
+    <set >
+      <if test="user != null" >
+        user = #{user,jdbcType=INTEGER},
+      </if>
+      <if test="commentId != null" >
+        comment_id = #{commentId,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.DJSEnglish.pojo.CommentLike" >
+    update comment_like
+    set user = #{user,jdbcType=INTEGER},
+      comment_id = #{commentId,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
