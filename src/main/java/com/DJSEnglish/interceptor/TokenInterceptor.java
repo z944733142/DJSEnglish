@@ -19,12 +19,12 @@ import java.util.Set;
 public class TokenInterceptor implements HandlerInterceptor {
     private Logger logger = LoggerFactory.getLogger(TokenInterceptor.class);
     // 设置不拦截的路径
-    private static final Set<String> IGNORE_URL = new HashSet<String>();
+    private static final Set<String> IGNORE_URL = new HashSet<>();
 
     static {
         String URL[] = new String[]{
                 "login.do", "register.do", "test.do", "need_login.do", "forget_reset_password.do"
-                , "get_msgcode.do", "check_msg.do"
+                , "get_msgcode.do", "check_msg.do","get_words.do","get_list.do","get_detail.do"
         };
         for (String s : URL) {
             IGNORE_URL.add(s);

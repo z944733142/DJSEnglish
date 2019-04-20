@@ -60,7 +60,7 @@ public class UserController {
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse login(String username, String password) {
-        ServerResponse serverResponse = null;
+        ServerResponse serverResponse;
         try {
             serverResponse = iUserService.Login(username, password);
         } catch (Exception e) {

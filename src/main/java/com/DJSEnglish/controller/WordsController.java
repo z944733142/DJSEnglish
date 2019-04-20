@@ -24,7 +24,6 @@ public class WordsController {
     @RequestMapping("get_words.do")
     @ResponseBody
     public ServerResponse getWords(HttpServletRequest request) {
-        Integer id = (Integer) request.getAttribute(Const.ID);
         return iWordService.getWord();
     }
 

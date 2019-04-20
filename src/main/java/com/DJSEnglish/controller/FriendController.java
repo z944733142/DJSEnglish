@@ -2,17 +2,13 @@ package com.DJSEnglish.controller;
 
 import com.DJSEnglish.common.Const;
 import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.pojo.User;
 import com.DJSEnglish.service.IFriendService;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 @RequestMapping("/friend/")
 @Controller
@@ -51,7 +47,7 @@ public class FriendController {
 
     @RequestMapping("get_detail.do")
     @ResponseBody
-    public ServerResponse getDetail(HttpServletRequest request, Integer friendId) {
+    public ServerResponse getDetail(Integer friendId) {
         
         return iFriendService.getDetail(friendId);
     }
