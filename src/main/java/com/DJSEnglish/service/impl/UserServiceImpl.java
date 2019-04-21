@@ -163,4 +163,13 @@ public class UserServiceImpl implements IUserService {
         }
         return ServerResponse.createByErrorMsg("获取失败");
     }
+
+    @Override
+    public ServerResponse<User> checkName(String userName) {
+        if(userMapper.selectNameCount(userName) > 0)
+        {
+            return ServerResponse.createByErrorMsg("昵称重复");
+        }
+        return ServerResponse.createBySuccessMsg("昵称可用");
+    }
 }

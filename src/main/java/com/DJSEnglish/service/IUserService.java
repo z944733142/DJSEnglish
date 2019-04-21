@@ -16,4 +16,6 @@ public interface IUserService {
     ServerResponse forgetResetPassword(String msgCode,String phoneNumber, String password);
 
     ServerResponse<User> getUserInfo(Integer userId);
+
+    ServerResponse<User> checkName(String name);
 }

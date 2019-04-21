@@ -30,6 +30,11 @@
   where phone = #{phoneNumber}
   and password = #{password}
   </select>
+  <select id="selectNameCount" resultType="int" parameterType="int">
+    select count(*)
+    from user
+    where username = #{userName}
+  </select>
   <select id="selectFriendList" resultType="com.DJSEnglish.vo.FriendListVo" parameterType="list">
     select id, name, img
     from user

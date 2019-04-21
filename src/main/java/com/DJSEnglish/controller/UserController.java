@@ -159,4 +159,10 @@ public class UserController {
         return iUserService.updateUserInfo(user);
     }
 
-}
+    @RequestMapping(value = "check_username.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<User> updateUserInfo(String userName) {
+        return iUserService.checkName(userName);
+    }
+
+    }

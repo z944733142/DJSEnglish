@@ -28,4 +28,6 @@ public interface UserMapper {
     int updateByPhone(@Param("phoneNumber")String phoneNumber, @Param("password")String password);
 
     List<FriendListVo> selectFriendList(List<Integer> idList);
+
+    int selectNameCount(String userName);
 }
