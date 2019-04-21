@@ -6,6 +6,7 @@ import com.DJSEnglish.dao.UserMapper;
 import com.DJSEnglish.pojo.Concern;
 import com.DJSEnglish.pojo.User;
 import com.DJSEnglish.service.IFriendService;
+import com.DJSEnglish.util.FTPUtil;
 import com.DJSEnglish.vo.FriendListVo;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,10 @@ public class FriendServiceImpl implements IFriendService {
         Concern concern = new Concern();
         concern.setUser(userId);
         concern.setFriending(friendId);
+        if(userMapper.selectByPrimaryKey(friendId) == null)
+        {
+            return ServerResponse.createByErrorMsg("用户不存在");
+        }
         if(concernMapper.insert(concern) > 0)
         {
             return ServerResponse.createBySuccessMsg("关注成功");
@@ -79,6 +84,7 @@ public class FriendServiceImpl implements IFriendService {
         {
             return ServerResponse.createByErrorMsg("用户不存在");
         }
+        user.setImg(FTPUtil.ftpPrefix + user.getImg());
         return ServerResponse.createBySuccess(user);
     }
 }

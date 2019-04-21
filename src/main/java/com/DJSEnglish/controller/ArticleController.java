@@ -3,6 +3,8 @@ package com.DJSEnglish.controller;
 import com.DJSEnglish.common.Const;
 import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.service.IArticleService;
+import com.DJSEnglish.util.JWTUtil;
+import com.auth0.jwt.interfaces.Claim;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 @RequestMapping("/article/")
 @Controller
@@ -32,7 +35,17 @@ public class ArticleController {
     @ResponseBody
     public ServerResponse getDetail(HttpServletRequest request, Integer articleId)
     {
-        Integer userId = (Integer) request.getAttribute(Const.ID);
+        String token = request.getHeader("token");
+        Integer userId = null;
+        if (token != null)
+        {
+            Map<String, Claim> map = null;
+            try {
+                map = JWTUtil.verifyToken(token);
+            } catch (Exception e) {
+            }
+            userId = map.get("id").asInt();
+        }
         return iArticleService.getDetail(articleId, userId);
     }
 

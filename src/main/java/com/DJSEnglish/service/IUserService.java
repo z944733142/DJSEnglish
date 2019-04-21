@@ -17,5 +17,5 @@ public interface IUserService {
 
     ServerResponse<User> getUserInfo(Integer userId);
 
-    ServerResponse<User> checkName(String name);
+    ServerResponse<User> checkName(String userName);
 }

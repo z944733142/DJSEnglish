@@ -3,6 +3,7 @@ package com.DJSEnglish.service.impl;
 
 import com.DJSEnglish.common.ServerResponse;
 import com.DJSEnglish.dao.ArticleCommentMapper;
+import com.DJSEnglish.dao.ArticleMapper;
 import com.DJSEnglish.dao.CommentLikeMapper;
 import com.DJSEnglish.pojo.ArticleComment;
 import com.DJSEnglish.pojo.CommentLike;
@@ -25,15 +26,29 @@ public class CommentServiceImpl implements ICommentService {
     @Autowired
     private CommentLikeMapper commentLikeMapper;
 
+    @Autowired
+    private ArticleMapper articleMapper;
+
     @Override
     public ServerResponse getList(Integer pageNum, Integer pageSize, Integer userId, Integer articleId) {
         PageHelper.startPage(pageNum, pageSize);
+        if(articleMapper.selectByPrimaryKey(articleId) == null)
+        {
+            return ServerResponse.createByErrorMsg("文章不存在");
+        }
         List<ArticleComment> list = articleCommentMapper.selectCommentList(articleId);
         if(list == null ||list.size() <= 0)
         {
             return ServerResponse.createByErrorMsg("暂无评论");
         }
-        List<Integer> likeList = commentLikeMapper.selectList(userId);
+        List<Integer> likeList;
+        if(userId != null)
+        {
+            likeList = commentLikeMapper.selectList(userId);
+        }else
+        {
+            likeList = new ArrayList<>();
+        }
         PageInfo pageInfo = new PageInfo(list);
         pageInfo.setList(commentToVo(list, userId, likeList));
         return ServerResponse.createBySuccess(pageInfo);
@@ -68,6 +83,10 @@ public class CommentServiceImpl implements ICommentService {
     @Override
     public ServerResponse addComment(ArticleComment articleComment) {
         articleComment.setLikes(0);
+        if(articleMapper.selectByPrimaryKey(articleComment.getArticle()) == null)
+        {
+            return ServerResponse.createByErrorMsg("文章不存在");
+        }
         if(articleCommentMapper.insertSelective(articleComment) > 0) {
             return ServerResponse.createBySuccessMsg("添加成功");
         }
@@ -91,7 +110,7 @@ public class CommentServiceImpl implements ICommentService {
         articleComment.setId(commentId);
         commentLike.setCommentId(commentId);
         commentLike.setUser(userId);
-        if(commentLikeMapper.selectCommentId(commentId) == 0)
+        if(articleCommentMapper.selectCountByPrimaryKey(commentId) == 0)
         {
             return ServerResponse.createByErrorMsg("评论不存在");
         }

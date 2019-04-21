@@ -14,6 +14,8 @@ public interface ArticleCommentMapper {
 
     ArticleComment selectByPrimaryKey(Integer id);
 
+    int selectCountByPrimaryKey(Integer id);
+
     int updateByPrimaryKeySelective(ArticleComment record);
 
     int updateByPrimaryKey(ArticleComment record);
