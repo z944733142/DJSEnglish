@@ -1,5 +1,6 @@
 package com.DJSEnglish.interceptor;
 
+import com.DJSEnglish.util.PropertiesUtil;
 import com.auth0.jwt.interfaces.Claim;
 import com.DJSEnglish.util.JWTUtil;
 import org.slf4j.Logger;
@@ -11,9 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 
 public class TokenInterceptor implements HandlerInterceptor {
@@ -22,10 +21,9 @@ public class TokenInterceptor implements HandlerInterceptor {
     private static final Set<String> IGNORE_URL = new HashSet<>();
 
     static {
-        String URL[] = new String[]{
-                "login.do", "register.do", "test.do", "need_login.do", "forget_reset_password.do"
-                , "get_msgcode.do", "check_msg.do","get_words.do","get_list.do","get_detail.do"
-        };
+        String uri = PropertiesUtil.getProperty("interceptor.uri");
+        String URL[] = uri.split("-");
+        System.out.println(Arrays.toString(URL));
         for (String s : URL) {
             IGNORE_URL.add(s);
         }
@@ -42,6 +40,7 @@ public class TokenInterceptor implements HandlerInterceptor {
         }
         if (!flag) {
             String token = request.getHeader("token");
+            System.out.println(path + "" + IGNORE_URL.contains(path));
             if (token == null) {
                 // 跳转返回未登录
                 request.getRequestDispatcher("/user/need_login.do").forward(request, response);
