@@ -10,9 +10,11 @@ import com.DJSEnglish.pojo.Collection;
 import com.DJSEnglish.pojo.CommentLike;
 import com.DJSEnglish.service.IArticleService;
 import com.DJSEnglish.util.DateTimeUtil;
+import com.DJSEnglish.util.FTPUtil;
 import com.DJSEnglish.vo.ArticleVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.net.ftp.FTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -167,7 +169,7 @@ public class ArticleServiceImpl implements IArticleService {
         articleVo.setUpdateTime(DateTimeUtil.dateToStr(article.getUpdateTime()));
         articleVo.setCollection(article.getCollection());
         articleVo.setId(article.getId());
-        articleVo.setImg(article.getImg());
+        articleVo.setImg(FTPUtil.ftpPrefix + article.getImg());
         articleVo.setLikes(article.getLikes());
         articleVo.setText(article.getText());
         return  articleVo;
