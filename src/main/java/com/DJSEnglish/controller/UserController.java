@@ -64,6 +64,7 @@ public class UserController {
         try {
             serverResponse = iUserService.Login(phoneNumber, password);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             return ServerResponse.createByErrorMsg("登录失败");
         }
         return serverResponse;

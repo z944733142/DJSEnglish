@@ -58,12 +58,6 @@ public class UserServiceImpl implements IUserService {
         {
             return serverResponse;
         }
-        serverResponse = CheckVaild(user.getEmail(), Const.EMAIL);
-        if(!serverResponse.isSuccess())
-        {
-            return serverResponse;
-        }
-
         if(!checkValid(user))
         {
             ServerResponse.createByErrorMsg("信息不完全");
@@ -75,7 +69,6 @@ public class UserServiceImpl implements IUserService {
         }
         User insertUser = new User();
         insertUser.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
-        insertUser.setEmail(user.getEmail());
         insertUser.setName("手机用户" + user.getPhone());
         insertUser.setPhone(user.getPhone());
         int count = userMapper.insertSelective(insertUser);
@@ -88,14 +81,7 @@ public class UserServiceImpl implements IUserService {
 
     public ServerResponse CheckVaild(String str, String type)
     {
-        if(StringUtils.equals(type, Const.EMAIL))
-        {
-            if(userMapper.selectEmailCount(str) > 0)
-            {
-                return ServerResponse.createByErrorMsg("邮箱已存在");
-            }
-        }
-        else if(StringUtils.equals(type, Const.PHONE))
+        if(StringUtils.equals(type, Const.PHONE))
         {
             if(userMapper.selectPhoneCount(str) > 0)
             {
@@ -110,16 +96,14 @@ public class UserServiceImpl implements IUserService {
     public ServerResponse updateUserInfo(User user)
     {
         User updateUser = new User();
-        ServerResponse serverResponse = CheckVaild(user.getEmail(), Const.EMAIL);
-        if(!serverResponse.isSuccess())
+        if(Const.checkSex(user.getSex()))
         {
-            return serverResponse;
+            updateUser.setSex(user.getSex());
         }
+        updateUser.setStage(user.getStage());
         updateUser.setId(user.getId());
         updateUser.setName(user.getName());
         updateUser.setMsg(user.getMsg());
-        updateUser.setEmail(user.getEmail());
-
         if(userMapper.updateByPrimaryKeySelective(updateUser) > 0)
         {
             return ServerResponse.createBySuccessMsg("更新信息成功");

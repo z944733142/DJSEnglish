@@ -1,16 +1,17 @@
 create table user (
   id int(11) not null AUTO_INCREMENT,
   name varchar(50) not null comment '昵称',
-  phone varchar(20) not null comment '电话',
+  phone varchar(20) not null comment '电话(账号)',
   password varchar(50) not null comment '密码',
+  sex varchar(20) default '尚未填写' comment '性别',
+  stage varchar(20) default '尚未填写'comment '学习阶段',
   msg varchar(200)  default '此人很懒, 尚未填写个人信息.'comment '用户介绍',
   img varchar(50) default 'default.jpg' comment '头像url',
-  email varchar(50)  default 'null' comment '邮箱',
+--   email varchar(50)  default 'null' comment '邮箱',
   update_time datetime not null  comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key (id),
-  unique index (phone),
-  unique index (email)
+  unique index (phone)
 )ENGINE=InnoDB AUTO_INCREMENT=22;
 
 create table concern(

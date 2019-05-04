@@ -33,7 +33,6 @@ public class test {
         user.setName("测试");
         user.setMsg("测试人员");
         user.setImg("default.jpg");
-        user.setEmail("test@test.com");
         userMapper.insertSelective(user);
     }
 

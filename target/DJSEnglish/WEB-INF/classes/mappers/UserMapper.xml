@@ -6,16 +6,17 @@
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="stage" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="msg" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="img" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="email" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, password, msg, img, email, phone, update_time, create_time
+    id, name, password,sex, stage, msg, img, phone, update_time, create_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select
@@ -43,10 +44,6 @@
       #{item}
     </foreach>
   </select>
-  <select id="selectEmailCount" resultType="java.lang.Integer">
-    select count(*) from user
-    where email = #{email}
-  </select>
   <select id="selectPhoneCount" resultType="java.lang.Integer">
     select count(*) from user
     where phone = #{phone}
@@ -57,12 +54,12 @@
   </delete>
   <insert id="insert" parameterType="com.DJSEnglish.pojo.User" >
     insert into user (id, name,
-      password, msg, img,
-      email, phone, update_time,
+      password, sex, stage, msg, img,
+     phone, update_time,
       create_time)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
       #{password,jdbcType=VARCHAR}, #{msg,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR},
-      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, now(),
+      #{phone,jdbcType=VARCHAR}, now(),
       now())
   </insert>
   <insert id="insertSelective" parameterType="com.DJSEnglish.pojo.User" >
@@ -77,14 +74,17 @@
       <if test="password != null" >
         password,
       </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="stage != null" >
+        stage,
+      </if>
       <if test="msg != null" >
         msg,
       </if>
       <if test="img != null" >
         img,
-      </if>
-      <if test="email != null" >
-        email,
       </if>
       <if test="phone != null" >
         phone,
@@ -102,14 +102,17 @@
       <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="stage != null" >
+        #{stage,jdbcType=VARCHAR},
+      </if>
       <if test="msg != null" >
         #{msg,jdbcType=VARCHAR},
       </if>
       <if test="img != null" >
         #{img,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null" >
-        #{email,jdbcType=VARCHAR},
       </if>
       <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
@@ -127,14 +130,17 @@
       <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="stage != null" >
+        stage = #{stage,jdbcType=VARCHAR},
+      </if>
       <if test="msg != null" >
         msg = #{msg,jdbcType=VARCHAR},
       </if>
       <if test="img != null" >
         img = #{img,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null" >
-        email = #{email,jdbcType=VARCHAR},
       </if>
       <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
@@ -153,8 +159,9 @@
     set name = #{name,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       msg = #{msg,jdbcType=VARCHAR},
+      sex = #{sex, jdbcType=VARCHAR},
+      stage = #{stage, jdbcType=VARCHAR},
       img = #{img,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
       update_time = now(),
       create_time = #{createTime,jdbcType=TIMESTAMP}

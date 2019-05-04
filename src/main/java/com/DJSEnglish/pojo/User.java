@@ -5,6 +5,7 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 
 import java.util.Date;
 
+@Json
 public class User {
     private Integer id;
 
@@ -13,29 +14,16 @@ public class User {
     @JsonIgnore
     private String password;
 
+    private String stage;
+
+    private String sex;
+
     private String msg;
 
     private String img;
 
-    private String email;
-
     private String phone;
 
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
-                ", msg='" + msg + '\'' +
-                ", img='" + img + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", updateTime=" + updateTime +
-                ", createTime=" + createTime +
-                '}';
-    }
 
     @JsonIgnore
     private Date updateTime;
@@ -43,16 +31,33 @@ public class User {
     @JsonIgnore
     private Date createTime;
 
-    public User(Integer id, String name, String password, String msg, String img, String email, String phone, Date updateTime, Date createTime) {
+    public User(Integer id, String name, String password, String stage, String sex, String msg, String img, String phone, Date updateTime, Date createTime) {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.stage = stage;
+        this.sex = sex;
         this.msg = msg;
         this.img = img;
-        this.email = email;
         this.phone = phone;
         this.updateTime = updateTime;
         this.createTime = createTime;
+    }
+
+    public String getStage() {
+        return stage;
+    }
+
+    public void setStage(String stage) {
+        this.stage = stage;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public User() {
@@ -97,14 +102,6 @@ public class User {
 
     public void setImg(String img) {
         this.img = img == null ? null : img.trim();
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
     }
 
     public String getPhone() {
