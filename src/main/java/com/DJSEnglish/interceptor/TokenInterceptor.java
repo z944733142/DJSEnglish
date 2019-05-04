@@ -3,6 +3,7 @@ package com.DJSEnglish.interceptor;
 import com.DJSEnglish.util.PropertiesUtil;
 import com.auth0.jwt.interfaces.Claim;
 import com.DJSEnglish.util.JWTUtil;
+import com.google.common.collect.Sets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -18,15 +19,12 @@ import java.util.*;
 public class TokenInterceptor implements HandlerInterceptor {
     private Logger logger = LoggerFactory.getLogger(TokenInterceptor.class);
     // 设置不拦截的路径
-    private static final Set<String> IGNORE_URL = new HashSet<>();
+    private static final Set<String> IGNORE_URL;
 
     static {
         String uri = PropertiesUtil.getProperty("interceptor.uri");
         String URL[] = uri.split("-");
-        System.out.println(Arrays.toString(URL));
-        for (String s : URL) {
-            IGNORE_URL.add(s);
-        }
+        IGNORE_URL = Sets.newHashSet(URL);
     }
 
 

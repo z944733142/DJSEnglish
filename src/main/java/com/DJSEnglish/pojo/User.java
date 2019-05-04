@@ -5,7 +5,6 @@ import org.codehaus.jackson.annotate.JsonIgnore;
 
 import java.util.Date;
 
-@Json
 public class User {
     private Integer id;
 

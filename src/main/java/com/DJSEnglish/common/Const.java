@@ -1,5 +1,7 @@
 package com.DJSEnglish.common;
 
+import com.google.common.collect.Sets;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,12 +16,7 @@ public class Const {
 
     public static final String ID = "id";
 
-    public static final Set<String> sexSet = new HashSet();
-
-    static {
-        sexSet.add("男");
-        sexSet.add("女");
-    }
+    public static final Set<String> sexSet = Sets.newHashSet("男", "女");
 
     public static boolean checkSex(String sex)
     {
