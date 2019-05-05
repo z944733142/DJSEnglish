@@ -44,10 +44,9 @@ public class TokenInterceptor implements HandlerInterceptor {
                 request.getRequestDispatcher("/user/need_login.do").forward(request, response);
                 logger.info("未登录");
             } else {
-                int id = 0;
                 try {
                     Map<String, Claim> map = JWTUtil.verifyToken(token);
-                    id = map.get("id").asInt();
+                    int id = map.get("id").asInt();
                     request.setAttribute("id", id);
                     return true;
                 } catch (Exception e) {

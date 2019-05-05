@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.Map;
 
 @RequestMapping("/article/")
@@ -33,7 +36,7 @@ public class ArticleController {
 
     @RequestMapping(value = "get_detail.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse getDetail(HttpServletRequest request, Integer articleId)
+    public ServerResponse getDetail(HttpServletRequest request, HttpServletResponse response, Integer articleId)
     {
         String token = request.getHeader("token");
         Integer userId = null;
@@ -43,6 +46,11 @@ public class ArticleController {
             try {
                 map = JWTUtil.verifyToken(token);
             } catch (Exception e) {
+                try {
+                    request.getRequestDispatcher("/user/need_login.do").forward(request, response);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
             }
             userId = map.get("id").asInt();
         }
