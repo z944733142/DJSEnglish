@@ -23,10 +23,9 @@ public class UserServiceImpl implements IUserService {
     private UserMapper userMapper;
 
     public ServerResponse Login(String phoneNumber, String password) throws Exception {
-        ServerResponse serverResponse = CheckVaild(phoneNumber, Const.PHONE);
-        if(serverResponse.isSuccess())
+        if(CheckVaild(phoneNumber, Const.PHONE).isSuccess())
         {
-            return ServerResponse.createByErrorMsg("手机号不存在");
+            return ServerResponse.createByErrorMsg("账号不存在");
         }
         String MD5PassWord = MD5Util.MD5EncodeUtf8(password);
         User user = userMapper.selectUser(phoneNumber, MD5PassWord);

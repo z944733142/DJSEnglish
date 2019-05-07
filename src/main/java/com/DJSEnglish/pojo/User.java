@@ -13,9 +13,9 @@ public class User {
     @JsonIgnore
     private String password;
 
-    private String stage;
-
     private String sex;
+
+    private String stage;
 
     private String msg;
 
@@ -30,7 +30,7 @@ public class User {
     @JsonIgnore
     private Date createTime;
 
-    public User(Integer id, String name, String password, String stage, String sex, String msg, String img, String phone, Date updateTime, Date createTime) {
+    public User(Integer id, String name, String password, String sex, String stage , String msg, String img, String phone, Date updateTime, Date createTime) {
         this.id = id;
         this.name = name;
         this.password = password;
