@@ -1,4 +1,4 @@
-package com.DJSEnglish.service;
+package com.djsenglish.service;
 
 import org.springframework.web.multipart.MultipartFile;
 

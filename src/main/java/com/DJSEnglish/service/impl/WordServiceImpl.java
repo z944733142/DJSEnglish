@@ -1,28 +1,31 @@
-package com.DJSEnglish.service.impl;
+package com.djsenglish.service.impl;
 
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.dao.SearchHistoryMapper;
-import com.DJSEnglish.dao.SentenceMapper;
-import com.DJSEnglish.dao.WordsMapper;
-import com.DJSEnglish.pojo.SearchHistory;
-import com.DJSEnglish.pojo.Sentence;
-import com.DJSEnglish.pojo.Words;
-import com.DJSEnglish.service.IWordService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.dao.SearchHistoryMapper;
+import com.djsenglish.dao.SentenceMapper;
+import com.djsenglish.dao.WordsMapper;
+import com.djsenglish.pojo.SearchHistory;
+import com.djsenglish.pojo.Sentence;
+import com.djsenglish.pojo.Words;
+import com.djsenglish.service.IWordService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * @author shuo
+ */
 @Service("iWordService")
 public class WordServiceImpl implements IWordService {
 
-    @Autowired
+    @Resource
     private SearchHistoryMapper searchHistoryMapper;
 
-    @Autowired
+    @Resource
     private WordsMapper wordsMapper;
 
-    @Autowired
+    @Resource
     private SentenceMapper sentenceMapper;
 
     @Override

@@ -1,4 +1,4 @@
-package com.DJSEnglish.util;
+package com.djsenglish.util;
 
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
@@ -13,7 +13,6 @@ import java.util.Date;
 public class DateTimeUtil {
 
     //joda-time
-
     //str->Date
     //Date->str
     public static final String STANDARD_FORMAT = "yyyy-MM-dd HH:mm:ss";

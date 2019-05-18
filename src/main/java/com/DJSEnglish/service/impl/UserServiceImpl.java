@@ -1,27 +1,29 @@
-package com.DJSEnglish.service.impl;
+package com.djsenglish.service.impl;
 
-import com.DJSEnglish.common.Const;
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.dao.UserMapper;
-import com.DJSEnglish.pojo.User;
-import com.DJSEnglish.service.IUserService;
-import com.DJSEnglish.util.FTPUtil;
-import com.DJSEnglish.util.JWTUtil;
-import com.DJSEnglish.util.MD5Util;
-import com.DJSEnglish.util.PhoneUtil;
+import com.djsenglish.common.Const;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.dao.UserMapper;
+import com.djsenglish.pojo.User;
+import com.djsenglish.service.IUserService;
+import com.djsenglish.util.FTPUtil;
+import com.djsenglish.util.JWTUtil;
+import com.djsenglish.util.MD5Util;
+import com.djsenglish.util.PhoneUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
 @Service("iUserService")
 public class UserServiceImpl implements IUserService {
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
+    @Override
     public ServerResponse Login(String phoneNumber, String password) throws Exception {
         if(CheckVaild(phoneNumber, Const.PHONE).isSuccess())
         {
@@ -50,6 +52,7 @@ public class UserServiceImpl implements IUserService {
         return true;
     }
 
+    @Override
     public ServerResponse Register(User user, String msgCode)
     {
         ServerResponse serverResponse = CheckVaild(user.getPhone(), Const.PHONE);
@@ -92,6 +95,7 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccessMsg("信息无重复, 可用");
     }
 
+    @Override
     public ServerResponse updateUserInfo(User user)
     {
         User updateUser = new User();
@@ -110,6 +114,7 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createByErrorMsg("更新失败");
     }
 
+    @Override
     public ServerResponse loginResetPassword(int id, String password)
     {
         User updateUser = new User();

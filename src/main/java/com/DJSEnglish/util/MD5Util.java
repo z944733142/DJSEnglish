@@ -1,4 +1,4 @@
-package com.DJSEnglish.util;
+package com.djsenglish.util;
 
 import java.security.MessageDigest;
 

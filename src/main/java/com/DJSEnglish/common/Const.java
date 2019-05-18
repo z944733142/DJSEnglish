@@ -1,8 +1,7 @@
-package com.DJSEnglish.common;
+package com.djsenglish.common;
 
 import com.google.common.collect.Sets;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public class Const {
@@ -15,6 +14,10 @@ public class Const {
     public static final String USERNAME = "username";
 
     public static final String ID = "id";
+
+    public static final String CHATUSER_PREFIX = "chat:user:";
+
+    public static final String MSG_LIST_PREFIX = "chat:msglist:";
 
     public static final Set<String> sexSet = Sets.newHashSet("男", "女");
 

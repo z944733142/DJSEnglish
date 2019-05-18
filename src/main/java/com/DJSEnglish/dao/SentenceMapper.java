@@ -1,6 +1,6 @@
-package com.DJSEnglish.dao;
+package com.djsenglish.dao;
 
-import com.DJSEnglish.pojo.Sentence;
+import com.djsenglish.pojo.Sentence;
 
 import java.util.List;
 

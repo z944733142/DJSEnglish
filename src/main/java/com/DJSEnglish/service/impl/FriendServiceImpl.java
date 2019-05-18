@@ -1,28 +1,31 @@
-package com.DJSEnglish.service.impl;
+package com.djsenglish.service.impl;
 
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.dao.ConcernMapper;
-import com.DJSEnglish.dao.UserMapper;
-import com.DJSEnglish.pojo.Concern;
-import com.DJSEnglish.pojo.User;
-import com.DJSEnglish.service.IFriendService;
-import com.DJSEnglish.util.FTPUtil;
-import com.DJSEnglish.vo.FriendListVo;
-import com.github.pagehelper.PageHelper;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.dao.ConcernMapper;
+import com.djsenglish.dao.UserMapper;
+import com.djsenglish.pojo.Concern;
+import com.djsenglish.pojo.User;
+import com.djsenglish.service.IFriendService;
+import com.djsenglish.util.FTPUtil;
+import com.djsenglish.vo.FriendListVo;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * @author shuo
+ */
 @Service("iFriendService")
 public class FriendServiceImpl implements IFriendService {
 
-    @Autowired
+    @Resource
     private ConcernMapper concernMapper;
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
+    @Override
     public ServerResponse concern(Integer userId, Integer friendId)
     {
         Concern concern = new Concern();
@@ -39,6 +42,7 @@ public class FriendServiceImpl implements IFriendService {
         return ServerResponse.createByErrorMsg("关注失败");
     }
 
+    @Override
     public ServerResponse unconcern(Integer userId, Integer friendId)
     {
         if(concernMapper.deleteConcern(userId, friendId) > 0)
@@ -48,6 +52,7 @@ public class FriendServiceImpl implements IFriendService {
         return ServerResponse.createByErrorMsg("取关失败");
     }
 
+    @Override
     public ServerResponse checkConcern(Integer userId, Integer friendId)
     {
         if(concernMapper.selectCount(userId, friendId) > 0)
@@ -62,6 +67,7 @@ public class FriendServiceImpl implements IFriendService {
         return ServerResponse.createBySuccessMsg("未关注");
     }
 
+    @Override
     public ServerResponse getList(Integer userId)
     {
         List<Integer> concerns = concernMapper.selectByUserId(userId);
@@ -77,6 +83,7 @@ public class FriendServiceImpl implements IFriendService {
         return ServerResponse.createByErrorMsg("好友数量为零");
     }
 
+    @Override
     public ServerResponse getDetail(Integer friendId)
     {
         User user = userMapper.selectByPrimaryKey(friendId);

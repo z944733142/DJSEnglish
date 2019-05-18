@@ -1,11 +1,10 @@
-package com.DJSEnglish.controller;
+package com.djsenglish.controller;
 
-import com.DJSEnglish.common.Const;
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.pojo.ArticleComment;
-import com.DJSEnglish.pojo.User;
-import com.DJSEnglish.service.ICommentService;
-import com.DJSEnglish.util.JWTUtil;
+import com.djsenglish.common.Const;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.pojo.ArticleComment;
+import com.djsenglish.service.ICommentService;
+import com.djsenglish.util.JWTUtil;
 import com.auth0.jwt.interfaces.Claim;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 @RequestMapping("/comment/")

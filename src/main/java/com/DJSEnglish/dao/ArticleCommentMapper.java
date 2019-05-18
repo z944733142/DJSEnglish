@@ -1,9 +1,13 @@
-package com.DJSEnglish.dao;
+package com.djsenglish.dao;
 
-import com.DJSEnglish.pojo.ArticleComment;
+import com.djsenglish.pojo.ArticleComment;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+
+/**
+ * @author shuo
+ */
 
 public interface ArticleCommentMapper {
     int deleteByPrimaryKey(Integer id);

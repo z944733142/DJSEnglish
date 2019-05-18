@@ -1,4 +1,4 @@
-package com.DJSEnglish.vo;
+package com.djsenglish.vo;
 
 public class FriendListVo {
 

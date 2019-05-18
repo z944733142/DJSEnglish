@@ -1,9 +1,12 @@
-package com.DJSEnglish.dao;
+package com.djsenglish.dao;
 
-import com.DJSEnglish.pojo.Article;
+import com.djsenglish.pojo.Article;
 
 import java.util.List;
 
+/**
+ * @author shuo
+ */
 public interface ArticleMapper {
     int deleteByPrimaryKey(Integer id);
 

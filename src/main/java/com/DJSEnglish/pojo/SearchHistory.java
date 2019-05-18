@@ -1,10 +1,13 @@
-package com.DJSEnglish.pojo;
+package com.djsenglish.pojo;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
+
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Date;
 
 public class SearchHistory {
+
     @JsonIgnore
     private Integer id;
 

@@ -1,6 +1,6 @@
-package com.DJSEnglish.dao;
+package com.djsenglish.dao;
 
-import com.DJSEnglish.pojo.Concern;
+import com.djsenglish.pojo.Concern;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -22,5 +22,5 @@ public interface ConcernMapper {
 
     int updateByPrimaryKey(Concern record);
 
-    int deleteConcern(@Param(value = "userId")Integer userId, @Param(value = "friendId") Integer friendId);
+    int deleteConcern(@Param(value = "userId") Integer userId, @Param(value = "friendId") Integer friendId);
 }

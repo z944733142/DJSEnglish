@@ -1,6 +1,6 @@
-package com.DJSEnglish.dao;
+package com.djsenglish.dao;
 
-import com.DJSEnglish.pojo.SearchHistory;
+import com.djsenglish.pojo.SearchHistory;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -16,15 +16,15 @@ public interface SearchHistoryMapper {
 
     List<SearchHistory> selectByUserId(Integer userId);
 
-    int selectCountByUseridAndWord(@Param("userId") Integer userId, @Param("word") String  word);
+    int selectCountByUseridAndWord(@Param("userId") Integer userId, @Param("word") String word);
 
     int updateByPrimaryKeySelective(SearchHistory record);
 
     int updateByPrimaryKey(SearchHistory record);
 
-    int updateWordTime(@Param("userId") Integer userId, @Param("word") String  word);
+    int updateWordTime(@Param("userId") Integer userId, @Param("word") String word);
 
     int deleteAllByUserId(Integer userId);
 
-    int deleteWord(@Param("userId") Integer userId, @Param("word") String  word);
+    int deleteWord(@Param("userId") Integer userId, @Param("word") String word);
 }

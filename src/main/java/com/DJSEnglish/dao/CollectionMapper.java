@@ -1,6 +1,6 @@
-package com.DJSEnglish.dao;
+package com.djsenglish.dao;
 
-import com.DJSEnglish.pojo.Collection;
+import com.djsenglish.pojo.Collection;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public interface CollectionMapper {
 
     List<Integer> selectByUserId(Integer userId);
 
-    boolean deleteByUserAndArticle(@Param("userId")Integer userId, @Param("articleId")Integer articleId);
+    boolean deleteByUserAndArticle(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 
-    int selectCount(@Param("userId")Integer userId, @Param("articleId")Integer articleId);
+    int selectCount(@Param("userId") Integer userId, @Param("articleId") Integer articleId);
 }

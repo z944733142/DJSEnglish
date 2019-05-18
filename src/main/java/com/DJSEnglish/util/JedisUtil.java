@@ -1,22 +1,35 @@
-package com.DJSEnglish.util;
+package com.djsenglish.util;
 
+import com.djsenglish.common.Const;
 import redis.clients.jedis.Jedis;
-    public class JedisUtil {
 
-        private static Jedis jedis;
-        private static void init() {
-            jedis = new Jedis("localhost");
-        }
-        public static void setToken(String id, String token, int day) {
-            int second = day * 60 * 60 * 24;
-            JedisUtil.init();
-            jedis.set(String.valueOf(id), token);
-            jedis.expire(String.valueOf(id), second);
-        }
+import javax.websocket.Session;
 
-        public static String getToken(String id) {
-            JedisUtil.init();
-            String token = jedis.get(String.valueOf(id));
-            return token;
-        }
+public class JedisUtil {
+
+    private static Jedis jedis;
+    private static void init() {
+        jedis = new Jedis("localhost");
     }
+
+    public static void putSession(Integer id, Session session)
+    {
+        init();
+        String key = Const.CHATUSER_PREFIX + id;
+        String json = JsonUtil.serialize(session);
+        jedis.set(key, json);
+    }
+
+    public static Session getSession(String id) {
+        init();
+        String json = jedis.get(Const.CHATUSER_PREFIX + id);
+        Session session = JsonUtil.sessionUnserialize(json);
+        return session;
+    }
+
+    public static void remove(Integer id)
+    {
+        jedis.del(Const.CHATUSER_PREFIX + id);
+    }
+
+}

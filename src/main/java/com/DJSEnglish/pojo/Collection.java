@@ -1,4 +1,4 @@
-package com.DJSEnglish.pojo;
+package com.djsenglish.pojo;
 
 import java.util.Date;
 

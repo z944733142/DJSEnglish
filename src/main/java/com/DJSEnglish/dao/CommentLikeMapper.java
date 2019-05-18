@@ -1,6 +1,6 @@
-package com.DJSEnglish.dao;
+package com.djsenglish.dao;
 
-import com.DJSEnglish.pojo.CommentLike;
+import com.djsenglish.pojo.CommentLike;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

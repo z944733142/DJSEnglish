@@ -1,4 +1,4 @@
-package com.DJSEnglish.common;
+package com.djsenglish.common;
 
 
 import com.google.common.cache.CacheBuilder;

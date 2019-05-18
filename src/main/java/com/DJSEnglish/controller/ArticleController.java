@@ -1,9 +1,9 @@
-package com.DJSEnglish.controller;
+package com.djsenglish.controller;
 
-import com.DJSEnglish.common.Const;
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.service.IArticleService;
-import com.DJSEnglish.util.JWTUtil;
+import com.djsenglish.common.Const;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.service.IArticleService;
+import com.djsenglish.util.JWTUtil;
 import com.auth0.jwt.interfaces.Claim;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.Map;
 
 @RequestMapping("/article/")
@@ -29,7 +27,7 @@ public class ArticleController {
 
     @RequestMapping(value = "get_list.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse getList( @RequestParam(required = false, defaultValue = "1") Integer pageNum, @RequestParam(required = false, defaultValue = "10")Integer pageSize)
+    public ServerResponse getList(@RequestParam(required = false, defaultValue = "1") Integer pageNum, @RequestParam(required = false, defaultValue = "10")Integer pageSize)
     {
         return iArticleService.getList(pageNum, pageSize);
     }

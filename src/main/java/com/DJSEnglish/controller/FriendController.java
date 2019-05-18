@@ -1,8 +1,8 @@
-package com.DJSEnglish.controller;
+package com.djsenglish.controller;
 
-import com.DJSEnglish.common.Const;
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.service.IFriendService;
+import com.djsenglish.common.Const;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.service.IFriendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

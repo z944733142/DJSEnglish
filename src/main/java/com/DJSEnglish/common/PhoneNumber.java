@@ -1,4 +1,4 @@
-package com.DJSEnglish.common;
+package com.djsenglish.common;
 
 public class PhoneNumber {
     private String mobilePhoneNumber;

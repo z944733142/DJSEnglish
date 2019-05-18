@@ -1,6 +1,6 @@
-package com.DJSEnglish.service;
+package com.djsenglish.service;
 
-import com.DJSEnglish.common.ServerResponse;
+import com.djsenglish.common.ServerResponse;
 
 public interface IArticleService {
     ServerResponse getList(Integer pageNum, Integer pageSize);

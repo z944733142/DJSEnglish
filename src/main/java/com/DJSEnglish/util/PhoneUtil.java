@@ -1,7 +1,7 @@
-package com.DJSEnglish.util;
+package com.djsenglish.util;
 
-import com.DJSEnglish.common.PhoneNumber;
-import com.DJSEnglish.common.PhoneRequest;
+import com.djsenglish.common.PhoneNumber;
+import com.djsenglish.common.PhoneRequest;
 import com.google.gson.Gson;
 import com.squareup.okhttp.*;
 import org.codehaus.jackson.JsonNode;
@@ -24,7 +24,7 @@ public class PhoneUtil {
         String url = "https://api2.bmob.cn/1/requestSmsCode";
         OkHttpClient client = new OkHttpClient();
 
-        PhoneRequest phoneRequest = new PhoneRequest(phoneNumber,"djsEnglish");
+        PhoneRequest phoneRequest = new PhoneRequest(phoneNumber,"djsenglish");
 
         Gson gson = new Gson();
         String json = gson.toJson(phoneRequest);

@@ -1,11 +1,13 @@
-package com.DJSEnglish.interceptor;
+package com.djsenglish.interceptor;
 
-import com.DJSEnglish.util.PropertiesUtil;
+import com.djsenglish.util.JWTUtil;
+import com.djsenglish.util.PropertiesUtil;
 import com.auth0.jwt.interfaces.Claim;
-import com.DJSEnglish.util.JWTUtil;
 import com.google.common.collect.Sets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,9 +15,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
 
 
+/**
+ * @author shuo
+ */
+@Configuration
 public class TokenInterceptor implements HandlerInterceptor {
     private Logger logger = LoggerFactory.getLogger(TokenInterceptor.class);
     // 设置不拦截的路径
@@ -28,6 +35,7 @@ public class TokenInterceptor implements HandlerInterceptor {
     }
 
 
+    @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
         boolean flag = false;
         String URI = request.getRequestURI();

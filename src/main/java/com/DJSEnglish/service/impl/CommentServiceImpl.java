@@ -1,32 +1,35 @@
-package com.DJSEnglish.service.impl;
+package com.djsenglish.service.impl;
 
 
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.dao.ArticleCommentMapper;
-import com.DJSEnglish.dao.ArticleMapper;
-import com.DJSEnglish.dao.CommentLikeMapper;
-import com.DJSEnglish.pojo.ArticleComment;
-import com.DJSEnglish.pojo.CommentLike;
-import com.DJSEnglish.service.ICommentService;
-import com.DJSEnglish.util.DateTimeUtil;
-import com.DJSEnglish.vo.CommentVo;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.dao.ArticleCommentMapper;
+import com.djsenglish.dao.ArticleMapper;
+import com.djsenglish.dao.CommentLikeMapper;
+import com.djsenglish.pojo.ArticleComment;
+import com.djsenglish.pojo.CommentLike;
+import com.djsenglish.service.ICommentService;
+import com.djsenglish.util.DateTimeUtil;
+import com.djsenglish.vo.CommentVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author shuo
+ */
 @Service("iCommentService")
 public class CommentServiceImpl implements ICommentService {
-    @Autowired
+    @Resource
     private ArticleCommentMapper articleCommentMapper;
 
-    @Autowired
+    @Resource
     private CommentLikeMapper commentLikeMapper;
 
-    @Autowired
+    @Resource
     private ArticleMapper articleMapper;
 
     @Override

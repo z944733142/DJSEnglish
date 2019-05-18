@@ -1,14 +1,13 @@
-package com.DJSEnglish.controller;
+package com.djsenglish.controller;
 
-import com.DJSEnglish.common.Const;
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.dao.UserMapper;
-import com.DJSEnglish.pojo.User;
-import com.DJSEnglish.service.IFileService;
-import com.DJSEnglish.service.IUserService;
-import com.DJSEnglish.util.JWTUtil;
-import com.DJSEnglish.util.PhoneUtil;
-import com.DJSEnglish.util.PropertiesUtil;
+import com.djsenglish.common.Const;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.dao.UserMapper;
+import com.djsenglish.pojo.User;
+import com.djsenglish.service.IFileService;
+import com.djsenglish.service.IUserService;
+import com.djsenglish.util.PhoneUtil;
+import com.djsenglish.util.PropertiesUtil;
 import com.google.common.collect.Maps;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.Enumeration;
 import java.util.Map;
 
@@ -28,13 +27,13 @@ import java.util.Map;
 @RequestMapping("/user/")
 public class UserController {
 
-    @Autowired
+    @Resource
     private IUserService iUserService;
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
-    @Autowired
+    @Resource
     private IFileService iFileService;
 
     @RequestMapping(value = "test.do", method = RequestMethod.POST)

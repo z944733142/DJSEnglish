@@ -1,4 +1,4 @@
-package com.DJSEnglish.util;
+package com.djsenglish.util;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.slf4j.Logger;

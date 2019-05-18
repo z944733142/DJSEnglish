@@ -1,7 +1,7 @@
-package com.DJSEnglish.service;
+package com.djsenglish.service;
 
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.pojo.ArticleComment;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.pojo.ArticleComment;
 
 public interface ICommentService {
 

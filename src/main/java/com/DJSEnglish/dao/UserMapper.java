@@ -1,7 +1,7 @@
-package com.DJSEnglish.dao;
+package com.djsenglish.dao;
 
-import com.DJSEnglish.pojo.User;
-import com.DJSEnglish.vo.FriendListVo;
+import com.djsenglish.pojo.User;
+import com.djsenglish.vo.FriendListVo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public interface UserMapper {
 
     int selectPhoneCount(String phone);
 
-    int updateByPhone(@Param("phoneNumber")String phoneNumber, @Param("password")String password);
+    int updateByPhone(@Param("phoneNumber") String phoneNumber, @Param("password") String password);
 
     List<FriendListVo> selectFriendList(List<Integer> idList);
 

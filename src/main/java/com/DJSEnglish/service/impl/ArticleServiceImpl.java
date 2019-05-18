@@ -1,36 +1,37 @@
-package com.DJSEnglish.service.impl;
+package com.djsenglish.service.impl;
 
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.dao.ArticleLikeMapper;
-import com.DJSEnglish.dao.ArticleMapper;
-import com.DJSEnglish.dao.CollectionMapper;
-import com.DJSEnglish.pojo.Article;
-import com.DJSEnglish.pojo.ArticleLike;
-import com.DJSEnglish.pojo.Collection;
-import com.DJSEnglish.pojo.CommentLike;
-import com.DJSEnglish.service.IArticleService;
-import com.DJSEnglish.util.DateTimeUtil;
-import com.DJSEnglish.util.FTPUtil;
-import com.DJSEnglish.vo.ArticleVo;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.dao.ArticleLikeMapper;
+import com.djsenglish.dao.ArticleMapper;
+import com.djsenglish.dao.CollectionMapper;
+import com.djsenglish.pojo.Article;
+import com.djsenglish.pojo.ArticleLike;
+import com.djsenglish.pojo.Collection;
+import com.djsenglish.service.IArticleService;
+import com.djsenglish.util.DateTimeUtil;
+import com.djsenglish.util.FTPUtil;
+import com.djsenglish.vo.ArticleVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.apache.commons.net.ftp.FTP;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author shuo
+ */
 @Service("iArticleService")
 public class ArticleServiceImpl implements IArticleService {
 
-    @Autowired
+    @Resource
     private ArticleMapper articleMapper;
 
-    @Autowired
+    @Resource
     private ArticleLikeMapper articleLikeMapper;
 
-    @Autowired
+    @Resource
     private CollectionMapper collectionMapper;
 
     @Override
@@ -58,8 +59,6 @@ public class ArticleServiceImpl implements IArticleService {
         {
             return ServerResponse.createByErrorMsg("文章不存在");
         }
-//        article.setCreateTime(DateTimeUtil.strToDate(article.getCreateTime().toString()));
-//        article.setUpdateTime(DateTimeUtil.strToDate(article.getUpdateTime().toString()));
         ArticleVo articleVo = toArticleVo(article, userId);
         return ServerResponse.createBySuccess(articleVo);
     }

@@ -1,6 +1,6 @@
-package com.DJSEnglish.dao;
+package com.djsenglish.dao;
 
-import com.DJSEnglish.pojo.ChattingRecords;
+import com.djsenglish.pojo.ChattingRecords;
 
 public interface ChattingRecordsMapper {
     int deleteByPrimaryKey(Integer id);

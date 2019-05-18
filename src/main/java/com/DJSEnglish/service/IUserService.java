@@ -1,7 +1,7 @@
-package com.DJSEnglish.service;
+package com.djsenglish.service;
 
-import com.DJSEnglish.common.ServerResponse;
-import com.DJSEnglish.pojo.User;
+import com.djsenglish.common.ServerResponse;
+import com.djsenglish.pojo.User;
 
 public interface IUserService {
 
@@ -13,7 +13,7 @@ public interface IUserService {
 
     ServerResponse loginResetPassword(int userId, String password);
 
-    ServerResponse forgetResetPassword(String msgCode,String phoneNumber, String password);
+    ServerResponse forgetResetPassword(String msgCode, String phoneNumber, String password);
 
     ServerResponse<User> getUserInfo(Integer userId);
 

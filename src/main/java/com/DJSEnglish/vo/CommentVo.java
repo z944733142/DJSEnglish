@@ -1,6 +1,4 @@
-package com.DJSEnglish.vo;
-
-import java.util.Date;
+package com.djsenglish.vo;
 
 public class CommentVo {
     private Integer id;

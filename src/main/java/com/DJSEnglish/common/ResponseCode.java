@@ -1,4 +1,4 @@
-package com.DJSEnglish.common;
+package com.djsenglish.common;
 
 public enum ResponseCode {
     SUCCESS(0, "SUCCESS"),
