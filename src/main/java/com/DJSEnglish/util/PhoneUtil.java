@@ -2,10 +2,12 @@ package com.djsenglish.util;
 
 import com.djsenglish.common.PhoneNumber;
 import com.djsenglish.common.PhoneRequest;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.squareup.okhttp.*;
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
+
+
 
 import java.io.IOException;
 

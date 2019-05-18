@@ -46,7 +46,6 @@ public class TokenInterceptor implements HandlerInterceptor {
         }
         if (!flag) {
             String token = request.getHeader("token");
-            System.out.println(path + "" + IGNORE_URL.contains(path));
             if (token == null) {
                 // 跳转返回未登录
                 request.getRequestDispatcher("/user/need_login.do").forward(request, response);
