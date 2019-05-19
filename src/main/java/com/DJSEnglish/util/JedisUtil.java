@@ -12,6 +12,10 @@ public class JedisUtil {
         jedis = new Jedis("localhost");
     }
 
+    /**
+     * @param id
+     * @param session
+     */
     public static void putSession(Integer id, Session session)
     {
         init();
@@ -20,6 +24,10 @@ public class JedisUtil {
         jedis.set(key, json);
     }
 
+    /**
+     * @param id
+     * @return
+     */
     public static Session getSession(String id) {
         init();
         String json = jedis.get(Const.CHATUSER_PREFIX + id);
@@ -27,9 +35,28 @@ public class JedisUtil {
         return session;
     }
 
-    public static void remove(Integer id)
+    /**
+     * @param id
+     */
+    public static void removeSession(Integer id)
     {
         jedis.del(Const.CHATUSER_PREFIX + id);
     }
 
+    /**
+     * @param id
+     * @param message
+     */
+    public static void putUnreadMessages(Integer id, String message)
+    {
+
+    }
+
+    /**
+     * @param id
+     */
+    public static void getUnreadMessages(Integer id)
+    {
+
+    }
 }

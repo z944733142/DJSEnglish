@@ -34,6 +34,7 @@ public class WebSocket {
     public void onOpen(Integer id, Session session){
         this.session = session;
         JedisUtil.putSession(id, session);
+
         logger.info("有新用户加入 id:" + id);
     }
 
@@ -44,9 +45,10 @@ public class WebSocket {
      */
     @OnClose
     public void onClose(Integer id){
-        JedisUtil.remove(id);
+        JedisUtil.removeSession(id);
         System.out.println(id + "用户连接关闭");
     }
 
+//    public void sendMessage(String )
 
 }

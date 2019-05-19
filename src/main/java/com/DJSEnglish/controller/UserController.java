@@ -55,6 +55,18 @@ public class UserController {
         return ServerResponse.createByErrorMsg("失败");
     }
 
+    @RequestMapping(value = "qq_login.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse qqLogin(String id) {
+        ServerResponse serverResponse;
+        try {
+            serverResponse = iUserService.Login(phoneNumber, password);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return ServerResponse.createByErrorMsg("登录失败");
+        }
+        return serverResponse;
+    }
 
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
