@@ -26,42 +26,28 @@ import java.util.Set;
 public class TokenInterceptor implements HandlerInterceptor {
     private Logger logger = LoggerFactory.getLogger(TokenInterceptor.class);
     // 设置不拦截的路径
-    private static final Set<String> IGNORE_URL;
-
-    static {
-        String uri = PropertiesUtil.getProperty("interceptor.uri");
-        String URL[] = uri.split("-");
-        IGNORE_URL = Sets.newHashSet(URL);
-    }
 
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
         boolean flag = false;
-        String URI = request.getRequestURI();
-        String path = URI.substring(URI.lastIndexOf("/") + 1);
-        if(IGNORE_URL.contains(path))
-        {
-            flag = true;
-        }
-        if (!flag) {
-            String token = request.getHeader("token");
-            if (token == null) {
-                // 跳转返回未登录
+        String token = request.getHeader("token");
+        if (token == null) {
+            // 跳转返回未登录
+            request.getRequestDispatcher("/user/need_login.do").forward(request, response);
+            logger.info("未登录");
+        } else {
+            try {
+                Map<String, Claim> map = JWTUtil.verifyToken(token);
+                int id = map.get("id").asInt();
+                request.setAttribute("id", id);
+                return true;
+            } catch (Exception e) {
                 request.getRequestDispatcher("/user/need_login.do").forward(request, response);
-                logger.info("未登录");
-            } else {
-                try {
-                    Map<String, Claim> map = JWTUtil.verifyToken(token);
-                    int id = map.get("id").asInt();
-                    request.setAttribute("id", id);
-                    return true;
-                } catch (Exception e) {
-                    request.getRequestDispatcher("/user/need_login.do").forward(request, response);
-                    logger.info("登录过期");
-                }
+                logger.info("登录过期");
             }
         }
+
         return flag;
     }
 
