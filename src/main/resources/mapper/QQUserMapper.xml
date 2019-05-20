@@ -17,7 +17,13 @@
     from qq_user
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <select id="selectByQQId" resultType="String" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List"/>
+      from qq_user
+      where qq_id = #{qqId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from qq_user
     where id = #{id,jdbcType=INTEGER}
   </delete>

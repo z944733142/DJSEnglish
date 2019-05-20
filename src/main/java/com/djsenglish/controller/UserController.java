@@ -58,8 +58,18 @@ public class UserController {
     @RequestMapping(value = "qq_login.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse qqLogin(String qqId) {
+        try {
+            return iUserService.qqLogin(qqId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ServerResponse.createByErrorMsg("登录失败");
+    }
 
-        return null;
+    @RequestMapping(value = "qq_register.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse qqRegister(String qqId, String phone, String img, String name) {
+            return iUserService.qqRegister(qqId, phone, img, name);
     }
 
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
@@ -67,7 +77,7 @@ public class UserController {
     public ServerResponse login(String phoneNumber, String password) {
         ServerResponse serverResponse;
         try {
-            serverResponse = iUserService.Login(phoneNumber, password);
+            serverResponse = iUserService.login(phoneNumber, password);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return ServerResponse.createByErrorMsg("登录失败");
@@ -137,7 +147,7 @@ public class UserController {
     @ResponseBody
     public ServerResponse register(User user, String msgCode) {
 
-        return iUserService.Register(user, msgCode);
+        return iUserService.register(user, msgCode);
     }
 
     @RequestMapping(value = "check_msg.do", method = RequestMethod.POST)

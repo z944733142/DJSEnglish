@@ -1,8 +1,11 @@
 package com.djsenglish.service.impl;
 
 import com.djsenglish.common.Const;
+import com.djsenglish.common.ResponseCode;
 import com.djsenglish.common.ServerResponse;
+import com.djsenglish.dao.QQUserMapper;
 import com.djsenglish.dao.UserMapper;
+import com.djsenglish.pojo.QQUser;
 import com.djsenglish.pojo.User;
 import com.djsenglish.service.IUserService;
 import com.djsenglish.util.FTPUtil;
@@ -10,37 +13,61 @@ import com.djsenglish.util.JWTUtil;
 import com.djsenglish.util.MD5Util;
 import com.djsenglish.util.PhoneUtil;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author shuo
+ */
 @Service("iUserService")
 public class UserServiceImpl implements IUserService {
 
     @Resource
     private UserMapper userMapper;
 
+    @Resource
+    private QQUserMapper qqUserMapper;
+
     @Override
-    public ServerResponse Login(String phoneNumber, String password) throws Exception {
-        if(CheckVaild(phoneNumber, Const.PHONE).isSuccess())
+    public ServerResponse login(String phoneNumber, String password) throws Exception {
+        if(checkVaild(phoneNumber, Const.PHONE).isSuccess())
         {
             return ServerResponse.createByErrorMsg("账号不存在");
         }
         String MD5PassWord = MD5Util.MD5EncodeUtf8(password);
         User user = userMapper.selectUser(phoneNumber, MD5PassWord);
+        return addToken(user);
+    }
+
+    @Override
+    public ServerResponse qqLogin(String qqId) throws Exception {
+        QQUser qqUser = qqUserMapper.selectByQQId(qqId);
+        if(qqUser == null)
+        {
+            return ServerResponse.createByCodeErrorMsg(ResponseCode.NEED_PHONE.getCode(), "需要验证手机");
+        }
+        else {
+            User user = userMapper.selectByPhone(qqUser.getPhone());
+            addToken(user);
+        }
+        return ServerResponse.createByErrorMsg("登录失败");
+    }
+
+    private ServerResponse addToken(User user) throws Exception {
         if(user != null)
         {
             user.setImg(FTPUtil.ftpPrefix + user.getImg());
             String token = JWTUtil.createToken(user.getId());
-            Map map = new HashMap();
+            Map map = new HashMap(4);
             map.put("user", user);
             map.put("token", token);
             return ServerResponse.createBySuccess("登录成功",map);
+        }else {
+            return ServerResponse.createByErrorMsg("登录失败");
         }
-        return ServerResponse.createByErrorMsg("账号密码不匹配");
     }
 
     public boolean checkValid(User user)
@@ -53,9 +80,9 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public ServerResponse Register(User user, String msgCode)
+    public ServerResponse register(User user, String msgCode)
     {
-        ServerResponse serverResponse = CheckVaild(user.getPhone(), Const.PHONE);
+        ServerResponse serverResponse = checkVaild(user.getPhone(), Const.PHONE);
         if(!serverResponse.isSuccess())
         {
             return serverResponse;
@@ -81,7 +108,7 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createByErrorMsg("注册失败");
     }
 
-    public ServerResponse CheckVaild(String str, String type)
+    public ServerResponse checkVaild(String str, String type)
     {
         if(StringUtils.equals(type, Const.PHONE))
         {
@@ -159,5 +186,34 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createByErrorMsg("昵称重复");
         }
         return ServerResponse.createBySuccessMsg("昵称可用");
+    }
+
+    @Override
+    public ServerResponse qqRegister(String qqId, String phone, String img, String name) {
+        ServerResponse serverResponse;
+        if(!(serverResponse = checkVaild(phone, Const.PHONE)).isSuccess())
+        {
+            return serverResponse;
+        }
+        QQUser qqUser = new QQUser();
+        qqUser.setQqId(qqId);
+        qqUser.setPhone(phone);
+        if(qqUserMapper.insertSelective(qqUser) > 0)
+        {
+            User insetUser = new User();
+            insetUser.setPhone(phone);
+            insetUser.setImg(img);
+            insetUser.setName(name);
+            if(userMapper.insertSelective(insetUser) > 0)
+            {
+                User user = userMapper.selectByPhone(phone);
+                try {
+                    return ServerResponse.createBySuccess("验证成功",addToken(user));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return ServerResponse.createByErrorMsg("验证失败");
     }
 }

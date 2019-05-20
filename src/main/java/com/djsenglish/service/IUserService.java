@@ -3,11 +3,16 @@ package com.djsenglish.service;
 import com.djsenglish.common.ServerResponse;
 import com.djsenglish.pojo.User;
 
+/**
+ * @author shuo
+ */
 public interface IUserService {
 
-    ServerResponse Login(String phoneNumber, String password) throws Exception;
+    ServerResponse login(String phoneNumber, String password) throws Exception;
 
-    ServerResponse Register(User user, String msgCode);
+    ServerResponse qqLogin(String qqId)throws Exception;
+
+    ServerResponse register(User user, String msgCode);
 
     ServerResponse updateUserInfo(User user);
 
@@ -18,4 +23,6 @@ public interface IUserService {
     ServerResponse<User> getUserInfo(Integer userId);
 
     ServerResponse<User> checkName(String userName);
+
+    ServerResponse qqRegister(String qqId, String phone, String img, String name);
 }

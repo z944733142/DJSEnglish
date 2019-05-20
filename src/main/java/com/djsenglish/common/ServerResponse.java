@@ -3,6 +3,7 @@ package com.djsenglish.common;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 /**
@@ -75,6 +76,7 @@ public class ServerResponse <T>{
 
     public static ServerResponse createByError()
     {
+
         return new ServerResponse(ResponseCode.ERROR.getCode());
     }
 
@@ -88,6 +90,9 @@ public class ServerResponse <T>{
         return new ServerResponse(ResponseCode.ERROR.getCode(), data);
     }
 
-
+    public static ServerResponse createByCodeErrorMsg(int status, String msg)
+    {
+        return new ServerResponse(status, msg);
+    }
 
 }

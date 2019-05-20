@@ -14,4 +14,6 @@ public interface QQUserMapper {
     int updateByPrimaryKeySelective(QQUser record);
 
     int updateByPrimaryKey(QQUser record);
+
+    QQUser selectByQQId(String qqId);
 }

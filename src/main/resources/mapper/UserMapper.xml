@@ -36,6 +36,12 @@
     from user
     where name = #{userName}
   </select>
+  <select id="selectByPhone" resultMap="BaseResultMap" parameterType="string">
+    select
+    <include refid="Base_Column_List"/>
+    from user
+    where phone = #{phone}
+  </select>
   <select id="selectFriendList" resultType="com.djsenglish.vo.FriendListVo" parameterType="list">
     select id, name, img
     from user
