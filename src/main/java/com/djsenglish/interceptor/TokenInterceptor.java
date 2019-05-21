@@ -30,7 +30,7 @@ public class TokenInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
-        boolean flag = false;
+        boolean flag = true;
         String token = request.getHeader("token");
         if (token == null) {
             // 跳转返回未登录

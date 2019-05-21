@@ -1,5 +1,6 @@
 package com.djsenglish.util;
 
+import com.djsenglish.pojo.Message;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -14,24 +15,24 @@ public class JsonUtil {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public static String serialize(Object object) {
-        try {
-            String json = objectMapper.writeValueAsString(object);
-            return json;
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        return null;
+    public static String serialize(Object object) throws JsonProcessingException {
+
+        String json = objectMapper.writeValueAsString(object);
+        return json;
+
     }
 
-    public static Session sessionUnserialize(String json) {
-        try {
-            Session session = objectMapper.readValue(json, Session.class);
-            return session;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+    public static Session sessionUnserialize(String json) throws IOException {
+
+        Session session = objectMapper.readValue(json, Session.class);
+        return session;
+
     }
 
+    public static Message messageUnserialize(String json) throws IOException {
+
+        Message message = objectMapper.readValue(json, Message.class);
+        return message;
+
+    }
 }

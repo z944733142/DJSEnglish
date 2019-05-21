@@ -6,7 +6,7 @@ create table user (
   sex varchar(20) default '尚未填写' comment '性别',
   stage varchar(20) default '尚未填写'comment '学习阶段',
   msg varchar(200)  default '此人很懒, 尚未填写个人信息.'comment '用户介绍',
-  img varchar(50) default 'default.jpg' comment '头像url',
+  img varchar(200) default 'default.jpg' comment '头像url',
   update_time datetime not null  comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key (id),
@@ -19,7 +19,7 @@ create table qq_user(
   phone varchar not null comment '对应的用户手机',
   primary key (id),
   unique index (qq_id),
-)
+);
 
 create table concern(
   id int(11) not null AUTO_INCREMENT,

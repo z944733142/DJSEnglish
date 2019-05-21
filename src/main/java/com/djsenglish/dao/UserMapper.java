@@ -28,4 +28,6 @@ public interface UserMapper {
     List<FriendListVo> selectFriendList(List<Integer> idList);
 
     int selectNameCount(String userName);
+
+    User selectByPhone(String phone);
 }

@@ -1,7 +1,11 @@
 package com.djsenglish.websocket;
 
+import com.djsenglish.pojo.Message;
 import com.djsenglish.service.impl.FileServiceImpl;
 import com.djsenglish.util.JedisUtil;
+import com.djsenglish.util.JsonUtil;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import org.apache.commons.collections.ListUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -10,6 +14,7 @@ import javax.websocket.OnClose;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
+import java.util.List;
 
 /**
  * @author: shuo
@@ -34,7 +39,11 @@ public class WebSocket {
     public void onOpen(Integer id, Session session){
         this.session = session;
         JedisUtil.putSession(id, session);
-
+        JedisUtil.getUnreadMessages(id);
+        List<Message> unreadMessages = JedisUtil.getUnreadMessages(id);
+        if(unreadMessages != null && unreadMessages.size() != 0) {
+            sendMessages(id, unreadMessages);
+        }
         logger.info("有新用户加入 id:" + id);
     }
 
@@ -46,9 +55,37 @@ public class WebSocket {
     @OnClose
     public void onClose(Integer id){
         JedisUtil.removeSession(id);
-        System.out.println(id + "用户连接关闭");
+        logger.info(id + "用户连接关闭");
     }
 
-//    public void sendMessage(String )
 
+    public void sendMessage(Integer id, Message message)
+    {
+        try {
+            String messageJson = JsonUtil.serialize(message);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        Session session = JedisUtil.getSession(id);
+        if(session != null)
+        {
+            try {
+                String messageJson = JsonUtil.serialize(message);
+                session.getAsyncRemote().sendText(messageJson);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+        }else
+        {
+            JedisUtil.putUnreadMessage(id, message);
+        }
+    }
+
+    public void sendMessages(Integer id, List<Message> messages)
+    {
+        for (Message message : messages) {
+            sendMessage(id, message);
+        }
+
+    }
 }

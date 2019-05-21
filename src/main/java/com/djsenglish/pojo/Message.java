@@ -11,6 +11,7 @@ import java.util.Date;
  */
 public class Message implements Serializable {
     Integer senderId;
+    Integer to;
     String text;
     DateTime time;
 
@@ -41,8 +42,17 @@ public class Message implements Serializable {
     public Message() {
     }
 
-    public Message(Integer senderId, String text, DateTime time) {
+    public Integer getTo() {
+        return to;
+    }
+
+    public void setTo(Integer to) {
+        this.to = to;
+    }
+
+    public Message(Integer senderId, Integer to, String text, DateTime time) {
         this.senderId = senderId;
+        this.to = to;
         this.text = text;
         this.time = time;
     }
