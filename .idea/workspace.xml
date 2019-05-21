@@ -6,18 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="014ce7d1-7fac-4c19-a9a6-149eb14f3ff6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/common/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/common/Const.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/Adapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/TokenInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/TokenInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/PhoneUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/PhoneUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/DSJEnglish.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DSJEnglish.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DSJEnglish.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DSJEnglish.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/接口文档/用户接口.md" beforeDir="false" afterPath="$PROJECT_DIR$/接口文档/用户接口.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,7 +55,7 @@
           <entry key="java" value="202" />
           <entry key="jsp" value="15" />
           <entry key="md" value="4" />
-          <entry key="properties" value="29" />
+          <entry key="properties" value="30" />
           <entry key="sql" value="10" />
           <entry key="txt" value="1" />
           <entry key="xml" value="54" />
@@ -79,7 +69,7 @@
           <entry key="JSP" value="15" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Properties" value="29" />
+          <entry key="Properties" value="30" />
           <entry key="SQL" value="2" />
           <entry key="Scratch" value="8" />
           <entry key="XML" value="54" />
@@ -90,8 +80,8 @@
         <counts>
           <entry key="java" value="3849" />
           <entry key="jsp" value="46" />
-          <entry key="md" value="74" />
-          <entry key="properties" value="89" />
+          <entry key="md" value="83" />
+          <entry key="properties" value="101" />
           <entry key="sql" value="369" />
           <entry key="txt" value="16" />
           <entry key="xml" value="293" />
@@ -102,9 +92,9 @@
           <entry key="JAVA" value="3849" />
           <entry key="JSON" value="8" />
           <entry key="JSP" value="46" />
-          <entry key="Markdown" value="66" />
+          <entry key="Markdown" value="75" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Properties" value="89" />
+          <entry key="Properties" value="101" />
           <entry key="SQL" value="184" />
           <entry key="Scratch" value="189" />
           <entry key="XML" value="289" />
@@ -164,7 +154,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="569">
@@ -173,12 +163,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="30">
-                <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <first_editor relative-caret-position="225">
+                <caret line="499" column="13" selection-start-line="499" selection-start-column="13" selection-end-line="499" selection-end-column="13" />
               </first_editor>
               <second_editor />
             </state>
@@ -198,7 +188,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/DSJEnglish.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="6" column="258" selection-start-line="6" selection-start-column="258" selection-end-line="6" selection-end-column="258" />
+              <caret line="6" column="279" selection-start-line="6" selection-start-column="279" selection-end-line="6" selection-end-column="279" />
             </state>
           </provider>
         </entry>
@@ -245,7 +235,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/WordServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/ArticleServiceImpl.java" />
@@ -290,12 +279,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/IUserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/PhoneUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/DSJEnglish.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/接口文档/用户接口.md" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bfbd8ac8-67d8-4ef4-a551-6fea580c2ea6/console.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/sql.sql" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/接口文档/用户接口.md" />
+        <option value="$PROJECT_DIR$/target/classes/DSJEnglish.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/DSJEnglish.properties" />
       </list>
     </option>
   </component>
@@ -449,7 +439,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/JavaProject/djsenglish/src/main/java/com/djsenglish/interceptor/TokenInterceptor.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558445120918" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558446854897" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="E:/maven/maven-jar/mysql/mysql-connector-java/8.0.12/mysql-connector-java-8.0.12.jar" />
@@ -546,12 +536,12 @@
       <workItem from="1558276339297" duration="428000" />
       <workItem from="1558353756653" duration="8316000" />
       <workItem from="1558362087656" duration="59000" />
-      <workItem from="1558438657105" duration="6326000" />
+      <workItem from="1558438657105" duration="8030000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60498000" />
+    <option name="totallyTimeSpent" value="62202000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -563,9 +553,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="2873" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49776787" visible="true" weight="0.1663113" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49776787" visible="true" weight="0.34135666" />
       <window_info id="Structure" order="1" sideWeight="0.50223213" side_tool="true" weight="0.23994638" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -575,13 +566,13 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35396308" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27631578" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.44191095" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32681867" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49932975" visible="true" weight="0.27361563" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49932975" weight="0.35203367" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.14893617" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32624114" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32899022" />
@@ -593,7 +584,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.14605543" />
+      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.29978117" />
       <window_info anchor="right" id="Database" order="6" weight="0.32942432" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -897,27 +888,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/DSJEnglish.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="258" selection-start-line="6" selection-start-column="258" selection-end-line="6" selection-end-column="258" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
           <caret line="124" column="63" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="30">
-            <caret line="1" selection-start-line="1" selection-end-line="1" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -935,17 +909,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/DSJEnglish.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="569">
           <caret line="40" selection-start-line="40" selection-end-line="45" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/classes/DSJEnglish.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="270" selection-start-line="6" selection-start-column="270" selection-end-line="6" selection-end-column="270" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/DSJEnglish.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="279" selection-start-line="6" selection-start-column="279" selection-end-line="6" selection-end-column="279" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="225">
+            <caret line="499" column="13" selection-start-line="499" selection-start-column="13" selection-end-line="499" selection-end-column="13" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
