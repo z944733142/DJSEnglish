@@ -19,6 +19,8 @@ public class Const {
 
     public static final String MSG_LIST_PREFIX = "chat:msglist:";
 
+    public static final String QQ_IMG_PREFIX = "qqImgPrefix";
+
     public static final Set<String> sexSet = Sets.newHashSet("男", "女");
 
     public static boolean checkSex(String sex)

@@ -24,5 +24,5 @@ public interface IUserService {
 
     ServerResponse<User> checkName(String userName);
 
-    ServerResponse qqRegister(String qqId, String phone, String img, String name);
+    ServerResponse qqRegister(String qqId, String phone, String msgCode, String img, String name);
 }

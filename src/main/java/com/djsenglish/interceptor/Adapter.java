@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.Set;
 
 /**
@@ -23,6 +24,7 @@ public class Adapter implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         String uri = PropertiesUtil.getProperty("interceptor.uri");
         String URL[] = uri.split("-");
+        System.out.println(Arrays.toString(URL));
         registry.addInterceptor(new TokenInterceptor())
                 .addPathPatterns("/**")
                 .excludePathPatterns(URL);

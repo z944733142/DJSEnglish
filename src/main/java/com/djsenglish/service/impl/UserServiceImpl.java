@@ -51,15 +51,23 @@ public class UserServiceImpl implements IUserService {
         }
         else {
             User user = userMapper.selectByPhone(qqUser.getPhone());
-            addToken(user);
+            return addToken(user);
         }
-        return ServerResponse.createByErrorMsg("登录失败");
     }
 
     private ServerResponse addToken(User user) throws Exception {
         if(user != null)
         {
-            user.setImg(FTPUtil.ftpPrefix + user.getImg());
+            String img = user.getImg();
+            if(img.startsWith(Const.QQ_IMG_PREFIX))
+            {
+                img = img.substring(Const.QQ_IMG_PREFIX.length());
+            }
+            else
+            {
+                img = FTPUtil.ftpPrefix + user.getImg();
+            }
+            user.setImg(img);
             String token = JWTUtil.createToken(user.getId());
             Map map = new HashMap(4);
             map.put("user", user);
@@ -173,7 +181,16 @@ public class UserServiceImpl implements IUserService {
     public ServerResponse<User> getUserInfo(Integer id) {
         User user;
         if((user = userMapper.selectByPrimaryKey(id)) != null) {
-            user.setImg(FTPUtil.ftpPrefix + user.getImg());
+            String img = user.getImg();
+            if(img.startsWith(Const.QQ_IMG_PREFIX))
+            {
+                img = img.substring(Const.QQ_IMG_PREFIX.length());
+            }
+            else
+            {
+                img = FTPUtil.ftpPrefix + user.getImg();
+            }
+            user.setImg(img);
             return ServerResponse.createBySuccess(user);
         }
         return ServerResponse.createByErrorMsg("获取失败");
@@ -189,11 +206,15 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public ServerResponse qqRegister(String qqId, String phone, String img, String name) {
+    public ServerResponse qqRegister(String qqId, String phone, String msgCode, String img, String name) {
         ServerResponse serverResponse;
         if(!(serverResponse = checkVaild(phone, Const.PHONE)).isSuccess())
         {
             return serverResponse;
+        }
+        if(!PhoneUtil.judgeCodeIsTrue(msgCode, phone))
+        {
+            return ServerResponse.createByErrorMsg("验证码错误");
         }
         QQUser qqUser = new QQUser();
         qqUser.setQqId(qqId);
@@ -202,7 +223,8 @@ public class UserServiceImpl implements IUserService {
         {
             User insetUser = new User();
             insetUser.setPhone(phone);
-            insetUser.setImg(img);
+            insetUser.setPassword(qqId);
+            insetUser.setImg(Const.QQ_IMG_PREFIX + img);
             insetUser.setName(name);
             if(userMapper.insertSelective(insetUser) > 0)
             {

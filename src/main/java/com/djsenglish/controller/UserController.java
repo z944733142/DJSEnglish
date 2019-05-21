@@ -68,8 +68,8 @@ public class UserController {
 
     @RequestMapping(value = "qq_register.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse qqRegister(String qqId, String phone, String img, String name) {
-            return iUserService.qqRegister(qqId, phone, img, name);
+    public ServerResponse qqRegister(String qqId, String phone, String msgCode, String img, String name) {
+            return iUserService.qqRegister(qqId, phone, msgCode, img, name);
     }
 
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
