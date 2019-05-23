@@ -1,6 +1,9 @@
 package com.djsenglish.dao;
 
 import com.djsenglish.pojo.Message;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface MessageMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +17,6 @@ public interface MessageMapper {
     int updateByPrimaryKeySelective(Message record);
 
     int updateByPrimaryKey(Message record);
+
+    List<Message> getMessageList(@Param("senderId")Integer senderId, @Param("receiverId")Integer receiverId);
 }

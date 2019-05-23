@@ -8,6 +8,7 @@ import org.joda.time.DateTime;
 
 import javax.websocket.Session;
 import java.io.*;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -35,9 +36,9 @@ public class JsonUtil {
             Map map = objectMapper.readValue(json, Map.class);
             Message message = new Message();
             message.setText((String) map.get("text"));
-            message.setSenderId(new Integer((String) map.get("senderId")));
+            message.setSender(new Integer((String) map.get("senderId")));
             message.setTo(new Integer((String)map.get("to")));
-            message.setTime(new DateTime());
+            message.setCreateTime(new Date());
             System.out.println(message.toString());
         return message;
         }

@@ -20,6 +20,14 @@
     from message
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="getMessageList" resultMap="BaseResultMap" parameterType="map">
+    select
+    <include refid="Base_Column_List"/>
+    from message
+    where sender = #{senderId}
+    and `to` = #{receiverId}
+    order by create_time
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from message
     where id = #{id,jdbcType=INTEGER}
@@ -29,7 +37,7 @@
       text, update_time, create_time
       )
     values (#{id,jdbcType=INTEGER}, #{sender,jdbcType=INTEGER}, #{to,jdbcType=INTEGER}, 
-      #{text,jdbcType=VARCHAR}, now(), now()
+      #{text,jdbcType=VARCHAR}, #{update_time,jdbcType=TIMESTAMP}, #{create_time,jdbcType=TIMESTAMP}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.djsenglish.pojo.Message" >

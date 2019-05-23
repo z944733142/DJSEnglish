@@ -3,6 +3,7 @@ package com.djsenglish.websocket;
 import com.djsenglish.common.Const;
 import com.djsenglish.pojo.ChatUser;
 import com.djsenglish.pojo.Message;
+import com.djsenglish.service.IMessageService;
 import com.djsenglish.util.JsonUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.tomcat.websocket.WsSession;
@@ -10,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
@@ -25,6 +27,9 @@ import java.util.concurrent.Future;
 @Component
 @ServerEndpoint("/chat/{id}")
 public class WebSocket {
+
+    @Resource
+    private IMessageService iMessageService;
 
     private Session session;
 
@@ -169,7 +174,7 @@ public class WebSocket {
         Future<Void> future = session.getAsyncRemote().sendText(messageJson);
         if(future.isDone())
         {
-
+            iMessageService.addMessageHistory(message);
         }
     }
 }
