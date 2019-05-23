@@ -3,8 +3,8 @@ create table user (
   name varchar(50) not null comment '昵称',
   phone varchar(20) not null comment '电话(账号)',
   password varchar(50) not null comment '密码',
-  sex varchar(20) default '尚未填写' comment '性别',
-  stage varchar(20) default '尚未填写'comment '学习阶段',
+  sex varchar(20) default '' comment '性别',
+  stage varchar(20) default ''comment '学习阶段',
   msg varchar(200)  default '此人很懒, 尚未填写个人信息.'comment '用户介绍',
   img varchar(200) default 'default.jpg' comment '头像url',
   update_time datetime not null  comment '更新时间',
@@ -13,13 +13,17 @@ create table user (
   unique index (phone)
 )ENGINE=InnoDB AUTO_INCREMENT=22;
 
+
+-- 更新
 create table qq_user(
   id int(11) not null  AUTO_INCREMENT,
-  qq_id varchar not null comment 'qq返回的唯一标识',
-  phone varchar not null comment '对应的用户手机',
+  qq_id varchar(50) not null comment 'qq返回的唯一标识',
+  phone varchar(50) not null comment '对应的用户手机',
+  update_time datetime not null  comment '更新时间',
+  create_time datetime not null comment '创建时间',
   primary key (id),
   unique index (qq_id),
-);
+)ENGINE=InnoDB AUTO_INCREMENT=22;
 
 create table concern(
   id int(11) not null AUTO_INCREMENT,
@@ -62,14 +66,16 @@ create table sentence(
   primary key (id)
 )ENGINE=InnoDB AUTO_INCREMENT=22 ;
 
-create table chatting_records(
+-- 更新
+create table message(
   id int(11) not null AUTO_INCREMENT,
-  sender int(11) not null comment '发送者',
-  receiver  int(11) not null comment '接收人',
+  sender int(11) not null comment '发送者id',
+  to  int(11) not null comment '接收人id',
+  text varchar(500) not null comment '内容',
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key(id)
-)ENGINE=InnoDB AUTO_INCREMENT=22 ;
+)ENGINE=InnoDB AUTO_INCREMENT=22;
 
 create table search_history(
   id int(11) not null AUTO_INCREMENT,

@@ -1,24 +1,174 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.djsenglish.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.User" >
-    <constructor >
-      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="sex" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="stage" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="msg" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="img" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.djsenglish.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.User">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sex" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="stage" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="msg" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="img" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
   </resultMap>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
+    id, name, phone, password, sex, stage, msg, img, update_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.djsenglish.pojo.User">
+    insert into user (id, name, phone, 
+      password, sex, stage, 
+      msg, img, update_time, 
+      create_time)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{stage,jdbcType=VARCHAR}, 
+      #{msg,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.djsenglish.pojo.User">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="stage != null">
+        stage,
+      </if>
+      <if test="msg != null">
+        msg,
+      </if>
+      <if test="img != null">
+        img,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="stage != null">
+        #{stage,jdbcType=VARCHAR},
+      </if>
+      <if test="msg != null">
+        #{msg,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.User">
+    update user
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="stage != null">
+        stage = #{stage,jdbcType=VARCHAR},
+      </if>
+      <if test="msg != null">
+        msg = #{msg,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null">
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.User">
+    update user
+    set name = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      stage = #{stage,jdbcType=VARCHAR},
+      msg = #{msg,jdbcType=VARCHAR},
+      img = #{img,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.User">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sex" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="stage" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="msg" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="img" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
     id, name, password,sex, stage, msg, img, phone, update_time, create_time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from user
@@ -26,27 +176,27 @@
   </select>
   <select id="selectUser" resultMap="BaseResultMap">
   select
-    <include refid="Base_Column_List"/>
+    <include refid="Base_Column_List" />
   from user
   where phone = #{phoneNumber}
   and password = #{password}
   </select>
-  <select id="selectNameCount" resultType="int" parameterType="string">
+  <select id="selectNameCount" parameterType="string" resultType="int">
     select count(*)
     from user
     where name = #{userName}
   </select>
-  <select id="selectByPhone" resultMap="BaseResultMap" parameterType="string">
+  <select id="selectByPhone" parameterType="string" resultMap="BaseResultMap">
     select
-    <include refid="Base_Column_List"/>
+    <include refid="Base_Column_List" />
     from user
     where phone = #{phone}
   </select>
-  <select id="selectFriendList" resultType="com.djsenglish.vo.FriendListVo" parameterType="list">
+  <select id="selectFriendList" parameterType="list" resultType="com.djsenglish.vo.FriendListVo">
     select id, name, img
     from user
     where id in
-    <foreach collection="list" index="index" item="item" open="(" close=")" separator=",">
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
       #{item}
     </foreach>
   </select>
@@ -54,11 +204,11 @@
     select count(*) from user
     where phone = #{phone}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.djsenglish.pojo.User" >
+  <insert id="insert" parameterType="com.djsenglish.pojo.User">
     insert into user (id, name,
       password, sex, stage, msg, img,
      phone, update_time,
@@ -68,99 +218,99 @@
       #{phone,jdbcType=VARCHAR}, now(),
       now())
   </insert>
-  <insert id="insertSelective" parameterType="com.djsenglish.pojo.User" >
+  <insert id="insertSelective" parameterType="com.djsenglish.pojo.User">
     insert into user
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         id,
       </if>
-      <if test="name != null" >
+      <if test="name != null">
         name,
       </if>
-      <if test="password != null" >
+      <if test="password != null">
         password,
       </if>
-      <if test="sex != null" >
+      <if test="sex != null">
         sex,
       </if>
-      <if test="stage != null" >
+      <if test="stage != null">
         stage,
       </if>
-      <if test="msg != null" >
+      <if test="msg != null">
         msg,
       </if>
-      <if test="img != null" >
+      <if test="img != null">
         img,
       </if>
-      <if test="phone != null" >
+      <if test="phone != null">
         phone,
       </if>
         update_time,
         create_time
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="name != null" >
+      <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null" >
+      <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="sex != null" >
+      <if test="sex != null">
         #{sex,jdbcType=VARCHAR},
       </if>
-      <if test="stage != null" >
+      <if test="stage != null">
         #{stage,jdbcType=VARCHAR},
       </if>
-      <if test="msg != null" >
+      <if test="msg != null">
         #{msg,jdbcType=VARCHAR},
       </if>
-      <if test="img != null" >
+      <if test="img != null">
         #{img,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null" >
+      <if test="phone != null">
         #{phone,jdbcType=VARCHAR},
       </if>
         now(),
         now()
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.User">
     update user
-    <set >
-      <if test="name != null" >
+    <set>
+      <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null" >
+      <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="sex != null" >
+      <if test="sex != null">
         sex = #{sex,jdbcType=VARCHAR},
       </if>
-      <if test="stage != null" >
+      <if test="stage != null">
         stage = #{stage,jdbcType=VARCHAR},
       </if>
-      <if test="msg != null" >
+      <if test="msg != null">
         msg = #{msg,jdbcType=VARCHAR},
       </if>
-      <if test="img != null" >
+      <if test="img != null">
         img = #{img,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null" >
+      <if test="phone != null">
         phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = now(),
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.User" >
+  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.User">
     update user
     set name = #{name,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java" line="210" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java" line="208" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="014ce7d1-7fac-4c19-a9a6-149eb14f3ff6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/ChatUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/WordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/WordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/dao/ChattingRecordsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/dao/QQUserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/Adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/ChattingRecords.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/QQUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/DateTimeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/DateTimeUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/FTPUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/FTPUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JWTUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JedisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JsonUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/MD5Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/PhoneUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/PhoneUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/util/PropertiesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocketConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/DSJEnglish.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DSJEnglish.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleCommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleCommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleLikeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleLikeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ChattingRecordsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CollectionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CollectionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommentLikeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommentLikeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ConcernMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ConcernMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/QQUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/QQUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SearchHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SearchHistoryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SentenceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SentenceMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/WordsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/WordsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/djsenglish/djsenglish/DjsenglishApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DSJEnglish.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DSJEnglish.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,69 +73,72 @@
     <session id="241454056">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="16" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.3" value="3" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.4" value="4" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="6" />
+          <entry key="1" value="2" />
+          <entry key="class" value="12" />
           <entry key="cmd" value="2" />
           <entry key="gitignore" value="5" />
-          <entry key="java" value="202" />
-          <entry key="jsp" value="15" />
+          <entry key="java" value="254" />
+          <entry key="jsp" value="16" />
           <entry key="md" value="4" />
-          <entry key="properties" value="30" />
-          <entry key="sql" value="10" />
+          <entry key="properties" value="33" />
+          <entry key="sql" value="13" />
           <entry key="txt" value="1" />
-          <entry key="xml" value="54" />
+          <entry key="xml" value="65" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="6" />
-          <entry key="JAVA" value="202" />
-          <entry key="JSP" value="15" />
+          <entry key="CLASS" value="12" />
+          <entry key="JAVA" value="254" />
+          <entry key="JSP" value="16" />
           <entry key="Markdown" value="4" />
-          <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Properties" value="30" />
-          <entry key="SQL" value="2" />
-          <entry key="Scratch" value="8" />
-          <entry key="XML" value="54" />
+          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="Properties" value="33" />
+          <entry key="SQL" value="4" />
+          <entry key="Scratch" value="9" />
+          <entry key="XML" value="65" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3849" />
-          <entry key="jsp" value="46" />
-          <entry key="md" value="83" />
-          <entry key="properties" value="101" />
-          <entry key="sql" value="369" />
+          <entry key="java" value="5407" />
+          <entry key="jsp" value="196" />
+          <entry key="md" value="155" />
+          <entry key="properties" value="116" />
+          <entry key="sql" value="555" />
           <entry key="txt" value="16" />
-          <entry key="xml" value="293" />
+          <entry key="xml" value="354" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3849" />
+          <entry key="JAVA" value="5407" />
           <entry key="JSON" value="8" />
-          <entry key="JSP" value="46" />
-          <entry key="Markdown" value="75" />
+          <entry key="JSP" value="196" />
+          <entry key="Markdown" value="147" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="Properties" value="101" />
-          <entry key="SQL" value="184" />
-          <entry key="Scratch" value="189" />
-          <entry key="XML" value="289" />
+          <entry key="Properties" value="116" />
+          <entry key="SQL" value="309" />
+          <entry key="Scratch" value="254" />
+          <entry key="XML" value="346" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -110,28 +151,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/PhoneUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1078">
-              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="124" column="63" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="63" />
+            <state relative-caret-position="420">
+              <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -139,8 +162,68 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/sql.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+            <state relative-caret-position="3720">
+              <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/dao/QQUserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/QQUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-416">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QQUserMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SearchHistoryMapper.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/Message.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#362#363#0" expanded="true" />
+                <element signature="e#399#400#0" expanded="true" />
+                <element signature="e#427#428#0" expanded="true" />
+                <element signature="e#461#462#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+                <element signature="e#535#536#0" expanded="true" />
+                <element signature="e#571#572#0" expanded="true" />
+                <element signature="e#606#607#0" expanded="true" />
+                <element signature="e#639#640#0" expanded="true" />
+                <element signature="e#689#690#0" expanded="true" />
+                <element signature="e#733#734#0" expanded="true" />
+                <element signature="e#768#769#0" expanded="true" />
+                <element signature="e#801#802#0" expanded="true" />
+                <element signature="e#851#852#0" expanded="true" />
+                <element signature="e#895#896#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,47 +231,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfbd8ac8-67d8-4ef4-a551-6fea580c2ea6/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="540">
+              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="40" selection-start-line="40" selection-end-line="45" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="225">
-                <caret line="499" column="13" selection-start-line="499" selection-start-column="13" selection-end-line="499" selection-end-column="13" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/TokenInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="36" column="62" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/DSJEnglish.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="6" column="279" selection-start-line="6" selection-start-column="279" selection-end-line="6" selection-end-column="279" />
+            <state relative-caret-position="767">
+              <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -217,6 +270,9 @@
       <find>QQ</find>
       <find>img</find>
       <find>Img</find>
+      <find>contains</find>
+      <find>declaringExecutable</find>
+      <find>parameters</find>
     </findStrings>
     <replaceStrings>
       <replace>Resource</replace>
@@ -235,57 +291,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/WordServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/ArticleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/CommentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/FileServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/FriendServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DjsenglishApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/DjsenglishApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/dao/ArticleCommentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/dao/ArticleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/common/abc.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/Sentence.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/SearchHistory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/DateTimeUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JDKSerializetionUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/ChatUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JsonSerializetionUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocketConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/DjsenglishApplication.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/45809d6e-a4af-4f71-ae20-343224dabfe7/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f99932b0-f75c-4948-9b89-a6326fe4cf7c/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/30505c20-e930-468e-bc4f-d40c39341da7/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/05461497-40bd-41ea-be77-9a2769b88936/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e2ae90c0-51c0-4962-912a-ce5a16263033/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/QQUser.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JsonUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JedisUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/Message.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/dao/QQUserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/QQUserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/common/ResponseCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/common/ServerResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/dao/UserMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/common/Const.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/TokenInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/Adapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/IUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/PhoneUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/target/classes/DSJEnglish.properties" />
+        <option value="$PROJECT_DIR$/接口文档/用户接口.md" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JWTUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/MD5Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/PhoneUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/PropertiesUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/FTPUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/DateTimeUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/djsenglish/djsenglish/JsonUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/djsenglish/djsenglish/DjsenglishApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/Adapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocketConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JedisUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/ChatUser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/djsenglish/djsenglish/test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/util/JsonUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/WordsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/WordController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/DSJEnglish.properties" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bfbd8ac8-67d8-4ef4-a551-6fea580c2ea6/console.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/sql.sql" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/接口文档/用户接口.md" />
-        <option value="$PROJECT_DIR$/target/classes/DSJEnglish.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/DSJEnglish.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/dao/QQUserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/QQUserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml" />
       </list>
     </option>
   </component>
@@ -375,6 +431,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -406,7 +463,128 @@
               <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="pojo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="websocket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="jsp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
@@ -426,7 +604,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -439,7 +616,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/JavaProject/djsenglish/src/main/java/com/djsenglish/interceptor/TokenInterceptor.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558446854897" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558612921886" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="E:/maven/maven-jar/mysql/mysql-connector-java/8.0.12/mysql-connector-java-8.0.12.jar" />
@@ -451,13 +628,6 @@
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\JavaProject\djsenglish\src\main\resources\mapper" />
-      <recent name="E:\JavaProject\djsenglish\src\main\resources" />
-      <recent name="E:\JavaProject\djsenglish\src\main\java" />
-      <recent name="E:\JavaProject\djsenglish\src\main" />
-      <recent name="E:\JavaProject\djsenglish\src\main\webapp" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.djsenglish" />
       <recent name="com" />
@@ -467,6 +637,16 @@
       <recent name="E:\JavaProject\djsenglish" />
       <recent name="E:\JavaProject\djsenglish\src\main\resources" />
       <recent name="E:\JavaProject\djsenglish\src\main\java\com\djsenglish" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.djsenglish.djsenglish" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JavaProject\djsenglish\src\main\webapp\jsp" />
+      <recent name="E:\JavaProject\djsenglish\src\main\resources\mapper" />
+      <recent name="E:\JavaProject\djsenglish\src\main\resources" />
+      <recent name="E:\JavaProject\djsenglish\src\main\java" />
+      <recent name="E:\JavaProject\djsenglish\src\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -482,6 +662,36 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.DjsenglishApplication">
+    <configuration name="test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="djsenglish" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djsenglish.djsenglish.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.djsenglish.djsenglish" />
+      <option name="MAIN_CLASS_NAME" value="com.djsenglish.djsenglish.test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="djsenglish" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.djsenglish.djsenglish.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.djsenglish.djsenglish" />
+      <option name="MAIN_CLASS_NAME" value="com.djsenglish.djsenglish.test" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DjsenglishApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="djsenglish" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.djsenglish.DjsenglishApplication" />
@@ -512,7 +722,18 @@
     <list>
       <item itemvalue="Spring Boot.DjsenglishApplication" />
       <item itemvalue="Spring Boot.djsenglishApplication" />
+      <item itemvalue="JUnit.test" />
+      <item itemvalue="JUnit.test.test" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.test.test" />
+        <item itemvalue="JUnit.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_FIELDS,SHOW_NON_PUBLIC" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -536,12 +757,35 @@
       <workItem from="1558276339297" duration="428000" />
       <workItem from="1558353756653" duration="8316000" />
       <workItem from="1558362087656" duration="59000" />
-      <workItem from="1558438657105" duration="8030000" />
+      <workItem from="1558438657105" duration="8275000" />
+      <workItem from="1558448150968" duration="448000" />
+      <workItem from="1558490416255" duration="5766000" />
+      <workItem from="1558525112162" duration="7309000" />
+      <workItem from="1558576701136" duration="4179000" />
+      <workItem from="1558581145521" duration="947000" />
+      <workItem from="1558610472304" duration="2447000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="test - 2019.05.22 at 10h 38m 21s.xml">
+      <configuration name="test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test - 2019.05.22 at 10h 38m 34s.xml">
+      <configuration name="test.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test - 2019.05.22 at 10h 40m 02s.xml">
+      <configuration name="test.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test - 2019.05.22 at 11h 03m 36s.xml">
+      <configuration name="test.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="test_test - 2019.05.23 at 10h 29m 16s.xml">
+      <configuration name="test.test" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62202000" />
+    <option name="totallyTimeSpent" value="83543000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -553,11 +797,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2873" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49776787" visible="true" weight="0.34135666" />
-      <window_info id="Structure" order="1" sideWeight="0.50223213" side_tool="true" weight="0.23994638" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49608764" visible="true" weight="0.2782516" />
+      <window_info id="Structure" order="1" sideWeight="0.5039124" side_tool="true" weight="0.20362474" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -566,25 +810,25 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.27631578" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2247557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.44191095" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32681867" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49932975" weight="0.35203367" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49932975" weight="0.34961998" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067025" side_tool="true" weight="0.14893617" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32624114" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3248227" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32899022" />
-      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32765958" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.2931596" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.29978117" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.18230277" />
       <window_info anchor="right" id="Database" order="6" weight="0.32942432" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -598,213 +842,180 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/接口文档/好友接口.md">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="15540">
+            <caret line="518" column="13" selection-start-line="518" selection-start-column="13" selection-end-line="518" selection-end-column="13" />
+          </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/45809d6e-a4af-4f71-ae20-343224dabfe7/console.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/JWTUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="180">
+          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f99932b0-f75c-4948-9b89-a6326fe4cf7c/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30505c20-e930-468e-bc4f-d40c39341da7/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/30505c20-e930-468e-bc4f-d40c39341da7/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/05461497-40bd-41ea-be77-9a2769b88936/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e2ae90c0-51c0-4962-912a-ce5a16263033/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/接口文档/单词接口.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleLikeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CollectionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ConcernMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2687" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WordsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/config/sqlMapConfig.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ChattingRecordsMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/MD5Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="3" column="58" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="58" />
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvnw.cmd">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/PhoneUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="26" />
+        <state relative-caret-position="210">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SentenceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocketConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/PropertiesUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="150">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/Collection.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/FTPUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="150">
+          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/DjsenglishApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/DateTimeUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/FTPUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/common/PhoneNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2599">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="150">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/JsonUtil.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="406">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/Message.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        <state relative-caret-position="510">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/djsenglish/djsenglish/DjsenglishApplicationTests.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/TokenInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="36" column="62" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.17/tomcat-embed-websocket-9.0.17.jar!/javax/websocket/Session.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8.jar!/com/fasterxml/jackson/core/io/SegmentedStringWriter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar!/com/fasterxml/jackson/databind/ObjectMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="1221" column="48" lean-forward="true" selection-start-line="1221" selection-start-column="48" selection-end-line="1221" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/JedisUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="840">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocket.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/FileServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="41" column="40" lean-forward="true" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/common/ServerResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+        <state relative-caret-position="240">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/common/ResponseCode.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        <state relative-caret-position="1980">
+          <caret line="66" column="23" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/dao/QQUserMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/Adapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="240">
           <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QQUserMapper.xml">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/concurrent/Future.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="19" column="74" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
+        <state relative-caret-position="208">
+          <caret line="122" column="15" lean-forward="true" selection-start-line="122" selection-start-column="15" selection-end-line="122" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/QQUser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/FriendServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        <state relative-caret-position="-355">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/djsenglish/djsenglish/JsonUtil.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/djsenglish/djsenglish/test.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/AutoCloseable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/io/Closeable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/8.5.34/tomcat-embed-websocket-8.5.34.jar!/javax/websocket/Session.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -815,128 +1026,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/common/Const.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-websocket/8.5.34/tomcat-embed-websocket-8.5.34.jar!/org/apache/tomcat/websocket/WsSession.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+        <state relative-caret-position="471">
+          <caret line="75" column="36" lean-forward="true" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/List.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/controller/FriendController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5834">
-          <caret line="291" column="61" selection-start-line="291" selection-start-column="61" selection-end-line="291" selection-end-column="61" />
+        <state relative-caret-position="180">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Object.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/ChatUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="368" column="66" selection-start-line="368" selection-start-column="66" selection-end-line="368" selection-end-column="66" />
+        <state relative-caret-position="1380">
+          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1328#1329#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.6.RELEASE/spring-webmvc-5.1.6.RELEASE.jar!/org/springframework/web/servlet/config/annotation/InterceptorRegistration.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocketConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-274">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="330">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.4.RELEASE/spring-boot-autoconfigure-2.1.4.RELEASE.jar!/org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/WebSocket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="254" column="44" selection-start-line="254" selection-start-column="44" selection-end-line="254" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/Adapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        <state relative-caret-position="270">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/IUserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/ChattingRecords.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="26" column="72" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
+        <state relative-caret-position="120">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="124" column="34" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+        <state relative-caret-position="2100">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/PhoneUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/WordServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1078">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        <state relative-caret-position="240">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/interceptor/TokenInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="36" column="62" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="124" column="63" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/sql.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfbd8ac8-67d8-4ef4-a551-6fea580c2ea6/console.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/controller/WordController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/util/JsonUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="40" selection-start-line="40" selection-end-line="45" selection-end-column="21" />
+        <state relative-caret-position="540">
+          <caret line="26" column="78" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/DSJEnglish.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/DjsenglishApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="270" selection-start-line="6" selection-start-column="270" selection-end-line="6" selection-end-column="270" />
+        <state relative-caret-position="360">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#638#639#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/DSJEnglish.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="279" selection-start-line="6" selection-start-column="279" selection-end-line="6" selection-end-column="279" />
+        <state relative-caret-position="240">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="225">
-            <caret line="499" column="13" selection-start-line="499" selection-start-column="13" selection-end-line="499" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bfbd8ac8-67d8-4ef4-a551-6fea580c2ea6/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/sql.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3720">
+          <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/QQUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SearchHistoryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/dao/QQUserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#733#734#0" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MessageMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/pojo/QQUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-416">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QQUserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
         </state>
       </provider>
     </entry>

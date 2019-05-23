@@ -2,8 +2,9 @@ package com.djsenglish.util;
 
 import java.security.MessageDigest;
 
+
 /**
- * Created by geely
+ * @author shuo
  */
 public class MD5Util {
 

@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author shuo
+ */
 @RequestMapping("/words/")
 @Controller
-public class WordsController {
+public class WordController {
 
     @Autowired
     private IWordService iWordService;

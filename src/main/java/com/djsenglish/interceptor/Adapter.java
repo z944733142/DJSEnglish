@@ -15,7 +15,7 @@ import java.util.Set;
  * @author: shuo
  * @date: 2019/05/14
  */
-@Configuration
+//@Configuration
 public class Adapter implements WebMvcConfigurer {
 
 

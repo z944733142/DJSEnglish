@@ -1,19 +1,110 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.djsenglish.dao.SearchHistoryMapper" >
-  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.SearchHistory" >
-    <constructor >
-      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="user" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="word" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.djsenglish.dao.SearchHistoryMapper">
+  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.SearchHistory">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="user" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="word" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
   </resultMap>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
     id, user, word, update_time, create_time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from search_history
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from search_history
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.djsenglish.pojo.SearchHistory">
+    insert into search_history (id, user, word, 
+      update_time, create_time)
+    values (#{id,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{word,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.djsenglish.pojo.SearchHistory">
+    insert into search_history
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="user != null">
+        user,
+      </if>
+      <if test="word != null">
+        word,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="user != null">
+        #{user,jdbcType=INTEGER},
+      </if>
+      <if test="word != null">
+        #{word,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.SearchHistory">
+    update search_history
+    <set>
+      <if test="user != null">
+        user = #{user,jdbcType=INTEGER},
+      </if>
+      <if test="word != null">
+        word = #{word,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.SearchHistory">
+    update search_history
+    set user = #{user,jdbcType=INTEGER},
+      word = #{word,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.SearchHistory">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="user" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="word" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user, word, update_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from search_history
@@ -26,13 +117,13 @@
     where user = #{userId}
     order by create_time DESC
   </select>
-    <select id="selectCountByUseridAndWord" resultType="java.lang.Integer" parameterType="map">
+    <select id="selectCountByUseridAndWord" parameterType="map" resultType="java.lang.Integer">
       select count(*)
       from search_history
       where user = #{userId}
       and word = #{word}
     </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from search_history
     where id = #{id,jdbcType=INTEGER}
   </delete>
@@ -45,22 +136,22 @@
     where user = #{userId}
     and word = #{word}
   </delete>
-  <insert id="insert" parameterType="com.djsenglish.pojo.SearchHistory" >
+  <insert id="insert" parameterType="com.djsenglish.pojo.SearchHistory">
     insert into search_history (id, user, word,
       update_time, create_time)
     values (#{id,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{word,jdbcType=VARCHAR},
       now(), now())
   </insert>
-  <insert id="insertSelective" parameterType="com.djsenglish.pojo.SearchHistory" >
+  <insert id="insertSelective" parameterType="com.djsenglish.pojo.SearchHistory">
     insert into search_history
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         id,
       </if>
-      <if test="user != null" >
+      <if test="user != null">
         user,
       </if>
-      <if test="word != null" >
+      <if test="word != null">
         word,
       </if>
         update_time,
@@ -68,14 +159,14 @@
         create_time,
 
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="user != null" >
+      <if test="user != null">
         #{user,jdbcType=INTEGER},
       </if>
-      <if test="word != null" >
+      <if test="word != null">
         #{word,jdbcType=VARCHAR},
       </if>
 
@@ -85,25 +176,25 @@
 
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.SearchHistory" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.SearchHistory">
     update search_history
-    <set >
-      <if test="user != null" >
+    <set>
+      <if test="user != null">
         user = #{user,jdbcType=INTEGER},
       </if>
-      <if test="word != null" >
+      <if test="word != null">
         word = #{word,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = now(),
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.SearchHistory" >
+  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.SearchHistory">
     update search_history
     set user = #{user,jdbcType=INTEGER},
       word = #{word,jdbcType=VARCHAR},

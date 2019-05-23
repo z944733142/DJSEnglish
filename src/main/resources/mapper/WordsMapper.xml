@@ -1,21 +1,136 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.djsenglish.dao.WordsMapper" >
-  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.Words" >
-    <constructor >
-      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="word" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="sound_mark" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="pos" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="mean" jdbcType="VARCHAR" javaType="java.lang.String" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.djsenglish.dao.WordsMapper">
+  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.Words">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="word" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sound_mark" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pos" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="mean" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
     id, word, sound_mark, pos, update_time, create_time, mean
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from words
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from words
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.djsenglish.pojo.Words">
+    insert into words (id, word, sound_mark, 
+      pos, update_time, create_time, 
+      mean)
+    values (#{id,jdbcType=INTEGER}, #{word,jdbcType=VARCHAR}, #{soundMark,jdbcType=VARCHAR}, 
+      #{pos,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{mean,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.djsenglish.pojo.Words">
+    insert into words
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="word != null">
+        word,
+      </if>
+      <if test="soundMark != null">
+        sound_mark,
+      </if>
+      <if test="pos != null">
+        pos,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="mean != null">
+        mean,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="word != null">
+        #{word,jdbcType=VARCHAR},
+      </if>
+      <if test="soundMark != null">
+        #{soundMark,jdbcType=VARCHAR},
+      </if>
+      <if test="pos != null">
+        #{pos,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mean != null">
+        #{mean,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.Words">
+    update words
+    <set>
+      <if test="word != null">
+        word = #{word,jdbcType=VARCHAR},
+      </if>
+      <if test="soundMark != null">
+        sound_mark = #{soundMark,jdbcType=VARCHAR},
+      </if>
+      <if test="pos != null">
+        pos = #{pos,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mean != null">
+        mean = #{mean,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.Words">
+    update words
+    set word = #{word,jdbcType=VARCHAR},
+      sound_mark = #{soundMark,jdbcType=VARCHAR},
+      pos = #{pos,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      mean = #{mean,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.Words">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="word" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sound_mark" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pos" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="mean" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, word, sound_mark, pos, update_time, create_time, mean
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from words
@@ -26,15 +141,15 @@
    <include refid="Base_Column_List" />
   FROM words
 
-  WHERE id >= (SELECT floor( RAND() * ((SELECT MAX(id) FROM words)-(SELECT MIN(id) FROM words)) + (SELECT MIN(id) FROM words)))
+  WHERE id &gt;= (SELECT floor( RAND() * ((SELECT MAX(id) FROM words)-(SELECT MIN(id) FROM words)) + (SELECT MIN(id) FROM words)))
 
   ORDER BY id LIMIT 12;
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from words
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.djsenglish.pojo.Words" >
+  <insert id="insert" parameterType="com.djsenglish.pojo.Words">
     insert into words (id, word, sound_mark, 
       pos, update_time, create_time, 
       mean)
@@ -42,80 +157,80 @@
       #{pos,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
       #{mean,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.djsenglish.pojo.Words" >
+  <insert id="insertSelective" parameterType="com.djsenglish.pojo.Words">
     insert into words
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         id,
       </if>
-      <if test="word != null" >
+      <if test="word != null">
         word,
       </if>
-      <if test="soundMark != null" >
+      <if test="soundMark != null">
         sound_mark,
       </if>
-      <if test="pos != null" >
+      <if test="pos != null">
         pos,
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time,
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time,
       </if>
-      <if test="mean != null" >
+      <if test="mean != null">
         mean,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="word != null" >
+      <if test="word != null">
         #{word,jdbcType=VARCHAR},
       </if>
-      <if test="soundMark != null" >
+      <if test="soundMark != null">
         #{soundMark,jdbcType=VARCHAR},
       </if>
-      <if test="pos != null" >
+      <if test="pos != null">
         #{pos,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="mean != null" >
+      <if test="mean != null">
         #{mean,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.Words" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.Words">
     update words
-    <set >
-      <if test="word != null" >
+    <set>
+      <if test="word != null">
         word = #{word,jdbcType=VARCHAR},
       </if>
-      <if test="soundMark != null" >
+      <if test="soundMark != null">
         sound_mark = #{soundMark,jdbcType=VARCHAR},
       </if>
-      <if test="pos != null" >
+      <if test="pos != null">
         pos = #{pos,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="mean != null" >
+      <if test="mean != null">
         mean = #{mean,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.Words" >
+  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.Words">
     update words
     set word = #{word,jdbcType=VARCHAR},
       sound_mark = #{soundMark,jdbcType=VARCHAR},
