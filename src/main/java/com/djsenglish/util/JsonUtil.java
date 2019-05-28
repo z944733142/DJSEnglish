@@ -8,8 +8,10 @@ import org.joda.time.DateTime;
 
 import javax.websocket.Session;
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+import java.util.TimeZone;
 
 /**
  * @author: shuo
@@ -18,9 +20,14 @@ import java.util.Map;
 public class JsonUtil {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
-
+    static {
+        SimpleDateFormat smt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        objectMapper.setDateFormat(smt);
+        objectMapper.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+    }
     public static String serialize(Object object) throws JsonProcessingException {
         String json = objectMapper.writeValueAsString(object);
+        System.out.println(json);
         return json;
 
     }
@@ -34,11 +41,10 @@ public class JsonUtil {
     public static Message messageUnserialize(String json) throws IOException {
         if(json != null) {
             Map map = objectMapper.readValue(json, Map.class);
-            Message message = new Message();
-            message.setText((String) map.get("text"));
-            message.setSender(new Integer((String) map.get("senderId")));
-            message.setTo(new Integer((String)map.get("to")));
-            message.setCreateTime(new Date());
+            String text = (String) map.get("text");
+            Integer senderId = new Integer((String) map.get("senderId"));
+            Integer to = new Integer((String)map.get("to"));
+            Message message = new Message(senderId, to, text);
             System.out.println(message.toString());
         return message;
         }

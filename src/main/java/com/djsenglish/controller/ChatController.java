@@ -1,6 +1,7 @@
 package com.djsenglish.controller;
 
 import com.auth0.jwt.interfaces.Claim;
+import com.djsenglish.common.Const;
 import com.djsenglish.common.ServerResponse;
 import com.djsenglish.dao.MessageMapper;
 import com.djsenglish.service.IMessageService;
@@ -21,7 +22,7 @@ import java.util.Map;
  * @date: 2019/05/12
  */
 @SuppressWarnings("all")
-@RequestMapping("/chat/")
+@RequestMapping("/chat_message/")
 @Controller
 public class ChatController {
 
@@ -30,8 +31,11 @@ public class ChatController {
 
     @RequestMapping(value = "get_Message_History.do", method = RequestMethod.POST)
     @ResponseBody
-    public ServerResponse getMesaageHistoryList(@RequestParam(required = false, defaultValue = "1") Integer pageNum, @RequestParam(required = false, defaultValue = "10")Integer pageSize, Integer senderId, Integer recevierId)
+    public ServerResponse getMesaageHistoryList(HttpServletRequest request, @RequestParam(required = false, defaultValue = "1") Integer pageNum, @RequestParam(required = false, defaultValue = "10")Integer pageSize, Integer friendId)
     {
-        return iMessageService.getUserMessageList(pageNum, pageSize, senderId, recevierId);
+        Integer userId = (Integer) request.getAttribute(Const.ID);
+        return iMessageService.getUserMessageList(pageNum, pageSize, userId, friendId);
     }
+
+
 }

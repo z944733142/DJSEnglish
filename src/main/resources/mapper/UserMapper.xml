@@ -37,6 +37,11 @@
     from user
     where name = #{userName}
   </select>
+  <select id="selectNameById" parameterType="int" resultType="string">
+    select name
+    from user
+    where id = #{id}
+  </select>
   <select id="selectByPhone" parameterType="string" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />

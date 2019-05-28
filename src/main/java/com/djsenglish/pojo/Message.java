@@ -1,5 +1,6 @@
 package com.djsenglish.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.joda.time.DateTime;
 
 import java.io.Serializable;
@@ -14,6 +15,9 @@ public class Message implements Serializable {
     private Integer sender;
     private Integer to;
     private String text;
+    @JsonIgnore
+    private Date updateTime;
+    private Date createTime;
 
     @Override
     public String toString() {
@@ -25,6 +29,15 @@ public class Message implements Serializable {
                 ", updateTime=" + updateTime +
                 ", createTime=" + createTime +
                 '}';
+    }
+
+
+    public Message(Integer sender, Integer to, String text) {
+        this.sender = sender;
+        this.to = to;
+        this.text = text;
+        this.updateTime = new Date();
+        this.createTime = new Date();
     }
 
     public Integer getId() {
@@ -68,9 +81,7 @@ public class Message implements Serializable {
         this.createTime = createTime;
     }
 
-    private Date updateTime;
 
-    private Date createTime;
 
 
     public String getText() {

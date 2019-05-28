@@ -63,8 +63,7 @@
         websocket.onmessage = function (evnt) {
             //将消息转成json格式
             var msg = JSON.parse(evnt.data);
-            $("#msgInfo").append("<p>收到--" + msg.senderId + "--给您发消息:<font color='red'>" + msg.text + "</font></p>");
-            alert("收到消息!"+ msg.senderId + "--给您发消息:<font color='red'>" + msg.text );
+            $("#msgInfo").append("<p>" + msg.sender + "&nbsp;&nbsp;<font color='red'>" +  msg.time + "</br>" +msg.text + "</font></p>");
             console.log("websocket.onmessage ");
         };
 

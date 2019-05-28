@@ -18,5 +18,5 @@ public interface MessageMapper {
 
     int updateByPrimaryKey(Message record);
 
-    List<Message> getMessageList(@Param("senderId")Integer senderId, @Param("receiverId")Integer receiverId);
+    List<Message> getMessageList(@Param("userId")Integer userId, @Param("friendId")Integer friendId);
 }

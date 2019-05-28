@@ -11,5 +11,5 @@ import com.djsenglish.pojo.Message;
 public interface IMessageService {
     void addMessageHistory(Message message);
 
-    ServerResponse getUserMessageList(Integer pageNum, Integer pageSize, Integer senderId, Integer receiverId);
+    ServerResponse getUserMessageList(Integer pageNum, Integer pageSize, Integer userId, Integer friendId);
 }
