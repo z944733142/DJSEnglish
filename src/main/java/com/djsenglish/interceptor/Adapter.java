@@ -18,8 +18,6 @@ import java.util.Set;
 @Configuration
 public class Adapter implements WebMvcConfigurer {
 
-
-
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         String uri = PropertiesUtil.getProperty("interceptor.uri");

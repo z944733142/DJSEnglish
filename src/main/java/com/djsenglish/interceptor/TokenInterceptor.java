@@ -30,7 +30,6 @@ public class TokenInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws ServletException, IOException {
-        boolean flag = true;
         String token = request.getHeader("token");
         if (token == null) {
             // 跳转返回未登录
@@ -41,14 +40,14 @@ public class TokenInterceptor implements HandlerInterceptor {
                 Map<String, Claim> map = JWTUtil.verifyToken(token);
                 int id = map.get("id").asInt();
                 request.setAttribute("id", id);
+                logger.info(id + "用户已登录");
                 return true;
             } catch (Exception e) {
                 request.getRequestDispatcher("/user/need_login.do").forward(request, response);
                 logger.info("登录过期");
             }
         }
-
-        return flag;
+        return false;
     }
 
     @Override

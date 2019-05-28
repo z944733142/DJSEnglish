@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author shuo
+ */
 public class JedisUtil {
 
     private static Jedis jedis;
@@ -35,7 +38,8 @@ public class JedisUtil {
         String key = Const.CHATUSER_PREFIX + id;
         String json = null;
         try {
-            json = JsonUtil.serialize(session);
+            json = JsonUtil.serialize("");
+            System.out.println(json);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -71,12 +75,11 @@ public class JedisUtil {
     }
 
     /**
-     * @param id
      * @param message
      *
      * 根据id讲消息加入用户未读消息队列
      */
-    public static void putUnreadMessage(Integer id, Message message)
+    public static void putUnreadMessage(Message message)
     {
         String mesageJson = null;
         try {
@@ -84,7 +87,7 @@ public class JedisUtil {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        jedis.lpush(Const.MSG_LIST_PREFIX + id, mesageJson);
+        jedis.lpush(Const.MSG_LIST_PREFIX + message.getTo(), mesageJson);
     }
 
     /**
@@ -94,7 +97,8 @@ public class JedisUtil {
      */
     public static List<Message> getUnreadMessages(Integer id)
     {
-        List<String> lrange = jedis.lrange(Const.MSG_LIST_PREFIX + id, 0, -1);
+        System.out.println(id);
+        List<String> lrange = jedis.lrange(Const.MSG_LIST_PREFIX + id.toString(), 0, -1);
         if(lrange == null || lrange.size() == 0)
         {
             return null;

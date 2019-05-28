@@ -9,8 +9,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
+
 /**
- * Created by geely
+ * @author shuo
  */
 public class FTPUtil {
 

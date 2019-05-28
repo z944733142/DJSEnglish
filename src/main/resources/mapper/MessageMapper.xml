@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.djsenglish.dao.MessageMapper" >
+  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.Message" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="sender" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="to"  jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="text" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, sender, `to`, text, update_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from message
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getMessageList" resultMap="BaseResultMap" parameterType="map">
+    select
+    <include refid="Base_Column_List"/>
+    from message
+    where sender = #{userId}
+    and `to` = #{friendId}
+    or sender = #{friendId}
+    and `to` = #{userId}
+    order by create_time
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from message
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.djsenglish.pojo.Message" >
+    insert into message (id, sender, to, 
+      text, update_time, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{sender,jdbcType=INTEGER}, #{to,jdbcType=INTEGER}, 
+      #{text,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP},#{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.djsenglish.pojo.Message" >
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="sender != null" >
+        sender,
+      </if>
+      <if test="to != null" >
+        `to`,
+      </if>
+      <if test="text != null" >
+        text,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sender != null" >
+        #{sender,jdbcType=INTEGER},
+      </if>
+      <if test="to != null" >
+        #{to,jdbcType=INTEGER},
+      </if>
+      <if test="text != null" >
+        #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.Message" >
+    update message
+    <set >
+      <if test="sender != null" >
+        sender = #{sender,jdbcType=INTEGER},
+      </if>
+      <if test="to != null" >
+        `to` = #{to,jdbcType=INTEGER},
+      </if>
+      <if test="text != null" >
+        text = #{text,jdbcType=VARCHAR},
+      </if>
+        update_time = now(),
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.Message" >
+    update message
+    set sender = #{sender,jdbcType=INTEGER},
+      to = #{to,jdbcType=INTEGER},
+      text = #{text,jdbcType=VARCHAR},
+      update_time = now(),
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

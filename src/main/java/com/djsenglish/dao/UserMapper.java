@@ -19,6 +19,8 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
+    String selectNameById(Integer id);
+
     User selectUser(@Param("phoneNumber") String phoneNumber, @Param("password") String password);
 
     int selectPhoneCount(String phone);

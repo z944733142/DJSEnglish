@@ -100,10 +100,10 @@ public class UserServiceImpl implements IUserService {
             ServerResponse.createByErrorMsg("信息不完全");
         }
 
-        if(!PhoneUtil.judgeCodeIsTrue(msgCode, user.getPhone()))
-        {
-            return ServerResponse.createByErrorMsg("注册失败, 验证码不正确");
-        }
+//        if(!PhoneUtil.judgeCodeIsTrue(msgCode, user.getPhone()))
+//        {
+//            return ServerResponse.createByErrorMsg("注册失败, 验证码不正确");
+//        }
         User insertUser = new User();
         insertUser.setPassword(MD5Util.MD5EncodeUtf8(user.getPassword()));
         insertUser.setName("手机用户" + user.getPhone());

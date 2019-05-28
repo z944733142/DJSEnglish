@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.djsenglish.dao.ConcernMapper" >
-  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.Concern" >
-    <constructor >
-      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="user" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="friending" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.djsenglish.dao.ConcernMapper">
+
+  <resultMap id="BaseResultMap" type="com.djsenglish.pojo.Concern">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="user" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="friending" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
   </resultMap>
-  <sql id="Base_Column_List" >
+  <sql id="Base_Column_List">
     id, user, friending, update_time, create_time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from concern
@@ -24,13 +25,13 @@
     where user = #{userId}
     and friending = #{friendId}
   </select>
-  <select id="selectByUserId" resultType="int" parameterType="int">
+  <select id="selectByUserId" parameterType="int" resultType="int">
     select
     friending
     from concern
     where user = #{userId}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from concern
     where id = #{id,jdbcType=INTEGER}
   </delete>
@@ -39,60 +40,60 @@
     where user = #{userId}
     and friending = #{friendId}
   </delete>
-  <insert id="insert" parameterType="com.djsenglish.pojo.Concern" >
+  <insert id="insert" parameterType="com.djsenglish.pojo.Concern">
     insert into concern (id, user, friending,
       update_time, create_time)
     values (#{id,jdbcType=INTEGER}, #{user,jdbcType=INTEGER}, #{friending,jdbcType=INTEGER},
       now(), now())
   </insert>
-  <insert id="insertSelective" parameterType="com.djsenglish.pojo.Concern" >
+  <insert id="insertSelective" parameterType="com.djsenglish.pojo.Concern">
     insert into concern
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         id,
       </if>
-      <if test="user != null" >
+      <if test="user != null">
         user,
       </if>
-      <if test="friending != null" >
+      <if test="friending != null">
         friending,
       </if>
         update_time,
         create_time,
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="user != null" >
+      <if test="user != null">
         #{user,jdbcType=INTEGER},
       </if>
-      <if test="friending != null" >
+      <if test="friending != null">
         #{friending,jdbcType=INTEGER},
       </if>
         now(),
         now(),
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.Concern" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.djsenglish.pojo.Concern">
     update concern
-    <set >
-      <if test="user != null" >
+    <set>
+      <if test="user != null">
         user = #{user,jdbcType=INTEGER},
       </if>
-      <if test="friending != null" >
+      <if test="friending != null">
         friending = #{friending,jdbcType=INTEGER},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = now(),
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.Concern" >
+  <update id="updateByPrimaryKey" parameterType="com.djsenglish.pojo.Concern">
     update concern
     set user = #{user,jdbcType=INTEGER},
       friending = #{friending,jdbcType=INTEGER},
