@@ -10,6 +10,7 @@ import com.djsenglish.vo.MessageVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -33,13 +34,14 @@ public class MessageServiceImpl implements IMessageService {
         messageMapper.insertSelective(message);
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public ServerResponse getUserMessageList(Integer pageNum, Integer pageSize, Integer userId, Integer friendId) {
         PageHelper.startPage(pageNum, pageSize);
         List<Message> list = messageMapper.getMessageList(userId, friendId);
-        String userName = userMapper.selectNameById(friendId);
-        String friendName = userMapper.selectNameById(userId);
-        List<MessageVo> messageVoList = null;
+        String userName = userMapper.selectNameById(userId);
+        String friendName = userMapper.selectNameById(friendId);
+        List<MessageVo> messageVoList;
         if (list != null && list.size() > 0 && userName != null && friendName != null) {
             messageVoList = new ArrayList<>(list.size());
             for (Message message : list) {

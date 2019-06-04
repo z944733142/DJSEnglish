@@ -47,7 +47,7 @@
         if ('WebSocket' in window) {
             //路径ws + ip + port + 自定义路径
             conect = connectId;
-            websocket = new WebSocket("ws://localhost:8080/chat/" + connectId);
+            websocket = new WebSocket("ws://www.zhangshuo.fun:8080/chat/" + connectId);
         } else {
             alert("浏览器不支持连接！")
             return;
@@ -63,7 +63,7 @@
         websocket.onmessage = function (evnt) {
             //将消息转成json格式
             var msg = JSON.parse(evnt.data);
-            $("#msgInfo").append("<p>" + msg.sender + "&nbsp;&nbsp;<font color='red'>" +  msg.time + "</br>" +msg.text + "</font></p>");
+            $("#msgInfo").append("<p><font color='red'>" + msg.sender + "</font>" + "&nbsp;&nbsp;" +  msg.time + "</br>" +msg.text + "</p>" );
             console.log("websocket.onmessage ");
         };
 
@@ -108,6 +108,7 @@
             to: toId
         };
         websocket.send(JSON.stringify(msgJson));
+        $("#msgInfo").append("<p><font color='red'>" + msgJson.senderId + "</font>" + "&nbsp;&nbsp;" +  msgJson.to + "</br>" +msgJson.text+"</p>" );
     });
 </script>
 </html>

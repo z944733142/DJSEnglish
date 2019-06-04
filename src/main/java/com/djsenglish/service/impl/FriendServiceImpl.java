@@ -25,6 +25,7 @@ public class FriendServiceImpl implements IFriendService {
     @Resource
     private UserMapper userMapper;
 
+
     @Override
     public ServerResponse concern(Integer userId, Integer friendId)
     {

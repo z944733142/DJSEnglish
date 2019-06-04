@@ -14,6 +14,7 @@ import com.djsenglish.util.MD5Util;
 import com.djsenglish.util.PhoneUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -55,7 +56,7 @@ public class UserServiceImpl implements IUserService {
         }
     }
 
-    private ServerResponse addToken(User user) throws Exception {
+    private ServerResponse addToken(User user) {
         if(user != null)
         {
             String img = user.getImg();
@@ -68,7 +69,12 @@ public class UserServiceImpl implements IUserService {
                 img = FTPUtil.ftpPrefix + user.getImg();
             }
             user.setImg(img);
-            String token = JWTUtil.createToken(user.getId());
+            String token = null;
+            try {
+                token = JWTUtil.createToken(user.getId());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             Map map = new HashMap(4);
             map.put("user", user);
             map.put("token", token);
@@ -205,6 +211,7 @@ public class UserServiceImpl implements IUserService {
         return ServerResponse.createBySuccessMsg("昵称可用");
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public ServerResponse qqRegister(String qqId, String phone, String msgCode, String img, String name) {
         ServerResponse serverResponse;
@@ -229,11 +236,7 @@ public class UserServiceImpl implements IUserService {
             if(userMapper.insertSelective(insetUser) > 0)
             {
                 User user = userMapper.selectByPhone(phone);
-                try {
                     return ServerResponse.createBySuccess("验证成功",addToken(user));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
         }
         return ServerResponse.createByErrorMsg("验证失败");
