@@ -38,6 +38,7 @@ public class ArticleServiceImpl implements IArticleService {
     @Override
     public ServerResponse getList(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
+        new ArrayList<>()
         List<Article> articles = articleMapper.getList();
         List<ArticleVo> articleVos = new ArrayList<>();
         if(articles == null || articles.size() <= 0)
