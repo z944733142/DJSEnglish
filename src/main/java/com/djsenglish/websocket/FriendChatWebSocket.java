@@ -84,6 +84,7 @@ public class FriendChatWebSocket {
             message = JsonUtil.messageUnserialize(messagejson);
         } catch (IOException e) {
             e.printStackTrace();
+            return;
         }
         sendMessage(message);
         iMessageService.addMessageHistory(message);
