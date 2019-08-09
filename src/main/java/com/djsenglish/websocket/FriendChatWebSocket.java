@@ -5,18 +5,17 @@ import com.djsenglish.dao.UserMapper;
 import com.djsenglish.pojo.ChatUser;
 import com.djsenglish.pojo.Message;
 import com.djsenglish.service.IMessageService;
-import com.djsenglish.service.IUserService;
-import com.djsenglish.service.impl.MessageServiceImpl;
+
 import com.djsenglish.util.JsonUtil;
 import com.djsenglish.vo.MessageVo;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.apache.tomcat.websocket.WsSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
+
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
@@ -36,9 +35,7 @@ public class FriendChatWebSocket {
 
     private UserMapper userMapper;
 
-    private Integer id;
-
-    private Session session;
+    private ChatUser chatUser;
 
     private Logger logger = LoggerFactory.getLogger(FriendChatWebSocket.class);
 
@@ -57,13 +54,8 @@ public class FriendChatWebSocket {
         ApplicationContext applicationContext = ApplicationContextRegister.getApplicationContext();
         iMessageService = applicationContext.getBean(IMessageService.class);
         userMapper = applicationContext.getBean(UserMapper.class);
-        this.session = session;
-        this.id = id;
         String key = Const.CHATUSER_PREFIX + id;
-        ChatUser chatUser = getChatUser(id, session);
-        if(chatUser != null) {
-            chatUserMap.put(key, chatUser);
-        }
+        this.chatUser =getChatUser(id, session);
         sendMessage(chatUser.getUnreadMessages());
         logger.info("有新用户加入 id:" + id);
     }
@@ -74,10 +66,11 @@ public class FriendChatWebSocket {
      */
     @OnClose
     public void onClose() {
+        Integer id = this.chatUser.getId();
         String key = Const.CHATUSER_PREFIX + id;
         chatUserMap.remove(key);
         try {
-            session.close();
+            chatUser.getSession().close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -91,6 +84,7 @@ public class FriendChatWebSocket {
             message = JsonUtil.messageUnserialize(messagejson);
         } catch (IOException e) {
             e.printStackTrace();
+            return;
         }
         sendMessage(message);
         iMessageService.addMessageHistory(message);
@@ -105,7 +99,7 @@ public class FriendChatWebSocket {
 
     @OnError
     public void onError(Session session, Throwable error) {
-        String key = Const.CHATUSER_PREFIX + id;
+        String key = Const.CHATUSER_PREFIX + this.chatUser.getId();
         chatUserMap.remove(key);
         try {
             session.close();
@@ -127,7 +121,7 @@ public class FriendChatWebSocket {
                 String messageJson = null;
                 try {
                     messageJson = JsonUtil.serialize(message);
-                    session.getBasicRemote().sendText(messageJson);
+                    this.chatUser.getSession().getBasicRemote().sendText(messageJson);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -165,23 +159,25 @@ public class FriendChatWebSocket {
 
     private void sendMessage(Message message) {
         Integer to = message.getTo();
-        ChatUser chatUser = getChatUser(to);
+        ChatUser toChatUser = getChatUser(to);
+        String name = userMapper.selectNameById(message.getSender());
         String messageJson = null;
         MessageVo messageVo = new MessageVo();
-        Session session = chatUser.getSession();
+        Session session = toChatUser.getSession();
         if (session == null) {
-            chatUser.putUnreadMessage(message);
+            toChatUser.putUnreadMessage(message);
         } else {
-            messageVo.setSender(chatUser.getName());
+
+            messageVo.setSender(name);
             messageVo.setText(message.getText());
             messageVo.setTime(message.getCreateTime());
+
             try {
                 messageJson = JsonUtil.serialize(messageVo);
+                logger.info(messageJson);
+                session.getBasicRemote().sendText(messageJson);
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
-            }
-            try {
-                session.getBasicRemote().sendText(messageJson);
             } catch (IOException e) {
                 e.printStackTrace();
             }

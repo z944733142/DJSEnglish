@@ -111,6 +111,17 @@ public class UserController {
         return ServerResponse.createBySuccess(fileMap);
     }
 
+    @RequestMapping(value = "image.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse image(@RequestParam(value = "upload_file", required = false) MultipartFile file, HttpServletRequest request) {
+        String path = request.getSession().getServletContext().getRealPath("upload");
+        String targetFileName = iFileService.upload(file, path);
+        String url = PropertiesUtil.getProperty("ftp.server.http.prefix") + targetFileName;
+        Map fileMap = Maps.newHashMap();
+        fileMap.put("uri", targetFileName);
+        fileMap.put("url", url);
+        return ServerResponse.createBySuccess(fileMap);
+    }
 
     @RequestMapping(value = "forget_reset_password.do", method = RequestMethod.POST)
     @ResponseBody

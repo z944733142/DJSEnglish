@@ -14,6 +14,7 @@ import com.djsenglish.vo.ArticleVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -63,6 +64,7 @@ public class ArticleServiceImpl implements IArticleService {
         return ServerResponse.createBySuccess(articleVo);
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public ServerResponse likeArticle(Integer userId, Integer articleId) {
         ArticleLike articleLike = new ArticleLike();
@@ -85,6 +87,7 @@ public class ArticleServiceImpl implements IArticleService {
         return ServerResponse.createByErrorMsg("点赞失败");
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public ServerResponse dislikeArticle(Integer userId, Integer articleId) {
         if(articleLikeMapper.selectCount(userId, articleId) == 0)
@@ -116,6 +119,7 @@ public class ArticleServiceImpl implements IArticleService {
         return ServerResponse.createBySuccess(articleVos);
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public ServerResponse collectionArticle(Integer userId, Integer articleId) {
         Collection collection = new Collection();
@@ -137,6 +141,7 @@ public class ArticleServiceImpl implements IArticleService {
         return ServerResponse.createByErrorMsg("收藏失败");
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public ServerResponse delColletcion(Integer userId, Integer articleId) {
         if(collectionMapper.selectCount(userId, articleId) == 0)

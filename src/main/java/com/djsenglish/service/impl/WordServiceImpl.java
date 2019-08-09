@@ -9,6 +9,7 @@ import com.djsenglish.pojo.Sentence;
 import com.djsenglish.pojo.Words;
 import com.djsenglish.service.IWordService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -28,6 +29,7 @@ public class WordServiceImpl implements IWordService {
     @Resource
     private SentenceMapper sentenceMapper;
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public ServerResponse addHistory(Integer userId, String word)
     {

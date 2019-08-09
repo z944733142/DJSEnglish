@@ -13,6 +13,7 @@ import com.djsenglish.vo.CommentVo;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -105,6 +106,7 @@ public class CommentServiceImpl implements ICommentService {
         return ServerResponse.createByErrorMsg("删除失败");
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public ServerResponse likeComment(Integer userId, Integer commentId)
     {
@@ -129,6 +131,7 @@ public class CommentServiceImpl implements ICommentService {
         return ServerResponse.createByErrorMsg("点赞失败");
     }
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public ServerResponse dislikeComment(Integer userId, Integer commentId) {
         if(commentLikeMapper.deleteByUserAndComment(userId, commentId))

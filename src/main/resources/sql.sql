@@ -22,7 +22,7 @@ create table qq_user(
   update_time datetime not null  comment '更新时间',
   create_time datetime not null comment '创建时间',
   primary key (id),
-  unique index (qq_id),
+  unique index (qq_id)
 )ENGINE=InnoDB AUTO_INCREMENT=22;
 
 create table concern(
@@ -70,7 +70,7 @@ create table sentence(
 create table message(
   id int(11) not null AUTO_INCREMENT,
   sender int(11) not null comment '发送者id',
-  to  int(11) not null comment '接收人id',
+  `to`  int(11) not null comment '接收人id',
   text varchar(500) not null comment '内容',
   update_time datetime not null comment '更新时间',
   create_time datetime not null comment '创建时间',
