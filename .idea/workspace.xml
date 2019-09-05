@@ -6,14 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="014ce7d1-7fac-4c19-a9a6-149eb14f3ff6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/FriendChatWebSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/djsenglish/websocket/FriendChatWebSocket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DSJEnglish.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DSJEnglish.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/chat.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DSJEnglish.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DSJEnglish.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/接口文档/聊天接口.md" beforeDir="false" afterPath="$PROJECT_DIR$/接口文档/聊天接口.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -57,24 +49,28 @@
     <session id="241454056">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="35" />
+          <entry key="project.closed" value="41" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="2" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="2" />
-          <entry key="project.open.time.25" value="2" />
+          <entry key="project.open.time.25" value="4" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.28" value="2" />
-          <entry key="project.open.time.29" value="1" />
+          <entry key="project.open.time.29" value="2" />
           <entry key="project.open.time.3" value="5" />
+          <entry key="project.open.time.30" value="2" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.4" value="5" />
@@ -84,7 +80,7 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="47" />
+          <entry key="project.opened" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -153,11 +149,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-46">
-              <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+            <state relative-caret-position="463">
+              <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -189,10 +185,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-419">
+            <state relative-caret-position="2250">
               <caret line="113" column="37" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="37" />
             </state>
           </provider>
@@ -202,7 +198,7 @@
         <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="454">
+              <first_editor relative-caret-position="10050">
                 <caret line="402" selection-start-line="359" selection-end-line="402" />
               </first_editor>
               <second_editor />
@@ -214,8 +210,8 @@
         <entry file="file://$PROJECT_DIR$/接口文档/聊天接口.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="305">
-                <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
+              <first_editor relative-caret-position="4825">
+                <caret line="193" selection-start-line="193" selection-end-line="193" />
               </first_editor>
               <second_editor />
             </state>
@@ -239,7 +235,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/FileServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="850">
               <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
             </state>
           </provider>
@@ -410,10 +406,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1911" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-216" />
+    <option name="y" value="-12" />
+    <option name="width" value="2328" />
+    <option name="height" value="1107" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -437,95 +433,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="djsenglish" type="462c0819:PsiDirectoryNode" />
-              <item name="接口文档" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="djsenglish" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -536,7 +444,7 @@
     <property name="SearchEverywhereHistoryKey" value="HashMap&#9;PSI&#9;JAVA://java.util.HashMap" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565264782420" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565264979528" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="E:/maven/maven-jar/mysql/mysql-connector-java/8.0.12/mysql-connector-java-8.0.12.jar" />
@@ -711,7 +619,18 @@
       <workItem from="1565089811095" duration="667000" />
       <workItem from="1565177514230" duration="1585000" />
       <workItem from="1565234264104" duration="294000" />
-      <workItem from="1565255279720" duration="3500000" />
+      <workItem from="1565255279720" duration="3728000" />
+      <workItem from="1565312104826" duration="677000" />
+      <workItem from="1565610573885" duration="594000" />
+      <workItem from="1565687340163" duration="1621000" />
+      <workItem from="1565746739983" duration="706000" />
+      <workItem from="1565767023951" duration="682000" />
+      <workItem from="1565785990377" duration="683000" />
+      <workItem from="1565874809964" duration="594000" />
+      <workItem from="1566215852854" duration="599000" />
+      <workItem from="1566289708913" duration="1193000" />
+      <workItem from="1566388880654" duration="1496000" />
+      <workItem from="1566528486996" duration="60000" />
     </task>
     <servers />
   </component>
@@ -733,7 +652,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148792000" />
+    <option name="totallyTimeSpent" value="157925000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -745,10 +664,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1913" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48058254" visible="true" weight="0.3036193" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48058254" weight="0.3036193" />
       <window_info id="Structure" order="1" sideWeight="0.51941746" side_tool="true" weight="0.24664879" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -758,7 +677,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26241136" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26241136" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -766,7 +685,7 @@
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32681867" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067025" side_tool="true" weight="0.14893617" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32340425" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932975" weight="0.3460993" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932975" weight="0.34560907" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="12" weight="0.32899022" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.32899022" />
@@ -777,7 +696,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" visible="true" weight="0.1816354" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.1816354" />
       <window_info anchor="right" id="Database" order="6" weight="0.32908848" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -1066,44 +985,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/DjsenglishApplication.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/IFileService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/FileServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="454">
-            <caret line="402" selection-start-line="359" selection-end-line="402" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+        <state relative-caret-position="463">
+          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1114,27 +999,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/DjsenglishApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+        <state relative-caret-position="175">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="113" column="37" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/接口文档/用户接口.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="10050">
+            <caret line="402" selection-start-line="359" selection-end-line="402" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/接口文档/聊天接口.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="305">
-            <caret line="193" lean-forward="true" selection-start-line="193" selection-end-line="193" />
+          <first_editor relative-caret-position="4825">
+            <caret line="193" selection-start-line="193" selection-end-line="193" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/IFileService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-419">
-          <caret line="113" column="37" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="37" />
+        <state relative-caret-position="150">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/djsenglish/service/impl/FileServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
         </state>
       </provider>
     </entry>
